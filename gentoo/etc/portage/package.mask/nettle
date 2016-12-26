@@ -1,0 +1,2 @@
+#gnutls don't support nettle 3
+>=dev-libs/nettle-3.1

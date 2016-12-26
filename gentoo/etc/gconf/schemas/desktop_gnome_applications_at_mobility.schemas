@@ -1,0 +1,36 @@
+<gconfschemafile>
+    <schemalist>
+      <schema>
+         <key>/schemas/desktop/gnome/applications/at/mobility/exec</key>
+         <applyto>/desktop/gnome/applications/at/mobility/exec</applyto>
+         <owner>gnome</owner>
+	 <type>string</type>
+         <default>dasher</default>
+         <locale name="C">
+            <short>Preferred Mobility assistive technology application</short>
+            <long>Preferred Mobility assistive technology application to be used for login, menu, or command line.</long>
+         </locale>
+
+         <locale name="zh_CN">
+            <short>首选的行动辅助技术应用程序</short>
+            <long>为登录、菜单或命令行使用的首选移动辅助技术应用程序。</long>
+         </locale>
+      </schema>    
+      <schema>
+         <key>/schemas/desktop/gnome/applications/at/mobility/startup</key>
+         <applyto>/desktop/gnome/applications/at/mobility/startup</applyto>
+         <owner>gnome</owner>
+	 <type>bool</type>
+         <default>false</default>
+         <locale name="C">
+            <short>Start preferred Mobility assistive technology application</short>
+            <long>GNOME to start preferred Mobility assistive technology application during login.</long>
+         </locale>
+
+         <locale name="zh_CN">
+            <short>启动首选的行动辅助技术应用程序</short>
+            <long>GNOME 将要在登录时启动的首选移动辅助技术应用程序。</long>
+         </locale>
+      </schema>    
+    </schemalist>
+</gconfschemafile>

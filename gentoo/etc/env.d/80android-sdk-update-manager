@@ -1,0 +1,4 @@
+PATH="/opt/android-sdk-update-manager/tools:/opt/android-sdk-update-manager/platform-tools"
+ROOTPATH="/opt/android-sdk-update-manager/tools:/opt/android-sdk-update-manager/platform-tools"
+ANDROID_SWT="/usr/share/swt-3.7/lib"
+ANDROID_HOME="/opt/android-sdk-update-manager"

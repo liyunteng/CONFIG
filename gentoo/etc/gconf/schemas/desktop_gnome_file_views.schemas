@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/desktop/gnome/file-views/icon_theme</key>
+      <applyto>/desktop/gnome/file_views/icon_theme</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>crux_teal</default>
+      <locale name="C">
+        <short>File Icon Theme</short>
+        <long>Theme used for displaying file icons.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>文件图标主题</short>
+        <long>用于显示文件图标的主题。</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

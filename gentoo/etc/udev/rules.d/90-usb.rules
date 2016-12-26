@@ -1,0 +1,16 @@
+ACTION=="remove", GOTO="USB_END"
+SUBSYSTEM!="input", GOTO="USB_END"
+SUBSYSTEM=="bluetooth", GOTO_"USB_END"
+
+#ENV{ID_INPUT_KEYBOARD}=="?*", ENV{.INPUT_CLASS}="kbd"
+#ENV{ID_INPUT_MOUSE}="?*", ENV{.INPUT_CLASS}="mouse"
+#ENV{ID_INPUT_TOUCHPAD}="?*", ENV{.INPUT_CLASS}="mouse"
+#ENV{ID_INPUT_TABLET}="?*", ENV{.INPUT_CLASS}="mouse"
+
+KERNEL=="event[0-9]*", ATTRS{name}=="*MOUSE*|*Mouse*|*mouse*", ENV{.INPUT_CLASS}="mouse"
+KERNEL=="event[0-9]*", ATTRS{name}=="*Keyboard*|*HID*", ENV{.INPUT_CLASS}="kbd"
+
+ENV{.INPUT_CLASS}=="mouse",  ATTRS{bInterfaceNumber}=="|00", SYMLINK+="mouse", GOTO="USB_END"
+ENV{.INPUT_CLASS}=="kbd", ATTRS{bInterfaceNumber}=="|00", SYMLINK+="kbd", GOTO="USB_END"
+ 
+LABEL="USB_END"

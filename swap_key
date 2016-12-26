@@ -1,0 +1,19 @@
+console 下交换键位
+1.复制/usr/share/keymaps/i386/qwerty/us.map.gz 到lyt.map.gz
+2.解压lyt.map.gz,修改其中的Caps_lock 和 Control对应的keycodes
+3.压缩lyt.map 
+4.修改/etc/vconsole.conf 改为KEYMAP=lyt
+
+X 下交换键位
+添加以下内容到/etc/X11/xorg.conf.d/00-keyboard.conf
+# Read and parsed by systemd-localed. It's probably wise not to edit this file
+# manually too freely.
+Section "InputClass"
+	Identifier "system-keyboard"
+	MatchIsKeyboard "on"
+	Option "XkbLayout" "us"
+	Option "XkbOptions" "ctrl:swapcaps"
+EndSection
+
+
+然后reboot

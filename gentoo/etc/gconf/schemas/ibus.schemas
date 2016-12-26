@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/desktop/ibus/general/preload_engines</key>
+      <applyto>/desktop/ibus/general/preload_engines</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <default>[]</default>
+      <list_type>string</list_type>
+      <locale name="C">
+        <short><!-- Translators: Here “Preload” is a verb -->Preload engines</short>
+	    <long><!-- Translators: Tooltip for the button “Preload Engines” -->Preload engines during ibus starts up</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>预加载引擎</short>
+	    <long>IBus 启动时预加载的引擎</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/engines_order</key>
+      <applyto>/desktop/ibus/general/engines_order</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <default>[]</default>
+      <list_type>string</list_type>
+      <locale name="C">
+        <short>Engines order</short>
+            <long>Saved engines order in input method list</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>引擎顺序</short>
+            <long>保存在输入法选单中的引擎顺序</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/switcher-delay-time</key>
+      <applyto>/desktop/ibus/general/switcher-delay-time</applyto>
+      <owner>ibus</owner>
+      <type>int</type>
+      <default>400</default>
+      <locale name="C">
+        <short>Popup delay milliseconds for IME switcher window</short>
+            <long>Set popup delay milliseconds to show IME switcher window.
+                  The default is 400.
+                  0 = Show the window immediately.
+                  0 &lt; Delay milliseconds.
+                  0 &gt; Do not show the window and switch prev/next engines.
+            </long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>输入法切换窗口弹出延时微秒数</short>
+            
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/version</key>
+      <applyto>/desktop/ibus/general/version</applyto>
+      <owner>ibus</owner>
+      <type>string</type>
+      <default></default>
+      <locale name="C">
+        <short>Saved version number</short>
+            <long>The saved version number will be used to check the
+                  difference between the version of the previous installed
+                  ibus and one of the current ibus.
+            </long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>已储存的版本号</short>
+            <long>已保存的版本号将被用作检查之前安装的 ibus 版本和当前版本间的区别。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/xkb-latin-layouts</key>
+      <applyto>/desktop/ibus/general/xkb-latin-layouts</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[ara,bg,cz,dev,gr,gur,in,jp(kana),mal,mkd,ru,ua]</default>
+      <locale name="C">
+        <short>Latin layouts which have no ASCII</short>
+           <long>US layout is appended to the latin layouts. variant can be
+                 omitted.
+           </long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/use-xmodmap</key>
+      <applyto>/desktop/ibus/general/use-xmodmap</applyto>
+      <owner>ibus</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Use xmodmap</short>
+          <long>Run xmodmap if .xmodmap or .Xmodmap exists when
+                ibus engines are switched.</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/hotkey/trigger</key>
+      <applyto>/desktop/ibus/general/hotkey/trigger</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[Control+space,Zenkaku_Hankaku,Alt+Kanji,Alt+grave,Hangul,Alt+Release+Alt_R]</default>
+      <locale name="C">
+        <short>Trigger shortcut keys</short>
+          <long>The shortcut keys for turning input method on or off</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>触发快捷键</short>
+          <long>打开关闭输入法的快捷键</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/hotkey/triggers</key>
+      <applyto>/desktop/ibus/general/hotkey/triggers</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[&lt;Super&gt;space]</default>
+      <locale name="C">
+        <short>Trigger shortcut keys for gtk_accelerator_parse</short>
+          <long>The shortcut keys for turning input method on or off</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>为 gtk_accelerator_parse 触发快捷键</short>
+          <long>打开关闭输入法的快捷键</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/hotkey/enable_unconditional</key>
+      <applyto>/desktop/ibus/general/hotkey/enable_unconditional</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[]</default>
+      <locale name="C">
+        <short>Enable shortcut keys</short>
+	    <long>The shortcut keys for turning input method on</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>应用快捷键</short>
+	    <long>开启输入法的快捷键</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/hotkey/disable_unconditional</key>
+      <applyto>/desktop/ibus/general/hotkey/disable_unconditional</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[]</default>
+      <locale name="C">
+        <short>Disable shortcut keys</short>
+	    <long>The shortcut keys for turning input method off</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>禁用快捷键</short>
+	    <long>关闭输入法的快捷键</long>
+      </locale>
+    </schema>
+    <!-- For backward compatibility -->
+    <schema>
+      <key>/schemas/desktop/ibus/general/hotkey/next_engine</key>
+      <applyto>/desktop/ibus/general/hotkey/next_engine</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[Alt+Shift_L]</default>
+      <locale name="C">
+        <short>Next engine shortcut keys</short>
+	    <long>The shortcut keys for switching to the next input method in the list</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>下一个引擎快捷键</short>
+	    <long>切换到列表中下一个输入法快捷键</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/ibus/general/hotkey/next_engine_in_menu</key>
+      <applyto>/desktop/ibus/general/hotkey/next_engine_in_menu</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[Alt+Shift_L]</default>
+      <locale name="C">
+        <short>Next engine shortcut keys</short>
+	    <long>The shortcut keys for switching to the next input method in the list</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>下一个引擎快捷键</short>
+	    <long>切换到列表中下一个输入法快捷键</long>
+      </locale>
+    </schema>
+
+    <!-- For backward compatibility -->
+    <schema>
+      <key>/schemas/desktop/ibus/general/hotkey/prev_engine</key>
+      <applyto>/desktop/ibus/general/hotkey/prev_engine</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[]</default>
+      <locale name="C">
+        <short>Prev engine shortcut keys</short>
+	    <long>The shortcut keys for switching to the previous input method</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>上一个引擎快捷键</short>
+	    <long>切换到列表中上一个输入法快捷键</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/ibus/general/hotkey/previous_engine</key>
+      <applyto>/desktop/ibus/general/hotkey/previous_engine</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[]</default>
+      <locale name="C">
+        <short>Prev engine shortcut keys</short>
+	    <long>The shortcut keys for switching to the previous input method</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>上一个引擎快捷键</short>
+	    <long>切换到列表中上一个输入法快捷键</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/show</key>
+      <applyto>/desktop/ibus/panel/show</applyto>
+      <owner>ibus</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+        <short>Auto hide</short>
+	    <long>The behavior of property panel. 0 = Do not show, 1 = Auto hide, 2 = Always show</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>自动隐藏</short>
+	    <long>属性面板的行为。 0 = 不再显示，1 = 自动隐藏，2 = 始终显示</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/x</key>
+      <applyto>/desktop/ibus/panel/x</applyto>
+      <owner>ibus</owner>
+      <type>int</type>
+      <default>-1</default>
+      <locale name="C">
+        <short>Language panel position</short>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>语言栏位置</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/y</key>
+      <applyto>/desktop/ibus/panel/y</applyto>
+      <owner>ibus</owner>
+      <type>int</type>
+      <default>-1</default>
+      <locale name="C">
+        <short>Language panel position</short>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>语言栏位置</short>
+      </locale>
+    </schema>
+    <!--
+    <schema>
+      <key>/schemas/desktop/ibus/panel/position</key>
+      <applyto>/desktop/ibus/panel/position</applyto>
+      <owner>ibus</owner>
+      <type>int</type>
+      <default>3</default>
+      <locale name="C">
+        <short>Language panel position</short>
+	    <long>The position of the language panel. 0 = Top left corner, 1 = Top right corner, 2 = Bottom left corner, 3 = Bottom right corner, 4 = Custom</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>语言栏位置</short>
+	    <long>语言栏位置。0 = 左上角，1 = 右上角，2 = 左下角，3 = 右下角，4 = 自定义</long>
+      </locale>
+    </schema>
+    -->
+    <schema>
+      <key>/schemas/desktop/ibus/panel/follow-input-cursor-when-always-shown</key>
+      <applyto>/desktop/ibus/panel/follow-input-cursor-when-always-shown</applyto>
+      <owner>ibus</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Follow the input cursor in case the panel is always shown</short>
+          <long>If true, the panel follows the input cursor in case the
+                panel is always shown. If false, the panel is shown at
+                a fixed location.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>在始终显示的情况下面板跟随输入光标</short>
+          <long>若为真，当面板设为始终显示时面板将跟随输入光标。若为假，面板将在固定位置显示。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/auto-hide-timeout</key>
+      <applyto>/desktop/ibus/panel/auto-hide-timeout</applyto>
+      <owner>ibus</owner>
+      <type>int</type>
+      <default>10000</default>
+      <locale name="C">
+        <short>The milliseconds to show property panel</short>
+          <long>The milliseconds to show property panel after focus-in or
+                properties are changed.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>以毫秒为单位显示属性面板的时间</short>
+          <long>在离开焦点或属性变更后，以毫秒为单位显示属性面板的时间</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/lookup_table_orientation</key>
+      <applyto>/desktop/ibus/panel/lookup_table_orientation</applyto>
+      <owner>ibus</owner>
+      <type>int</type>
+      <default>1</default>
+      <locale name="C">
+        <short>Orientation of lookup table</short>
+	    <long>Orientation of lookup table. 0 = Horizontal, 1 = Vertical</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>候选词表方向</short>
+	    <long>候选词表方向。0 = 水平，1 = 竖直。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/show_icon_on_systray</key>
+      <applyto>/desktop/ibus/panel/show_icon_on_systray</applyto>
+      <owner>ibus</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Show icon on system tray</short>
+	    <long>Show icon on system tray</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>在系统托盘上显示图标</short>
+	    <long>在系统托盘上显示图标</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/show_im_name</key>
+      <applyto>/desktop/ibus/panel/show_im_name</applyto>
+      <owner>ibus</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Show input method name</short>
+	    <long>Show input method name on language bar</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>显示输入法名称</short>
+	    <long>语言栏上显示输入法名称</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/xkb-icon-rgba</key>
+      <applyto>/desktop/ibus/panel/xkb-icon-rgba</applyto>
+      <owner>ibus</owner>
+      <type>string</type>
+      <default>#415099</default>
+      <locale name="C">
+        <short>RGBA value of XKB icon</short>
+	    <long>XKB icon shows the layout string and the string is
+                  rendered with the RGBA value. The RGBA value can be
+                  1. a color name from X11, 2. a hex value in form '#rrggbb'
+                  where 'r', 'g' and 'b' are hex digits of the red, green,
+                  and blue, 3. a RGB color in form 'rgb(r,g,b)' or
+                  4. a RGBA color in form 'rgba(r,g,b,a)' where 'r',
+                  'g', and 'b' are either integers in the range 0 to 255
+                  or precentage values in the range 0% to 100%, and
+                  'a' is a floating point value in the range 0 to 1
+                  of the alpha.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>XKB 图标的 RGBA 值</short>
+	    <long>XKB 图标显示键盘布局字符串并依据 RGBA 值进行渲染。RGBA 值可以是 1. X11 中的颜色名；2. &apos;#rrggbb&apos; 形式的十六进制数，其中 &apos;r&apos;, &apos;g&apos; 和 &apos;b&apos; 分别代表十六进制数字的红、绿和蓝；3. &apos;rgb(r,g,b)&apos; 形式的 RGB 颜色；或者 4. &apos;rgba(r,g,b,a)&apos; 形式的 RGBA 颜色，其中 &apos;r&apos;, &apos;g&apos; 和 &apos;b&apos; 分别为 0 到 255 之间的整数值，或者 0% 到 100% 之间的百分比值，而 &apos;a&apos; 为 0 到 1 之间的浮点透明度。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/property-icon-delay-time</key>
+      <applyto>/desktop/ibus/panel/property-icon-delay-time</applyto>
+      <owner>ibus</owner>
+      <type>int</type>
+      <default>500</default>
+      <locale name="C">
+        <short>The milliseconds to show the panel icon for a property</short>
+          <long>The milliseconds to show the panel icon from the
+                engine icon to a property icon whenever engines are
+                switched if the property is specified by the value of
+                icon-prop-key in IBusEngineDesc.
+                If the value is 0, no delay time and the property icon
+                is shown immediately.</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/use_system_keyboard_layout</key>
+      <applyto>/desktop/ibus/general/use_system_keyboard_layout</applyto>
+      <owner>ibus</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Use system keyboard layout</short>
+	    <long>Use system keyboard (XKB) layout</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>使用系统键盘布局</short>
+	    <long>使用系统键盘（XKB）布局</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/use_custom_font</key>
+      <applyto>/desktop/ibus/panel/use_custom_font</applyto>
+      <owner>ibus</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Use custom font</short>
+	    <long>Use custom font name for language panel</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>使用自定义字体</short>
+	    <long>语言栏上使用自定义字体</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/panel/custom_font</key>
+      <applyto>/desktop/ibus/panel/custom_font</applyto>
+      <owner>ibus</owner>
+      <type>string</type>
+      <default>Sans 10</default>
+      <locale name="C">
+        <short>Custom font</short>
+	    <long>Custom font name for language panel</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>自定义字体</short>
+	    <long>自定义语言栏字体</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/embed_preedit_text</key>
+      <applyto>/desktop/ibus/general/embed_preedit_text</applyto>
+      <owner>ibus</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Embed Preedit Text</short>
+	    <long>Embed Preedit Text in Application Window</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>内嵌编辑模式</short>
+	    <long>在应用程序窗口中启用内嵌编辑模式</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/ibus/general/use_global_engine</key>
+      <applyto>/desktop/ibus/general/use_global_engine</applyto>
+      <owner>ibus</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Use global input method</short>
+	    <long>Share the same input method among all applications</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>使用全局输入法</short>
+	    <long>在所有应用程序中共享同一个输入法</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/ibus/general/enable_by_default</key>
+      <applyto>/desktop/ibus/general/enable_by_default</applyto>
+      <owner>ibus</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Enable input method by default</short>
+	    <long>Enable input method by default when the application gets input
+            focus</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>默认启动输入法</short>
+	    <long>当应用程序需要使用输入时自动启用输入法</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/ibus/general/dconf_preserve_name_prefixes</key>
+      <applyto>/desktop/ibus/general/dconf_preserve_name_prefixes</applyto>
+      <owner>ibus</owner>
+      <type>list</type>
+      <default>[/desktop/ibus/engine/pinyin,/desktop/ibus/engine/bopomofo,/desktop/ibus/engine/hangul]</default>
+      <list_type>string</list_type>
+      <locale name="C">
+        <short>DConf preserve name prefixes</short>
+	    <long>Prefixes of DConf keys to stop name conversion</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>DConf 保留名称前缀</short>
+	    <long>用来停止名称转换的 DConf 键前缀</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

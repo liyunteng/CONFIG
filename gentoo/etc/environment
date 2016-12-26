@@ -1,0 +1,6 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+CALIDUS_ROOT_DIR=/home/lyt/svn/Calidus/sunnysky64/branches/b_SO_p3_6_1

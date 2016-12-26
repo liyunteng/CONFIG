@@ -1,0 +1,5 @@
+cross-arm-none-linux-gnueabi/binutils cross-arm-none-linux-gnueabi/binutils.conf
+cross-arm-none-linux-gnueabi/gcc cross-arm-none-linux-gnueabi/gcc.conf
+cross-arm-none-linux-gnueabi/linux-headers cross-arm-none-linux-gnueabi/linux-headers.conf
+cross-arm-none-linux-gnueabi/glibc cross-arm-none-linux-gnueabi/glibc.conf
+cross-arm-none-linux-gnueabi/gdb cross-arm-none-linux-gnueabi/gdb.conf

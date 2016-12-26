@@ -1,0 +1,4 @@
+dev-java/oracle-jdk-bin nsplugin
+dev-java/oracle-jre-bin nsplugin
+dev-java/icedtea nsplugin javascript
+dev-java/icedtea-web nsplugin javascript

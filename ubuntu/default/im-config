@@ -1,0 +1,14 @@
+# Deault im-config mode (see im-config(8))
+
+if [ $XDG_CURRENT_DESKTOP -a $XDG_CURRENT_DESKTOP = "Unity" ]; then
+    # Always start best input method
+    IM_CONFIG_DEFAULT_MODE=auto
+else
+    # Start best input method only if CJKV environment
+    IM_CONFIG_DEFAULT_MODE=cjkv
+fi
+
+# Trace commands for debug
+# (This may cause problem configuration file generated under console mode)
+#IM_CONFIG_SETMODE="-x"
+

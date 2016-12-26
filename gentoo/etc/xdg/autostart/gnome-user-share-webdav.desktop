@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Personal File Sharing
+Name[zh_CN]=个人文件共享
+Comment=Launch Personal File Sharing if enabled
+Comment[zh_CN]=如果已启用则启动个人文件共享
+Keywords=share;files;bluetooth;obex;http;network;copy;send;
+Keywords[zh_CN]=share;files;bluetooth;obex;http;network;copy;send;共享;文件;蓝牙;网络;复制;发送;
+AutostartCondition=GSETTINGS org.gnome.desktop.file-sharing enabled
+Icon=folder-remote
+Exec=/usr/libexec/gnome-user-share
+Terminal=false
+Type=Application
+Categories=
+OnlyShowIn=GNOME;

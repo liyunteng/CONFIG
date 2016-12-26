@@ -1,0 +1,16 @@
+[options]
+verbose = 0
+read_all = false
+message_log = ~/.getmail/log
+
+[retriever]
+type = SimplePOP3Retriever
+server = pop3.jwele.com.cn
+username = liyt@jwele.com.cn
+password = liyunteng1988
+port = 110
+
+[destination]
+type = MDA_external
+path = /usr/bin/procmail
+

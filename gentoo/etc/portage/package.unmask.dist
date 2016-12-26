@@ -1,0 +1,16 @@
+# required by virtual/krb5-0-r1::gentoo
+# required by net-fs/cifs-utils-6.4::gentoo
+# required by net-fs/samba-4.1.17::gentoo[client]
+# required by net-libs/libsoup-2.48.1::gentoo[samba]
+# required by net-im/empathy-3.12.7::gentoo
+# required by gnome-base/gnome-core-apps-3.14.0::gentoo
+# required by gnome-base/gnome-3.14.0::gentoo
+# required by gnome (argument)
+# /etc/portage/package.mask/heimdal:
+=app-crypt/heimdal-1.5.3-r2
+# required by virtual/krb5-0-r1::gentoo
+# required by app-editors/emacs-24.4-r4::gentoo
+# required by @selected
+# required by @world (argument)
+# /etc/portage/package.mask/mit-krb5:
+=app-crypt/mit-krb5-1.13.1

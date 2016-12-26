@@ -1,0 +1,1 @@
+../../usr/share/bash-completion/pulseaudio-bash-completion.sh

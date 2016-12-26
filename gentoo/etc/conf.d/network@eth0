@@ -1,0 +1,4 @@
+address=172.16.1.136
+netmask=24
+broadcast=172.16.1.255
+gateway=172.16.1.1

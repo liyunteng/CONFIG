@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/desktop/gnome/applications/window_manager/default</key>
+      <applyto>/desktop/gnome/applications/window_manager/default</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <locale name="C">
+        <short>Fallback window manager (deprecated)</short>
+        <long>
+          Fallback window manager if user window manager can't be found.
+          This key has been deprecated since GNOME 2.12.
+        </long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>默认窗口管理器(不推荐)</short>
+        <long>用户窗口管理器无法找到时使用的默认窗口管理器。此键自 GNOME 2.12 之后不再推荐使用。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/applications/window_manager/current</key>
+      <applyto>/desktop/gnome/applications/window_manager/current</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <locale name="C">
+        <short>User window manager (deprecated)</short>
+        <long>
+          Window manager to try first.
+          This key has been deprecated since GNOME 2.12.
+        </long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>用户窗口管理器(不推荐)</short>
+        <long>首先尝试的窗口管理器。此键自 GNOME 2.12 之后不再推荐使用。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/applications/window_manager/number_of_workspaces</key>
+      <applyto>/desktop/gnome/applications/window_manager/number_of_workspaces</applyto>
+      <owner>gnome</owner>
+      <type>int</type>
+      <locale name="C">
+        <short>The number of workspaces (deprecated)</short>
+        <long>
+          The number of workspaces the window manager should use
+          This key has been deprecated since GNOME 2.12.
+        </long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>工作区数目(不推荐)</short>
+        <long>窗口管理器应该使用的工作区数目。此键自 GNOME 2.12 之后不再推荐使用。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/applications/window_manager/workspace_names</key>
+      <applyto>/desktop/gnome/applications/window_manager/workspace_names</applyto>
+      <owner>gnome</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <locale name="C">
+        <short>Names of the workspaces (deprecated)</short>
+        <long>
+          A list with names of the first window manager workspaces.
+          This key has been deprecated since GNOME 2.12.
+        </long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>工作区名称(不推荐)</short>
+        <long>第一个窗口管理器工作区名称的列表。此键自 GNOME 2.12 之后不再推荐使用。</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

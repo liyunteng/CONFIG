@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=GNOME Settings Daemon
+Name[zh_CN]=GNOME 设置守护程序
+Exec=/usr/libexec/gnome-settings-daemon-localeexec
+OnlyShowIn=GNOME;
+NoDisplay=true
+X-GNOME-Autostart-Phase=Initialization
+X-GNOME-Autostart-Notify=true
+X-GNOME-AutoRestart=true

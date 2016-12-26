@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Name=Evolution Alarm Notify
+Name[zh_CN]=Evolution 提醒通知
+Comment=Calendar event notifications
+Comment[zh_CN]=日历事件信息
+Icon=appointment-soon
+Exec=/usr/libexec/evolution/evolution-alarm-notify
+Terminal=false
+Type=Application
+Categories=
+OnlyShowIn=GNOME;Unity;XFCE;Dawati;MATE;
+X-Meego-Priority=Low
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=evolution
+X-GNOME-Bugzilla-Component=calendar
+X-GNOME-Bugzilla-Version=3.20.x

@@ -1,0 +1,4 @@
+# /etc/exports: NFS file systems being exported.  See exports(5).
+/mnt/share 172.16.1.0/255.255.255.0(rw,no_subtree_check)
+#/mnt/deploy 172.16.1.0/255.255.255.0(rw,sync,no_root_squash,no_subtree_check)
+#/mnt/android-backup 172.16.1.0/255.255.255.0(rw,sync,no_root_squash,no_subtree_check)

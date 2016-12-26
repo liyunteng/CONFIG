@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Print Queue Applet
+Name[zh_CN]=打印队列小程序
+Comment=System tray icon for managing print jobs
+Comment[zh_CN]=管理打印任务的系统托盘图标
+Exec=system-config-printer-applet
+Terminal=false
+Type=Application
+Icon=printer
+NotShowIn=KDE;
+StartupNotify=false
+X-GNOME-Autostart-Delay=30
+X-Desktop-File-Install-Version=0.22
+Categories=System;Monitor;GTK;

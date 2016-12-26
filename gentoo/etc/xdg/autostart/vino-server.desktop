@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Desktop Sharing
+Name[zh_CN]=桌面共享
+Comment=GNOME Desktop Sharing Server
+Comment[zh_CN]=GNOME 桌面共享服务器
+Keywords=vnc;share;remote;
+Keywords[zh_CN]=vnc;share;remote;
+Exec=/usr/libexec/vino-server
+Icon=preferences-desktop-remote-desktop
+OnlyShowIn=GNOME;Unity;
+Terminal=false
+Type=Application
+AutostartCondition=GSettings org.gnome.Vino enabled
+X-GNOME-Autostart-Phase=Applications
+X-GNOME-AutoRestart=true
+X-GNOME-UsesNotifications=true

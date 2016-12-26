@@ -1,0 +1,17 @@
+[options]
+verbose = 0
+read_all = false
+delete = False
+message_log = ~/.getmail/log
+
+[retriever]
+type = SimpleIMAPRetriever
+server = imap.163.com
+username = li_yunteng
+password = liyunteng1988
+port = 143
+
+[destination]
+type = MDA_external
+path = /usr/bin/procmail
+

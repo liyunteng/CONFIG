@@ -1,0 +1,5 @@
+sys-devel/gcc amd64 -~amd64
+# required by dev-lang/php-5.6.9::gentoo[apache2]
+# required by @selected
+# required by @world (argument)
+=www-servers/apache-2.4.12-r1 ~amd64

@@ -1,0 +1,53 @@
+# Do not edit -- this file documents how Postfix was built for your machine.
+#----------------------------------------------------------------
+# Start of summary of user-configurable 'make makefiles' options.
+# CCARGS=-DHAS_PCRE -DHAS_LDAP -DUSE_TLS -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl -DNO_NIS -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+# AUXLIBS=-Wl,-O1 -Wl,--as-needed -ldl -lpam -lssl -lcrypto -lsasl2
+# AUXLIBS_LMDB=
+# AUXLIBS_PCRE=-L/usr/lib64 -lpcre
+# AUXLIBS_SQLITE=
+# AUXLIBS_MYSQL=
+# AUXLIBS_CDB=
+# AUXLIBS_LDAP=-lldap -llber
+# AUXLIBS_PGSQL=
+# shared=yes
+# dynamicmaps=no
+# pie=yes
+# shlib_directory=/usr/lib64/postfix/MAIL_VERSION
+# End of summary of user-configurable 'make makefiles' options.
+#--------------------------------------------------------------
+# System-dependent settings and compiler/linker overrides.
+SYSTYPE	= LINUX4
+_AR	= x86_64-pc-linux-gnu-ar
+ARFL	= rv
+_RANLIB	= x86_64-pc-linux-gnu-ranlib
+SYSLIBS	= -pie -Wl,-O1 -Wl,--as-needed -ldl -lpam -lssl -lcrypto -lsasl2 -lldap -llber -L/usr/lib64 -lpcre -ldb -lnsl -lresolv -ldl -L/usr/lib64 -licui18n -licuuc -licudata 
+CC	= x86_64-pc-linux-gnu-gcc -fPIC -I. -I../../include -DHAS_PCRE -DHAS_LDAP -DUSE_TLS -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl -DNO_NIS -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DU_DISABLE_RENAMING=1 -I/usr/include -DHAS_DEV_URANDOM -DDEF_SHLIB_DIR=\"/usr/lib64/postfix/\$${mail_version}\" -DUSE_DYNAMIC_LIBS -UUSE_DYNAMIC_MAPS $(WARN)
+OPT	= -O2 -pipe -fomit-frame-pointer -Wno-comment
+DEBUG	= 
+AWK	= awk
+STRCASE = 
+EXPORT	= CCARGS='-I. -I../../include -DHAS_PCRE -DHAS_LDAP -DUSE_TLS -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl -DNO_NIS -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DU_DISABLE_RENAMING=1 -I/usr/include -DHAS_DEV_URANDOM -DDEF_SHLIB_DIR=\"/usr/lib64/postfix/\$${mail_version}\" -DUSE_DYNAMIC_LIBS -UUSE_DYNAMIC_MAPS' OPT='-O2 -pipe -fomit-frame-pointer -Wno-comment' DEBUG=''
+WARN	= -Wall -Wno-comment -Wformat -Wimplicit -Wmissing-prototypes \
+	-Wparentheses -Wstrict-prototypes -Wswitch -Wuninitialized \
+	-Wunused -Wno-missing-braces
+DEFINED_MAP_TYPES = pcre ldap dev_urandom
+MAKE_FIX = 
+# Switch between Postfix static and dynamically-linked libraries.
+AR	= :
+RANLIB	= :
+LIB_PREFIX = postfix-
+LIB_SUFFIX = .so
+SHLIB_CFLAGS = -fPIC
+SHLIB_DIR = /usr/lib64/postfix/3.1.2
+SHLIB_LD = x86_64-pc-linux-gnu-gcc -shared -Wl,-soname,${LIB}
+SHLIB_SYSLIBS = -Wl,-O1 -Wl,--as-needed -ldl -lpam -lssl -lcrypto -lsasl2 -lldap -llber -L/usr/lib64 -lpcre -ldb -lnsl -lresolv -ldl -L/usr/lib64 -licui18n -licuuc -licudata
+SHLIB_RPATH = -Wl,--enable-new-dtags -Wl,-rpath,${SHLIB_DIR}
+# Switch between dynamicmaps.cf plugins and hard-linked databases.
+NON_PLUGIN_MAP_OBJ = $(MAP_OBJ)
+PLUGIN_MAP_OBJ = 
+PLUGIN_MAP_OBJ_UPDATE = 
+PLUGIN_MAP_SO_MAKE = 
+PLUGIN_MAP_SO_UPDATE = 
+PLUGIN_LD = 
+# Application-specific rules.

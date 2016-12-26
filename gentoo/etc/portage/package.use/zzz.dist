@@ -1,0 +1,29 @@
+# required by gnome-extra/gnome-user-share-3.14.2::gentoo
+# required by gnome-base/gnome-extra-apps-3.14.0-r1::gentoo
+# required by gnome-base/gnome-3.14.0::gentoo[extras]
+# required by gnome (argument)
+>=www-servers/apache-2.2.29 apache2_mpms_prefork
+x11-libs/libX11 abi_x86_32
+x11-libs/libXext abi_x86_32
+x11-libs/libXau abi_x86_32
+x11-proto/xproto abi_x86_32
+x11-libs/libXdmcp abi_x86_32
+x11-proto/xextproto abi_x86_32
+x11-proto/kbproto abi_x86_32
+x11-proto/inputproto abi_x86_32
+media-plugins/grilo-plugins upnp-av
+dev-libs/libpthread-stubs abi_x86_32
+x11-libs/libxcb abi_x86_32
+# required by app-arch/p7zip-9.38.1-r2::gentoo[-kde,wxwidgets]
+# required by dev-util/android-ndk-10e::gentoo
+# required by android-ndk (argument)
+>=x11-libs/wxGTK-2.8.12.1-r1:2.8 -odbc
+# required by dev-util/android-sdk-update-manager-23::gentoo
+# required by dev-util/android-ndk-10e::gentoo
+# required by android-ndk (argument)
+>=sys-libs/zlib-1.2.8-r1 abi_x86_32
+# required by dev-qt/qtcore-5.5.1::gentoo
+# required by dev-qt/qtsingleapplication-2.6.1_p20150629::gentoo[qt5]
+# required by media-video/smplayer-15.9.0::gentoo[qt5]
+# required by smplayer (argument)
+>=dev-libs/libpcre-8.37-r2 pcre16

@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/desktop/gnome/peripherals/mouse/left_handed</key>
+      <applyto>/desktop/gnome/peripherals/mouse/left_handed</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Mouse button orientation</short>
+        <long>Swap left and right mouse buttons for left-handed mice.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>鼠标按钮方向</short>
+        <long>为左手鼠标交换左右鼠标按钮。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/peripherals/mouse/single_click</key>
+      <applyto>/desktop/gnome/peripherals/mouse/single_click</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Single Click</short>
+        <long>Single click to open icons.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>单击</short>
+        <long>单击以打开图标。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/peripherals/mouse/motion_acceleration</key>
+      <applyto>/desktop/gnome/peripherals/mouse/motion_acceleration</applyto>
+      <owner>gnome</owner>
+      <type>float</type>
+      <default>-1</default>
+      <locale name="C">
+        <short>Single Click</short>
+        <long>Acceleration multiplier for mouse motion.  A value of -1
+        is the system default.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>单击</short>
+        <long>鼠标运动的加速倍数。系统的默认值是 -1。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/peripherals/mouse/motion_threshold</key>
+      <applyto>/desktop/gnome/peripherals/mouse/motion_threshold</applyto>
+      <owner>gnome</owner>
+      <type>int</type>
+      <default>-1</default>
+      <locale name="C">
+        <short>Motion Threshold</short>
+        <long>Distance in pixels the pointer must move before
+        accelerated mouse motion is activated.  A value of -1 is the
+        system default.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>运动阈值</short>
+        <long>启动鼠标运动加速前鼠标必须移动的像素点数。系统默认的值是 -1。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/peripherals/mouse/drag_threshold</key>
+      <applyto>/desktop/gnome/peripherals/mouse/drag_threshold</applyto>
+      <owner>gnome</owner>
+      <type>int</type>
+      <default>8</default>
+      <locale name="C">
+        <short>Drag Threshold</short>
+        <long>Distance before a drag is started.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>拖放阈值</short>
+        <long>判断拖放开始的距离。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/peripherals/mouse/double_click</key>
+      <applyto>/desktop/gnome/peripherals/mouse/double_click</applyto>
+      <owner>gnome</owner>
+      <type>int</type>
+      <default>400</default>
+      <locale name="C">
+        <short>Double Click Time</short>
+        <long>Length of a double click.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>双击时间</short>
+        <long>鼠标双击的时间长度。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/peripherals/mouse/locate_pointer</key>
+      <applyto>/desktop/gnome/peripherals/mouse/locate_pointer</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Locate Pointer</short>
+        <long>Highlights the current location of the pointer when the
+        Control key is pressed and released.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>定位指针</short>
+        <long>当键按下和放开时突出显示指针的当前位置。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/peripherals/mouse/cursor_font</key>
+      <applyto>/desktop/gnome/peripherals/mouse/cursor_font</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <locale name="C">
+	<short>Cursor font</short>
+	<long>
+	  Font name of the cursor. If unset, the default font is
+	  used. This value is only propagated to the X server start of
+	  each session, so changing it mid-session won't have an effect
+	  until the next time you log in.
+	</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>光标字体</short>
+	<long>光标字体的名称。如果未设置，则使用默认的字体。此设置只有在每次会话开始前传送给 X 服务器，因此在会话当中改变它不会有用，要等到您下次登录后才会起作用。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/peripherals/mouse/cursor_theme</key>
+      <applyto>/desktop/gnome/peripherals/mouse/cursor_theme</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <locale name="C">
+	<short>Cursor theme</short>
+	<long>
+	  Cursor theme name. Used only by Xservers that support Xcursor,
+	  such as XFree86 4.3 and later.
+	</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>光标主题</short>
+	<long>光标主题名称。仅适用于支持 Xcursor 的 Xserver，比如 XFree86 4.3 或更新版本。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/peripherals/mouse/cursor_size</key>
+      <applyto>/desktop/gnome/peripherals/mouse/cursor_size</applyto>
+      <owner>gnome</owner>
+      <type>int</type>
+      <default>18</default>
+      <locale name="C">
+	<short>Cursor size</short>
+	<long>
+	  Size of the cursor referenced by cursor_theme.
+	</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>光标大小</short>
+	<long>cursor_theme 引用的光标大小。</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

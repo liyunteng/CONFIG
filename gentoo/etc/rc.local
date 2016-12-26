@@ -1,0 +1,14 @@
+#!/bin/bash
+git daemon --verbose --export-all --syslog --base-path=/var/git --listen=172.16.1.136 --port=9418 --detach --user=git --group=git 
+#ifconfig br0 down
+#brctl delbr br0
+#brctl addbr br0
+#brctl addif br0 eth0
+#brctl stp br0 off
+#ifconfig eth0 0.0.0.0
+#ifconfig br0 172.16.1.148 netmask 255.255.255.0
+#ip r add default via 172.16.1.1
+#tunctl -t tap0 -u lyt
+#brctl addif br0 tap0
+#ifconfig tap0 0.0.0.0
+

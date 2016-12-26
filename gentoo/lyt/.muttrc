@@ -1,0 +1,10 @@
+set sendmail = "/usr/bin/msmtp"
+set editor = "vim"
+set use_from = yes
+set from = "li_yunteng@163.com"
+#set from = "liyt@jwele.com.cn"
+set realname = "liyunteng"
+set envelope_from = yes
+
+
+auto_view text/html

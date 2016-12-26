@@ -1,0 +1,9 @@
+;;; The following is required if you want source location functions to
+;;; work in SLIME, for example.
+
+(setf (logical-pathname-translations "SYS")
+      '(("SYS:SRC;**;*.*.*" #p"/usr/lib64/sbcl/src/**/*.*")
+        ("SYS:CONTRIB;**;*.*.*" #p"/usr/lib64/sbcl/**/*.*")))
+
+;;; Setup ASDF2
+(load "/etc/common-lisp/gentoo-init.lisp")

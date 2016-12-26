@@ -1,0 +1,11 @@
+[Desktop Entry]
+Exec=xdg-user-dirs-gtk-update
+Name=User folders update
+Name[zh_CN]=用户文件夹更新
+Comment=Update common folders names to match current locale
+Comment[zh_CN]=更新公共文件夹名称以匹配当前区域设置
+Terminal=false
+NotShowIn=KDE;
+Type=Application
+StartupNotify=false
+X-KDE-autostart-after=panel

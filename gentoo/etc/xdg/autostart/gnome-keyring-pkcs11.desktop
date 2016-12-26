@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=Certificate and Key Storage
+Name[zh_CN]=证书和密钥存储
+Comment=GNOME Keyring: PKCS#11 Component
+Comment[zh_CN]=GNOME 密钥环：PKCS#11 组件
+Exec=/usr/bin/gnome-keyring-daemon --start --components=pkcs11
+OnlyShowIn=GNOME;Unity;MATE;
+X-GNOME-Autostart-Phase=PreDisplayServer
+X-GNOME-AutoRestart=false
+X-GNOME-Autostart-Notify=true
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gnome-keyring
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.20.0

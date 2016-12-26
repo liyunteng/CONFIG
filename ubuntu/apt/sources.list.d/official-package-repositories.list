@@ -1,0 +1,9 @@
+deb http://ftp.stust.edu.tw/pub/Linux/LinuxMint/packages/ petra main upstream import 
+
+deb http://extra.linuxmint.com petra main
+
+deb http://mirrors.163.com/ubuntu/ saucy main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ saucy-updates main restricted universe multiverse
+
+deb http://security.ubuntu.com/ubuntu/ saucy-security main restricted universe multiverse
+deb http://archive.canonical.com/ubuntu/ saucy partner

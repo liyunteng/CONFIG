@@ -1,0 +1,21 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/gconf-editor/bookmarks</key>
+      <applyto>/apps/gconf-editor/bookmarks</applyto>
+      <owner>gconf-editor</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[]</default>
+      <locale name="C">
+	<short>Bookmarks</short>
+	<long>gconf-editor folder bookmarks</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>书签</short>
+	<long>gconf-editor 文件夹书签</long>
+      </locale>
+    </schema>
+ </schemalist>
+</gconfschemafile>

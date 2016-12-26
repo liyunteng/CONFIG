@@ -1,0 +1,1 @@
+CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --ppapi-flash-path=/usr/lib64/chromium-browser/PepperFlash/libpepflashplayer.so --ppapi-flash-version=24.0.0.186"

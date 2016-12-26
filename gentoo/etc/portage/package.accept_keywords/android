@@ -1,0 +1,8 @@
+# required by android-ndk (argument)
+=dev-util/android-ndk-11c ~amd64
+# required by dev-util/android-ndk-11c::gentoo
+# required by android-ndk (argument)
+=dev-util/android-sdk-update-manager-24.4.1 ~amd64
+dev-util/android-ndk ~amd64
+dev-util/android-tools ~amd64
+dev-util/android-studio ~amd64

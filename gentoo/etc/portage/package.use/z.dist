@@ -1,0 +1,8 @@
+# required by dev-vcs/git-2.3.3::gentoo[subversion,perl]
+# required by sys-devel/gettext-0.19.4::gentoo[git]
+# required by dev-scheme/guile-1.8.8-r1::gentoo
+# required by sys-devel/autogen-5.18.4::gentoo
+# required by net-libs/gnutls-3.3.12::gentoo
+# required by net-nds/openldap-2.4.40-r3::gentoo[gnutls,ssl]
+# required by www-servers/apache-2.4.12::gentoo[ldap]
+>=dev-vcs/subversion-1.8.11 -dso perl

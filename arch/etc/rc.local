@@ -1,0 +1,9 @@
+#!/bin/sh
+exit 0
+#优化内核参数
+sysctl -p > /dev/null
+#启动php-fpm 配合nginx使用
+/usr/bin/php-fpm
+/usr/bin/nginx
+#启动mysql
+/usr/bin/mysqld --pid-file=/run/mysqld/mysqld.pid

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/system/dns_sd/display_local</key>
+      <applyto>/system/dns_sd/display_local</applyto>
+      <owner>gnome-vfs</owner>
+      <type>string</type>
+      <default>merged</default>
+      <locale name="C">
+        <short>How to display local DNS-SD service</short>
+        <long>Possible values are "merged", "separate" and "disabled".</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>如何显示本地 DNS-SD 服务</short>
+        <long>可供选择的值有“merged”、“separate”和“disabled”。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/system/dns_sd/extra_domains</key>
+      <applyto>/system/dns_sd/extra_domains</applyto>
+      <owner>gnome-vfs</owner>
+      <type>string</type>
+      <default></default>
+      <locale name="C">
+        <short>Extra domains to look for DNS-SD services in</short>
+        <long>Comma separated list of DNS-SD domains that should be
+        visible in the "network:///" location.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>DNS-SD 服务应查阅的额外域</short>
+        <long>以逗号分隔的 DNS-SD 域列表，这些域将出现在“network:///”位置中。</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

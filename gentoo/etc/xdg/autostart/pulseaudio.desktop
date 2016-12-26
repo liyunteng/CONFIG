@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=PulseAudio Sound System
+Name[zh_CN]=PulseAudio 声音系统
+Comment=Start the PulseAudio Sound System
+Comment[zh_CN]=启动 PulseAudio 声音系统
+Exec=start-pulseaudio-x11
+Terminal=false
+Type=Application
+Categories=
+GenericName=
+X-GNOME-Autostart-Phase=Initialization
+X-KDE-autostart-phase=1

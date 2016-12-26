@@ -1,0 +1,36 @@
+[Films]
+row=5
+col=0
+
+[20 GB Volume]
+row=0
+col=1
+
+[Software]
+row=4
+col=0
+
+[Download]
+row=6
+col=0
+
+[24 GB Volume]
+row=1
+col=1
+
+[Windows]
+row=3
+col=0
+
+[Trash]
+row=2
+col=0
+
+[File System]
+row=1
+col=0
+
+[Home]
+row=0
+col=0
+

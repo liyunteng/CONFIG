@@ -1,0 +1,11 @@
+1.安装x11vnc
+apt-get install x11vnc
+2.设定密码
+x11vnc -storepasswd 123456 /etc/x11vnc.pass
+3.编写启动脚本
+cat <<EOF
+start on login-session-start
+script
+x11vnc -display :0 -auth /var/run/lightdm/root/:0 -forever -bg -o /var/log/x11vnc.log -rfbauth /etc/x11vnc.pass -rfbport 5900
+end script
+EOF > /etc/init/x11vnc.conf

@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
+
+export XIM=iBus
+export XMODIFIERS=@im=iBus
+export GTK_IM_MODULE=iBus
+export QT_IM_MODULE=iBus
+
+ exec gnome-session
+# exec startkde
+# exec startxfce4
+# ...or the Window Manager of your choice

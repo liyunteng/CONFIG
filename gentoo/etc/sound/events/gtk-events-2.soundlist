@@ -1,0 +1,18 @@
+[__section_info__]
+description=User interface events
+description[zh_CN]=用户界面事件
+
+[clicked]
+file=gtk-events/clicked.wav
+description=Click on command button
+description[zh_CN]=单击命令按钮
+
+[activate]
+file=gtk-events/activate.wav
+description=Choose menu item
+description[zh_CN]=选择菜单项
+
+[toggled]
+file=gtk-events/toggled.wav
+description=Select check box
+description[zh_CN]=选择复选框

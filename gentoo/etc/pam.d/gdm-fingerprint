@@ -1,0 +1,15 @@
+account  include  system-login
+
+auth     optional pam_env.so
+auth     required pam_tally2.so onerr=succeed
+auth     required pam_shells.so
+auth     required pam_nologin.so
+auth     required pam_fprintd.so
+auth     required pam_permit.so
+auth     optional pam_gnome_keyring.so
+
+password required pam_deny.so
+
+session  substack system-login
+session  optional pam_gnome_keyring.so auto_start
+

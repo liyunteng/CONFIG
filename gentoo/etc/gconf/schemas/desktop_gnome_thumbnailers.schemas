@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+
+    <schema>
+      <key>/schemas/desktop/gnome/thumbnailers/disable_all</key>
+      <applyto>/desktop/gnome/thumbnailers/disable_all</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Disable all external thumbnailers</short>
+        <long>Set to true to disable all external thumbnailer programs, independent on whether they are independently disabled/enabled.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>禁用所有外部缩略图程序</short>
+        <long>设为 true 可禁用所有外部缩略图程序，而不管这些程序自身是启用还是禁用。</long>
+      </locale>
+    </schema>
+
+  </schemalist>
+</gconfschemafile>

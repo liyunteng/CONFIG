@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/system/smb/workgroup</key>
+      <applyto>/system/smb/workgroup</applyto>
+      <owner>gnome-vfs</owner>
+      <type>string</type>
+      <default></default>
+      <locale name="C">
+        <short>SMB workgroup</short>
+        <long>The Windows networking workgroup or domain that the user 
+        is part of. In order for a new workgroup to fully take effect 
+        the user may need to log out and log back in. </long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>SMB 工作组</short>
+        <long>用户所属的 Windows 网络工作组或域。为了让新工作组完全生效，用户可能需要注销并再次登录。</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

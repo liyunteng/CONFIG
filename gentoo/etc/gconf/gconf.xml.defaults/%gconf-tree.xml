@@ -1,0 +1,1921 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="system">
+		<dir name="dns_sd">
+			<entry name="extra_domains" mtime="1475410925" schema="/schemas/system/dns_sd/extra_domains"/>
+			<entry name="display_local" mtime="1475410925" schema="/schemas/system/dns_sd/display_local"/>
+		</dir>
+		<dir name="smb">
+			<entry name="workgroup" mtime="1475410924" schema="/schemas/system/smb/workgroup"/>
+		</dir>
+		<dir name="proxy">
+			<entry name="autoconfig_url" mtime="1475410924" schema="/schemas/system/proxy/autoconfig_url"/>
+			<entry name="socks_port" mtime="1475410924" schema="/schemas/system/proxy/socks_port"/>
+			<entry name="socks_host" mtime="1475410924" schema="/schemas/system/proxy/socks_host"/>
+			<entry name="ftp_port" mtime="1475410924" schema="/schemas/system/proxy/ftp_port"/>
+			<entry name="ftp_host" mtime="1475410924" schema="/schemas/system/proxy/ftp_host"/>
+			<entry name="secure_port" mtime="1475410924" schema="/schemas/system/proxy/secure_port"/>
+			<entry name="secure_host" mtime="1475410924" schema="/schemas/system/proxy/secure_host"/>
+			<entry name="mode" mtime="1475410924" schema="/schemas/system/proxy/mode"/>
+		</dir>
+		<dir name="http_proxy">
+			<entry name="ignore_hosts" mtime="1475410924" schema="/schemas/system/http_proxy/ignore_hosts"/>
+			<entry name="authentication_password" mtime="1475410924" schema="/schemas/system/http_proxy/authentication_password"/>
+			<entry name="authentication_user" mtime="1475410924" schema="/schemas/system/http_proxy/authentication_user"/>
+			<entry name="use_authentication" mtime="1475410924" schema="/schemas/system/http_proxy/use_authentication"/>
+			<entry name="port" mtime="1475410924" schema="/schemas/system/http_proxy/port"/>
+			<entry name="host" mtime="1475410924" schema="/schemas/system/http_proxy/host"/>
+			<entry name="use_http_proxy" mtime="1475410924" schema="/schemas/system/http_proxy/use_http_proxy"/>
+		</dir>
+	</dir>
+	<dir name="desktop">
+		<dir name="ibus">
+			<dir name="panel">
+				<entry name="custom_font" mtime="1474425925" schema="/schemas/desktop/ibus/panel/custom_font"/>
+				<entry name="use_custom_font" mtime="1474425925" schema="/schemas/desktop/ibus/panel/use_custom_font"/>
+				<entry name="property-icon-delay-time" mtime="1474425925" schema="/schemas/desktop/ibus/panel/property-icon-delay-time"/>
+				<entry name="xkb-icon-rgba" mtime="1474425925" schema="/schemas/desktop/ibus/panel/xkb-icon-rgba"/>
+				<entry name="show_im_name" mtime="1474425925" schema="/schemas/desktop/ibus/panel/show_im_name"/>
+				<entry name="show_icon_on_systray" mtime="1474425925" schema="/schemas/desktop/ibus/panel/show_icon_on_systray"/>
+				<entry name="lookup_table_orientation" mtime="1474425925" schema="/schemas/desktop/ibus/panel/lookup_table_orientation"/>
+				<entry name="auto-hide-timeout" mtime="1474425925" schema="/schemas/desktop/ibus/panel/auto-hide-timeout"/>
+				<entry name="follow-input-cursor-when-always-shown" mtime="1474425925" schema="/schemas/desktop/ibus/panel/follow-input-cursor-when-always-shown"/>
+				<entry name="y" mtime="1474425925" schema="/schemas/desktop/ibus/panel/y"/>
+				<entry name="x" mtime="1474425925" schema="/schemas/desktop/ibus/panel/x"/>
+				<entry name="show" mtime="1474425925" schema="/schemas/desktop/ibus/panel/show"/>
+			</dir>
+			<dir name="general">
+				<entry name="dconf_preserve_name_prefixes" mtime="1474425925" schema="/schemas/desktop/ibus/general/dconf_preserve_name_prefixes"/>
+				<entry name="enable_by_default" mtime="1474425925" schema="/schemas/desktop/ibus/general/enable_by_default"/>
+				<entry name="use_global_engine" mtime="1474425925" schema="/schemas/desktop/ibus/general/use_global_engine"/>
+				<entry name="embed_preedit_text" mtime="1474425925" schema="/schemas/desktop/ibus/general/embed_preedit_text"/>
+				<entry name="use_system_keyboard_layout" mtime="1474425925" schema="/schemas/desktop/ibus/general/use_system_keyboard_layout"/>
+				<entry name="use-xmodmap" mtime="1474425925" schema="/schemas/desktop/ibus/general/use-xmodmap"/>
+				<entry name="xkb-latin-layouts" mtime="1474425925" schema="/schemas/desktop/ibus/general/xkb-latin-layouts"/>
+				<entry name="version" mtime="1474425925" schema="/schemas/desktop/ibus/general/version"/>
+				<entry name="switcher-delay-time" mtime="1474425925" schema="/schemas/desktop/ibus/general/switcher-delay-time"/>
+				<entry name="engines_order" mtime="1474425925" schema="/schemas/desktop/ibus/general/engines_order"/>
+				<entry name="preload_engines" mtime="1474425925" schema="/schemas/desktop/ibus/general/preload_engines"/>
+				<dir name="hotkey">
+					<entry name="previous_engine" mtime="1474425925" schema="/schemas/desktop/ibus/general/hotkey/previous_engine"/>
+					<entry name="prev_engine" mtime="1474425925" schema="/schemas/desktop/ibus/general/hotkey/prev_engine"/>
+					<entry name="next_engine_in_menu" mtime="1474425925" schema="/schemas/desktop/ibus/general/hotkey/next_engine_in_menu"/>
+					<entry name="next_engine" mtime="1474425925" schema="/schemas/desktop/ibus/general/hotkey/next_engine"/>
+					<entry name="disable_unconditional" mtime="1474425925" schema="/schemas/desktop/ibus/general/hotkey/disable_unconditional"/>
+					<entry name="enable_unconditional" mtime="1474425925" schema="/schemas/desktop/ibus/general/hotkey/enable_unconditional"/>
+					<entry name="triggers" mtime="1474425925" schema="/schemas/desktop/ibus/general/hotkey/triggers"/>
+					<entry name="trigger" mtime="1474425925" schema="/schemas/desktop/ibus/general/hotkey/trigger"/>
+				</dir>
+			</dir>
+		</dir>
+		<dir name="gnome">
+			<dir name="background">
+				<entry name="color_shading_type" mtime="1464360523" schema="/schemas/desktop/gnome/background/color_shading_type"/>
+				<entry name="secondary_color" mtime="1464360523" schema="/schemas/desktop/gnome/background/secondary_color"/>
+				<entry name="primary_color" mtime="1464360523" schema="/schemas/desktop/gnome/background/primary_color"/>
+				<entry name="picture_opacity" mtime="1464360523" schema="/schemas/desktop/gnome/background/picture_opacity"/>
+				<entry name="picture_filename" mtime="1464360523" schema="/schemas/desktop/gnome/background/picture_filename"/>
+				<entry name="picture_options" mtime="1464360523" schema="/schemas/desktop/gnome/background/picture_options"/>
+				<entry name="draw_background" mtime="1464360523" schema="/schemas/desktop/gnome/background/draw_background"/>
+			</dir>
+			<dir name="thumbnailers">
+				<entry name="disable_all" mtime="1464360523" schema="/schemas/desktop/gnome/thumbnailers/disable_all"/>
+			</dir>
+			<dir name="file_views">
+				<entry name="icon_theme" mtime="1464360522" schema="/schemas/desktop/gnome/file-views/icon_theme"/>
+			</dir>
+			<dir name="peripherals">
+				<dir name="mouse">
+					<entry name="cursor_size" mtime="1464360523" schema="/schemas/desktop/gnome/peripherals/mouse/cursor_size"/>
+					<entry name="cursor_theme" mtime="1464360523" schema="/schemas/desktop/gnome/peripherals/mouse/cursor_theme"/>
+					<entry name="cursor_font" mtime="1464360523" schema="/schemas/desktop/gnome/peripherals/mouse/cursor_font"/>
+					<entry name="locate_pointer" mtime="1464360523" schema="/schemas/desktop/gnome/peripherals/mouse/locate_pointer"/>
+					<entry name="double_click" mtime="1464360523" schema="/schemas/desktop/gnome/peripherals/mouse/double_click"/>
+					<entry name="drag_threshold" mtime="1464360523" schema="/schemas/desktop/gnome/peripherals/mouse/drag_threshold"/>
+					<entry name="motion_threshold" mtime="1464360523" schema="/schemas/desktop/gnome/peripherals/mouse/motion_threshold"/>
+					<entry name="motion_acceleration" mtime="1464360523" schema="/schemas/desktop/gnome/peripherals/mouse/motion_acceleration"/>
+					<entry name="single_click" mtime="1464360523" schema="/schemas/desktop/gnome/peripherals/mouse/single_click"/>
+					<entry name="left_handed" mtime="1464360523" schema="/schemas/desktop/gnome/peripherals/mouse/left_handed"/>
+				</dir>
+				<dir name="keyboard">
+					<entry name="remember_numlock_state" mtime="1464360522" schema="/schemas/desktop/gnome/peripherals/keyboard/remember_numlock_state"/>
+					<entry name="bell_custom_file" mtime="1464360522" schema="/schemas/desktop/gnome/peripherals/keyboard/bell_custom_file"/>
+					<entry name="bell_duration" mtime="1464360522" schema="/schemas/desktop/gnome/peripherals/keyboard/bell_duration"/>
+					<entry name="bell_pitch" mtime="1464360522" schema="/schemas/desktop/gnome/peripherals/keyboard/bell_pitch"/>
+					<entry name="bell_mode" mtime="1464360522" schema="/schemas/desktop/gnome/peripherals/keyboard/bell_mode"/>
+					<entry name="click_volume" mtime="1464360522" schema="/schemas/desktop/gnome/peripherals/keyboard/click_volume"/>
+					<entry name="delay" mtime="1464360522" schema="/schemas/desktop/gnome/peripherals/keyboard/delay"/>
+					<entry name="rate" mtime="1464360522" schema="/schemas/desktop/gnome/peripherals/keyboard/rate"/>
+					<entry name="click" mtime="1464360522" schema="/schemas/desktop/gnome/peripherals/keyboard/click"/>
+					<entry name="repeat" mtime="1464360522" schema="/schemas/desktop/gnome/peripherals/keyboard/repeat"/>
+				</dir>
+			</dir>
+			<dir name="lockdown">
+				<entry name="disable_application_handlers" mtime="1464360522" schema="/schemas/desktop/gnome/lockdown/disable_application_handlers"/>
+				<entry name="disable_lock_screen" mtime="1464360522" schema="/schemas/desktop/gnome/lockdown/disable_lock_screen"/>
+				<entry name="disable_user_switching" mtime="1464360522" schema="/schemas/desktop/gnome/lockdown/disable_user_switching"/>
+				<entry name="disable_print_setup" mtime="1464360522" schema="/schemas/desktop/gnome/lockdown/disable_print_setup"/>
+				<entry name="disable_printing" mtime="1464360522" schema="/schemas/desktop/gnome/lockdown/disable_printing"/>
+				<entry name="disable_save_to_disk" mtime="1464360522" schema="/schemas/desktop/gnome/lockdown/disable_save_to_disk"/>
+				<entry name="disable_command_line" mtime="1464360522" schema="/schemas/desktop/gnome/lockdown/disable_command_line"/>
+			</dir>
+			<dir name="interface">
+				<entry name="show_unicode_menu" mtime="1464360522" schema="/schemas/desktop/gnome/interface/show_unicode_menu"/>
+				<entry name="show_input_method_menu" mtime="1464360522" schema="/schemas/desktop/gnome/interface/show_input_method_menu"/>
+				<entry name="menubar_accel" mtime="1464360522" schema="/schemas/desktop/gnome/interface/menubar_accel"/>
+				<entry name="file_chooser_backend" mtime="1464360522" schema="/schemas/desktop/gnome/interface/file_chooser_backend"/>
+				<entry name="status_bar_meter_on_right" mtime="1464360522" schema="/schemas/desktop/gnome/interface/status_bar_meter_on_right"/>
+				<entry name="use_custom_font" mtime="1464360522" schema="/schemas/desktop/gnome/interface/use_custom_font"/>
+				<entry name="monospace_font_name" mtime="1464360522" schema="/schemas/desktop/gnome/interface/monospace_font_name"/>
+				<entry name="document_font_name" mtime="1464360522" schema="/schemas/desktop/gnome/interface/document_font_name"/>
+				<entry name="gtk-im-module" mtime="1464360522" schema="/schemas/desktop/gnome/interface/gtk-im-module"/>
+				<entry name="gtk-im-status-style" mtime="1464360522" schema="/schemas/desktop/gnome/interface/gtk-im-status-style"/>
+				<entry name="gtk-im-preedit-style" mtime="1464360522" schema="/schemas/desktop/gnome/interface/gtk-im-preedit-style"/>
+				<entry name="font_name" mtime="1464360522" schema="/schemas/desktop/gnome/interface/font_name"/>
+				<entry name="gtk_key_theme" mtime="1464360522" schema="/schemas/desktop/gnome/interface/gtk_key_theme"/>
+				<entry name="gtk_theme" mtime="1464360522" schema="/schemas/desktop/gnome/interface/gtk_theme"/>
+				<entry name="icon_theme" mtime="1464360522" schema="/schemas/desktop/gnome/interface/icon_theme"/>
+				<entry name="cursor_blink_time" mtime="1464360522" schema="/schemas/desktop/gnome/interface/cursor_blink_time"/>
+				<entry name="cursor_blink" mtime="1464360522" schema="/schemas/desktop/gnome/interface/cursor_blink"/>
+				<entry name="toolbar_icons_size" mtime="1464360522" schema="/schemas/desktop/gnome/interface/toolbar_icons_size"/>
+				<entry name="toolbar_detachable" mtime="1464360522" schema="/schemas/desktop/gnome/interface/toolbar_detachable"/>
+				<entry name="menubar_detachable" mtime="1464360522" schema="/schemas/desktop/gnome/interface/menubar_detachable"/>
+				<entry name="buttons_have_icons" mtime="1464360522" schema="/schemas/desktop/gnome/interface/buttons_have_icons"/>
+				<entry name="menus_have_icons" mtime="1464360522" schema="/schemas/desktop/gnome/interface/menus_have_icons"/>
+				<entry name="toolbar_style" mtime="1464360522" schema="/schemas/desktop/gnome/interface/toolbar_style"/>
+				<entry name="can_change_accels" mtime="1464360522" schema="/schemas/desktop/gnome/interface/can_change_accels"/>
+				<entry name="menus_have_tearoff" mtime="1464360522" schema="/schemas/desktop/gnome/interface/menus_have_tearoff"/>
+				<entry name="enable_animations" mtime="1464360522" schema="/schemas/desktop/gnome/interface/enable_animations"/>
+				<entry name="accessibility" mtime="1464360522" schema="/schemas/desktop/gnome/interface/accessibility"/>
+			</dir>
+			<dir name="sound">
+				<entry name="input_feedback_sounds" mtime="1464360521" schema="/schemas/desktop/gnome/sound/input_feedback_sounds"/>
+				<entry name="theme_name" mtime="1464360521" schema="/schemas/desktop/gnome/sound/theme_name"/>
+				<entry name="event_sounds" mtime="1464360521" schema="/schemas/desktop/gnome/sound/event_sounds"/>
+				<entry name="enable_esd" mtime="1464360521" schema="/schemas/desktop/gnome/sound/enable_esd"/>
+				<entry name="default_mixer_tracks" mtime="1464360521" schema="/schemas/desktop/gnome/sound/default_mixer_tracks"/>
+				<entry name="default_mixer_device" mtime="1464360521" schema="/schemas/desktop/gnome/sound/default_mixer_device"/>
+			</dir>
+			<dir name="thumbnail_cache">
+				<entry name="maximum_size" mtime="1464360521" schema="/schemas/desktop/gnome/thumbnail_cache/maximum_size"/>
+				<entry name="maximum_age" mtime="1464360521" schema="/schemas/desktop/gnome/thumbnail_cache/maximum_age"/>
+			</dir>
+			<dir name="typing_break">
+				<entry name="enabled" mtime="1464360521" schema="/schemas/desktop/gnome/typing_break/enabled"/>
+				<entry name="allow_postpone" mtime="1464360521" schema="/schemas/desktop/gnome/typing_break/allow_postpone"/>
+				<entry name="break_time" mtime="1464360521" schema="/schemas/desktop/gnome/typing_break/break_time"/>
+				<entry name="type_time" mtime="1464360521" schema="/schemas/desktop/gnome/typing_break/type_time"/>
+			</dir>
+			<dir name="accessibility">
+				<dir name="startup">
+					<entry name="exec_ats" mtime="1464360521" schema="/schemas/desktop/gnome/accessibility/startup/exec_ats"/>
+				</dir>
+				<dir name="keyboard">
+					<entry name="togglekeys_enable" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/togglekeys_enable"/>
+					<entry name="stickykeys_modifier_beep" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep"/>
+					<entry name="stickykeys_two_key_off" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/stickykeys_two_key_off"/>
+					<entry name="stickykeys_enable" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/stickykeys_enable"/>
+					<entry name="slowkeys_beep_reject" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/slowkeys_beep_reject"/>
+					<entry name="slowkeys_beep_accept" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/slowkeys_beep_accept"/>
+					<entry name="slowkeys_beep_press" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/slowkeys_beep_press"/>
+					<entry name="slowkeys_delay" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/slowkeys_delay"/>
+					<entry name="slowkeys_enable" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/slowkeys_enable"/>
+					<entry name="mousekeys_init_delay" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/mousekeys_init_delay"/>
+					<entry name="mousekeys_accel_time" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/mousekeys_accel_time"/>
+					<entry name="mousekeys_max_speed" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/mousekeys_max_speed"/>
+					<entry name="mousekeys_enable" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/mousekeys_enable"/>
+					<entry name="bouncekeys_beep_reject" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/bouncekeys_beep_reject"/>
+					<entry name="bouncekeys_delay" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/bouncekeys_delay"/>
+					<entry name="bouncekeys_enable" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/bouncekeys_enable"/>
+					<entry name="timeout" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/timeout"/>
+					<entry name="timeout_enable" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/timeout_enable"/>
+					<entry name="feature_state_change_beep" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/feature_state_change_beep"/>
+					<entry name="enable" mtime="1464360520" schema="/schemas/desktop/gnome/accessibility/keyboard/enable"/>
+				</dir>
+			</dir>
+			<dir name="url-handlers">
+				<dir name="h323">
+					<entry name="needs_terminal" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/h323/needs_terminal"/>
+					<entry name="command" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/h323/command"/>
+					<entry name="enabled" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/h323/enabled"/>
+				</dir>
+				<dir name="callto">
+					<entry name="needs_terminal" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/callto/needs_terminal"/>
+					<entry name="command" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/callto/command"/>
+					<entry name="enabled" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/callto/enabled"/>
+				</dir>
+				<dir name="aim">
+					<entry name="needs_terminal" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/aim/needs_terminal"/>
+					<entry name="command" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/aim/command"/>
+					<entry name="enabled" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/aim/enabled"/>
+				</dir>
+				<dir name="mailto">
+					<entry name="needs_terminal" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/mailto/needs_terminal"/>
+					<entry name="command" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/mailto/command"/>
+					<entry name="enabled" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/mailto/enabled"/>
+				</dir>
+				<dir name="https">
+					<entry name="needs_terminal" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/https/needs_terminal"/>
+					<entry name="command" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/https/command"/>
+					<entry name="enabled" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/https/enabled"/>
+				</dir>
+				<dir name="http">
+					<entry name="needs_terminal" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/http/needs_terminal"/>
+					<entry name="command" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/http/command"/>
+					<entry name="enabled" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/http/enabled"/>
+				</dir>
+				<dir name="man">
+					<entry name="needs_terminal" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/man/needs_terminal"/>
+					<entry name="command" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/man/command"/>
+					<entry name="enabled" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/man/enabled"/>
+				</dir>
+				<dir name="info">
+					<entry name="needs_terminal" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/info/needs_terminal"/>
+					<entry name="command" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/info/command"/>
+					<entry name="enabled" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/info/enabled"/>
+				</dir>
+				<dir name="ghelp">
+					<entry name="needs_terminal" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/ghelp/needs_terminal"/>
+					<entry name="command" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/ghelp/command"/>
+					<entry name="enabled" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/ghelp/enabled"/>
+				</dir>
+				<dir name="trash">
+					<entry name="needs_terminal" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/trash/needs_terminal"/>
+					<entry name="command" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/trash/command"/>
+					<entry name="enabled" mtime="1475410925" schema="/schemas/desktop/gnome/url-handlers/trash/enabled"/>
+				</dir>
+			</dir>
+			<dir name="applications">
+				<dir name="at">
+					<dir name="visual">
+						<entry name="startup" mtime="1464360523" schema="/schemas/desktop/gnome/applications/at/visual/startup"/>
+						<entry name="exec" mtime="1464360523" schema="/schemas/desktop/gnome/applications/at/visual/exec"/>
+					</dir>
+					<dir name="mobility">
+						<entry name="startup" mtime="1464360523" schema="/schemas/desktop/gnome/applications/at/mobility/startup"/>
+						<entry name="exec" mtime="1464360523" schema="/schemas/desktop/gnome/applications/at/mobility/exec"/>
+					</dir>
+				</dir>
+				<dir name="tasks">
+					<entry name="needs_term" mtime="1464360522" schema="/schemas/desktop/gnome/applications/tasks/needs_term"/>
+					<entry name="exec" mtime="1464360522" schema="/schemas/desktop/gnome/applications/tasks/exec"/>
+				</dir>
+				<dir name="calendar">
+					<entry name="needs_term" mtime="1464360522" schema="/schemas/desktop/gnome/applications/calendar/needs_term"/>
+					<entry name="exec" mtime="1464360522" schema="/schemas/desktop/gnome/applications/calendar/exec"/>
+				</dir>
+				<dir name="browser">
+					<entry name="nremote" mtime="1464360521" schema="/schemas/desktop/gnome/applications/browser/nremote"/>
+					<entry name="needs_term" mtime="1464360521" schema="/schemas/desktop/gnome/applications/browser/needs_term"/>
+					<entry name="exec" mtime="1464360521" schema="/schemas/desktop/gnome/applications/browser/exec"/>
+				</dir>
+				<dir name="window_manager">
+					<entry name="workspace_names" mtime="1464360519" schema="/schemas/desktop/gnome/applications/window_manager/workspace_names"/>
+					<entry name="number_of_workspaces" mtime="1464360519" schema="/schemas/desktop/gnome/applications/window_manager/number_of_workspaces"/>
+					<entry name="current" mtime="1464360519" schema="/schemas/desktop/gnome/applications/window_manager/current"/>
+					<entry name="default" mtime="1464360519" schema="/schemas/desktop/gnome/applications/window_manager/default"/>
+				</dir>
+				<dir name="component_viewer">
+					<entry name="exec" mtime="1475410923" schema="/schemas/desktop/gnome/applications/component_viewer/exec"/>
+				</dir>
+				<dir name="terminal">
+					<entry name="exec_arg" mtime="1475410923" schema="/schemas/desktop/gnome/applications/terminal/exec_arg"/>
+					<entry name="exec" mtime="1475410923" schema="/schemas/desktop/gnome/applications/terminal/exec"/>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+	<dir name="schemas">
+		<dir name="system">
+			<dir name="dns_sd">
+				<entry name="extra_domains" mtime="1475410925" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="Extra domains to look for DNS-SD services in">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>Comma separated list of DNS-SD domains that should be
+        visible in the &quot;network:///&quot; location.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="display_local" mtime="1475410925" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="How to display local DNS-SD service">
+						<default type="string">
+							<stringvalue>merged</stringvalue>
+						</default>
+						<longdesc>Possible values are &quot;merged&quot;, &quot;separate&quot; and &quot;disabled&quot;.</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+			<dir name="smb">
+				<entry name="workgroup" mtime="1475410924" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="SMB workgroup">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>The Windows networking workgroup or domain that the user 
+        is part of. In order for a new workgroup to fully take effect 
+        the user may need to log out and log back in. </longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+			<dir name="proxy">
+				<entry name="autoconfig_url" mtime="1475410924" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="Automatic proxy configuration URL">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>URL that provides proxy configuration values.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="socks_port" mtime="1475410924" type="schema" stype="int" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="SOCKS proxy port">
+						<default type="int" value="0"/>
+						<longdesc>The port on the machine defined by &quot;/system/proxy/socks_host&quot;
+        that you proxy through.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="socks_host" mtime="1475410924" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="SOCKS proxy host name">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>The machine name to proxy socks through.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="ftp_port" mtime="1475410924" type="schema" stype="int" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="FTP proxy port">
+						<default type="int" value="0"/>
+						<longdesc>The port on the machine defined by &quot;/system/proxy/ftp_host&quot;
+        that you proxy through.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="ftp_host" mtime="1475410924" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="FTP proxy host name">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>The machine name to proxy FTP through.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="secure_port" mtime="1475410924" type="schema" stype="int" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="Secure HTTP proxy port">
+						<default type="int" value="0"/>
+						<longdesc>The port on the machine defined by &quot;/system/proxy/secure_host&quot;
+        that you proxy through.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="secure_host" mtime="1475410924" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="Secure HTTP proxy host name">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>The machine name to proxy secure HTTP through.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="mode" mtime="1475410924" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="Proxy configuration mode">
+						<default type="string">
+							<stringvalue>none</stringvalue>
+						</default>
+						<longdesc>Select the proxy configuration mode. Supported values are
+	&quot;none&quot;, &quot;manual&quot;, &quot;auto&quot;.</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+			<dir name="http_proxy">
+				<entry name="ignore_hosts" mtime="1475410924" type="schema" stype="list" owner="gnome-vfs" list_type="string">
+					<local_schema locale="C" short_desc="Non-proxy hosts">
+						<default type="list" ltype="string">
+							<li type="string">
+								<stringvalue>localhost</stringvalue>
+							</li>
+							<li type="string">
+								<stringvalue>127.0.0.0/8</stringvalue>
+							</li>
+						</default>
+						<longdesc>This key contains a list of hosts which are connected to
+	directly, rather than via the proxy (if it is active). The values can
+	be hostnames, domains (using an initial wildcard like *.foo.com), IP
+	host addresses (both IPv4 and IPv6) and network addresses with a
+	netmask (something like 192.168.0.0/24).</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="authentication_password" mtime="1475410924" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="HTTP proxy password">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>Password to pass as authentication when doing HTTP proxying.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="authentication_user" mtime="1475410924" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="HTTP proxy username">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>User name to pass as authentication when doing HTTP proxying.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="use_authentication" mtime="1475410924" type="schema" stype="bool" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="Authenticate proxy server connections">
+						<default type="bool" value="false"/>
+						<longdesc>If true, then connections to the proxy server require
+        authentication. The username/password combo is defined by
+        &quot;/system/http_proxy/authentication_user&quot; and
+        &quot;/system/http_proxy/authentication_password&quot;.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="port" mtime="1475410924" type="schema" stype="int" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="HTTP proxy port">
+						<default type="int" value="8080"/>
+						<longdesc>The port on the machine defined by &quot;/system/http_proxy/host&quot;
+        that you proxy through.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="host" mtime="1475410924" type="schema" stype="string" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="HTTP proxy host name">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>The machine name to proxy HTTP through.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="use_http_proxy" mtime="1475410924" type="schema" stype="bool" owner="gnome-vfs">
+					<local_schema locale="C" short_desc="Use HTTP proxy">
+						<default type="bool" value="false"/>
+						<longdesc>Enables the proxy settings when accessing HTTP over the
+        Internet.</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+		</dir>
+		<dir name="desktop">
+			<dir name="ibus">
+				<dir name="panel">
+					<entry name="custom_font" mtime="1474425925" type="schema" stype="string" owner="ibus">
+						<local_schema locale="C" short_desc="Custom font">
+							<default type="string">
+								<stringvalue>Sans 10</stringvalue>
+							</default>
+							<longdesc>Custom font name for language panel</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="use_custom_font" mtime="1474425925" type="schema" stype="bool" owner="ibus">
+						<local_schema locale="C" short_desc="Use custom font">
+							<default type="bool" value="false"/>
+							<longdesc>Use custom font name for language panel</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="property-icon-delay-time" mtime="1474425925" type="schema" stype="int" owner="ibus">
+						<local_schema locale="C" short_desc="The milliseconds to show the panel icon for a property">
+							<default type="int" value="500"/>
+							<longdesc>The milliseconds to show the panel icon from the
+                engine icon to a property icon whenever engines are
+                switched if the property is specified by the value of
+                icon-prop-key in IBusEngineDesc.
+                If the value is 0, no delay time and the property icon
+                is shown immediately.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="xkb-icon-rgba" mtime="1474425925" type="schema" stype="string" owner="ibus">
+						<local_schema locale="C" short_desc="RGBA value of XKB icon">
+							<default type="string">
+								<stringvalue>#415099</stringvalue>
+							</default>
+							<longdesc>XKB icon shows the layout string and the string is
+                  rendered with the RGBA value. The RGBA value can be
+                  1. a color name from X11, 2. a hex value in form &apos;#rrggbb&apos;
+                  where &apos;r&apos;, &apos;g&apos; and &apos;b&apos; are hex digits of the red, green,
+                  and blue, 3. a RGB color in form &apos;rgb(r,g,b)&apos; or
+                  4. a RGBA color in form &apos;rgba(r,g,b,a)&apos; where &apos;r&apos;,
+                  &apos;g&apos;, and &apos;b&apos; are either integers in the range 0 to 255
+                  or precentage values in the range 0% to 100%, and
+                  &apos;a&apos; is a floating point value in the range 0 to 1
+                  of the alpha.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="show_im_name" mtime="1474425925" type="schema" stype="bool" owner="ibus">
+						<local_schema locale="C" short_desc="Show input method name">
+							<default type="bool" value="false"/>
+							<longdesc>Show input method name on language bar</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="show_icon_on_systray" mtime="1474425925" type="schema" stype="bool" owner="ibus">
+						<local_schema locale="C" short_desc="Show icon on system tray">
+							<default type="bool" value="true"/>
+							<longdesc>Show icon on system tray</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="lookup_table_orientation" mtime="1474425925" type="schema" stype="int" owner="ibus">
+						<local_schema locale="C" short_desc="Orientation of lookup table">
+							<default type="int" value="1"/>
+							<longdesc>Orientation of lookup table. 0 = Horizontal, 1 = Vertical</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="auto-hide-timeout" mtime="1474425925" type="schema" stype="int" owner="ibus">
+						<local_schema locale="C" short_desc="The milliseconds to show property panel">
+							<default type="int" value="10000"/>
+							<longdesc>The milliseconds to show property panel after focus-in or
+                properties are changed.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="follow-input-cursor-when-always-shown" mtime="1474425925" type="schema" stype="bool" owner="ibus">
+						<local_schema locale="C" short_desc="Follow the input cursor in case the panel is always shown">
+							<default type="bool" value="false"/>
+							<longdesc>If true, the panel follows the input cursor in case the
+                panel is always shown. If false, the panel is shown at
+                a fixed location.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="y" mtime="1474425925" type="schema" stype="int" owner="ibus">
+						<local_schema locale="C" short_desc="Language panel position">
+							<default type="int" value="-1"/>
+						</local_schema>
+					</entry>
+					<entry name="x" mtime="1474425925" type="schema" stype="int" owner="ibus">
+						<local_schema locale="C" short_desc="Language panel position">
+							<default type="int" value="-1"/>
+						</local_schema>
+					</entry>
+					<entry name="show" mtime="1474425925" type="schema" stype="int" owner="ibus">
+						<local_schema locale="C" short_desc="Auto hide">
+							<default type="int" value="0"/>
+							<longdesc>The behavior of property panel. 0 = Do not show, 1 = Auto hide, 2 = Always show</longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="general">
+					<entry name="dconf_preserve_name_prefixes" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+						<local_schema locale="C" short_desc="DConf preserve name prefixes">
+							<default type="list" ltype="string">
+								<li type="string">
+									<stringvalue>/desktop/ibus/engine/pinyin</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>/desktop/ibus/engine/bopomofo</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>/desktop/ibus/engine/hangul</stringvalue>
+								</li>
+							</default>
+							<longdesc>Prefixes of DConf keys to stop name conversion</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="enable_by_default" mtime="1474425925" type="schema" stype="bool" owner="ibus">
+						<local_schema locale="C" short_desc="Enable input method by default">
+							<default type="bool" value="false"/>
+							<longdesc>Enable input method by default when the application gets input
+            focus</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="use_global_engine" mtime="1474425925" type="schema" stype="bool" owner="ibus">
+						<local_schema locale="C" short_desc="Use global input method">
+							<default type="bool" value="true"/>
+							<longdesc>Share the same input method among all applications</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="embed_preedit_text" mtime="1474425925" type="schema" stype="bool" owner="ibus">
+						<local_schema locale="C" short_desc="Embed Preedit Text">
+							<default type="bool" value="true"/>
+							<longdesc>Embed Preedit Text in Application Window</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="use_system_keyboard_layout" mtime="1474425925" type="schema" stype="bool" owner="ibus">
+						<local_schema locale="C" short_desc="Use system keyboard layout">
+							<default type="bool" value="false"/>
+							<longdesc>Use system keyboard (XKB) layout</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="use-xmodmap" mtime="1474425925" type="schema" stype="bool" owner="ibus">
+						<local_schema locale="C" short_desc="Use xmodmap">
+							<default type="bool" value="true"/>
+							<longdesc>Run xmodmap if .xmodmap or .Xmodmap exists when
+                ibus engines are switched.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="xkb-latin-layouts" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+						<local_schema locale="C" short_desc="Latin layouts which have no ASCII">
+							<default type="list" ltype="string">
+								<li type="string">
+									<stringvalue>ara</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>bg</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>cz</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>dev</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>gr</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>gur</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>in</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>jp(kana)</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>mal</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>mkd</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>ru</stringvalue>
+								</li>
+								<li type="string">
+									<stringvalue>ua</stringvalue>
+								</li>
+							</default>
+							<longdesc>US layout is appended to the latin layouts. variant can be
+                 omitted.
+           </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="version" mtime="1474425925" type="schema" stype="string" owner="ibus">
+						<local_schema locale="C" short_desc="Saved version number">
+							<default type="string">
+								<stringvalue></stringvalue>
+							</default>
+							<longdesc>The saved version number will be used to check the
+                  difference between the version of the previous installed
+                  ibus and one of the current ibus.
+            </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="switcher-delay-time" mtime="1474425925" type="schema" stype="int" owner="ibus">
+						<local_schema locale="C" short_desc="Popup delay milliseconds for IME switcher window">
+							<default type="int" value="400"/>
+							<longdesc>Set popup delay milliseconds to show IME switcher window.
+                  The default is 400.
+                  0 = Show the window immediately.
+                  0 &lt; Delay milliseconds.
+                  0 &gt; Do not show the window and switch prev/next engines.
+            </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="engines_order" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+						<local_schema locale="C" short_desc="Engines order">
+							<default type="list" ltype="string">
+							</default>
+							<longdesc>Saved engines order in input method list</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="preload_engines" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+						<local_schema locale="C" short_desc="Preload engines">
+							<default type="list" ltype="string">
+							</default>
+							<longdesc>Preload engines during ibus starts up</longdesc>
+						</local_schema>
+					</entry>
+					<dir name="hotkey">
+						<entry name="previous_engine" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+							<local_schema locale="C" short_desc="Prev engine shortcut keys">
+								<default type="list" ltype="string">
+								</default>
+								<longdesc>The shortcut keys for switching to the previous input method</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="prev_engine" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+							<local_schema locale="C" short_desc="Prev engine shortcut keys">
+								<default type="list" ltype="string">
+								</default>
+								<longdesc>The shortcut keys for switching to the previous input method</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="next_engine_in_menu" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+							<local_schema locale="C" short_desc="Next engine shortcut keys">
+								<default type="list" ltype="string">
+									<li type="string">
+										<stringvalue>Alt+Shift_L</stringvalue>
+									</li>
+								</default>
+								<longdesc>The shortcut keys for switching to the next input method in the list</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="next_engine" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+							<local_schema locale="C" short_desc="Next engine shortcut keys">
+								<default type="list" ltype="string">
+									<li type="string">
+										<stringvalue>Alt+Shift_L</stringvalue>
+									</li>
+								</default>
+								<longdesc>The shortcut keys for switching to the next input method in the list</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="disable_unconditional" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+							<local_schema locale="C" short_desc="Disable shortcut keys">
+								<default type="list" ltype="string">
+								</default>
+								<longdesc>The shortcut keys for turning input method off</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enable_unconditional" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+							<local_schema locale="C" short_desc="Enable shortcut keys">
+								<default type="list" ltype="string">
+								</default>
+								<longdesc>The shortcut keys for turning input method on</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="triggers" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+							<local_schema locale="C" short_desc="Trigger shortcut keys for gtk_accelerator_parse">
+								<default type="list" ltype="string">
+									<li type="string">
+										<stringvalue>&lt;Super&gt;space</stringvalue>
+									</li>
+								</default>
+								<longdesc>The shortcut keys for turning input method on or off</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="trigger" mtime="1474425925" type="schema" stype="list" owner="ibus" list_type="string">
+							<local_schema locale="C" short_desc="Trigger shortcut keys">
+								<default type="list" ltype="string">
+									<li type="string">
+										<stringvalue>Control+space</stringvalue>
+									</li>
+									<li type="string">
+										<stringvalue>Zenkaku_Hankaku</stringvalue>
+									</li>
+									<li type="string">
+										<stringvalue>Alt+Kanji</stringvalue>
+									</li>
+									<li type="string">
+										<stringvalue>Alt+grave</stringvalue>
+									</li>
+									<li type="string">
+										<stringvalue>Hangul</stringvalue>
+									</li>
+									<li type="string">
+										<stringvalue>Alt+Release+Alt_R</stringvalue>
+									</li>
+								</default>
+								<longdesc>The shortcut keys for turning input method on or off</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+			<dir name="gnome">
+				<dir name="background">
+					<entry name="color_shading_type" mtime="1464360523" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Color Shading Type">
+							<default type="string">
+								<stringvalue>solid</stringvalue>
+							</default>
+							<longdesc>How to shade the background color. Possible values are &quot;horizontal-gradient&quot;, &quot;vertical-gradient&quot;, and &quot;solid&quot;.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="secondary_color" mtime="1464360523" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Secondary Color">
+							<default type="string">
+								<stringvalue>#66ba00</stringvalue>
+							</default>
+							<longdesc>Right or Bottom color when drawing gradients, not used for solid color.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="primary_color" mtime="1464360523" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Primary Color">
+							<default type="string">
+								<stringvalue>#66ba00</stringvalue>
+							</default>
+							<longdesc>Left or Top color when drawing gradients, or the solid color.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="picture_opacity" mtime="1464360523" type="schema" stype="int" owner="gnome">
+						<local_schema locale="C" short_desc="Picture Opacity">
+							<default type="int" value="100"/>
+							<longdesc>Opacity with which to draw the background picture.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="picture_filename" mtime="1464360523" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Picture Filename">
+							<default type="string">
+								<stringvalue>/usr/share/pixmaps/backgrounds/gnome/gentoo/gentoo-emergence.png</stringvalue>
+							</default>
+							<longdesc>File to use for the background image.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="picture_options" mtime="1464360523" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Picture Options">
+							<default type="string">
+								<stringvalue>zoom</stringvalue>
+							</default>
+							<longdesc>Determines how the image set by wallpaper_filename is
+    rendered.  Possible values are &quot;none&quot;, &quot;wallpaper&quot;, &quot;centered&quot;, &quot;scaled&quot;,
+    &quot;stretched&quot;, &quot;zoom&quot;, &quot;spanned&quot;.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="draw_background" mtime="1464360523" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Draw Desktop Background">
+							<default type="bool" value="true"/>
+							<longdesc>Have GNOME draw the desktop background.</longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="thumbnailers">
+					<entry name="disable_all" mtime="1464360523" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Disable all external thumbnailers">
+							<default type="bool" value="false"/>
+							<longdesc>Set to true to disable all external thumbnailer programs, independent on whether they are independently disabled/enabled.</longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="file-views">
+					<entry name="icon_theme" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="File Icon Theme">
+							<default type="string">
+								<stringvalue>crux_teal</stringvalue>
+							</default>
+							<longdesc>Theme used for displaying file icons.</longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="peripherals">
+					<dir name="mouse">
+						<entry name="cursor_size" mtime="1464360523" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="Cursor size">
+								<default type="int" value="18"/>
+								<longdesc>
+	  Size of the cursor referenced by cursor_theme.
+	</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="cursor_theme" mtime="1464360523" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="Cursor theme">
+								<longdesc>
+	  Cursor theme name. Used only by Xservers that support Xcursor,
+	  such as XFree86 4.3 and later.
+	</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="cursor_font" mtime="1464360523" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="Cursor font">
+								<longdesc>
+	  Font name of the cursor. If unset, the default font is
+	  used. This value is only propagated to the X server start of
+	  each session, so changing it mid-session won&apos;t have an effect
+	  until the next time you log in.
+	</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="locate_pointer" mtime="1464360523" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Locate Pointer">
+								<default type="bool" value="false"/>
+								<longdesc>Highlights the current location of the pointer when the
+        Control key is pressed and released.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="double_click" mtime="1464360523" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="Double Click Time">
+								<default type="int" value="400"/>
+								<longdesc>Length of a double click.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="drag_threshold" mtime="1464360523" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="Drag Threshold">
+								<default type="int" value="8"/>
+								<longdesc>Distance before a drag is started.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="motion_threshold" mtime="1464360523" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="Motion Threshold">
+								<default type="int" value="-1"/>
+								<longdesc>Distance in pixels the pointer must move before
+        accelerated mouse motion is activated.  A value of -1 is the
+        system default.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="motion_acceleration" mtime="1464360523" type="schema" stype="float" owner="gnome">
+							<local_schema locale="C" short_desc="Single Click">
+								<default type="float" value="-1"/>
+								<longdesc>Acceleration multiplier for mouse motion.  A value of -1
+        is the system default.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="single_click" mtime="1464360523" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Single Click">
+								<default type="bool" value="true"/>
+								<longdesc>Single click to open icons.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="left_handed" mtime="1464360523" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Mouse button orientation">
+								<default type="bool" value="false"/>
+								<longdesc>Swap left and right mouse buttons for left-handed mice.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="keyboard">
+						<entry name="remember_numlock_state" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Remember NumLock state">
+								<default type="bool" value="true"/>
+								<longdesc>When set to true, GNOME will remember the state of the NumLock LED between sessions.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="bell_custom_file" mtime="1464360522" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="Keyboard Bell Custom Filename">
+								<longdesc>File name of the bell sound to be played.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="bell_duration" mtime="1464360522" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="int" value="100"/>
+							</local_schema>
+						</entry>
+						<entry name="bell_pitch" mtime="1464360522" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="int" value="400"/>
+							</local_schema>
+						</entry>
+						<entry name="bell_mode" mtime="1464360522" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="string">
+									<stringvalue>on</stringvalue>
+								</default>
+								<longdesc>possible values are &quot;on&quot;, &quot;off&quot;, and &quot;custom&quot;.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="click_volume" mtime="1464360522" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="int" value="0"/>
+							</local_schema>
+						</entry>
+						<entry name="delay" mtime="1464360522" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="int" value="500"/>
+							</local_schema>
+						</entry>
+						<entry name="rate" mtime="1464360522" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="int" value="30"/>
+							</local_schema>
+						</entry>
+						<entry name="click" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="true"/>
+							</local_schema>
+						</entry>
+						<entry name="repeat" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="true"/>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+				<dir name="lockdown">
+					<entry name="disable_application_handlers" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Disable URL and MIME type handlers">
+							<default type="bool" value="false"/>
+							<longdesc>
+         Prevent running any URL or MIME type handler applications.
+        </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="disable_lock_screen" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Disable lock screen">
+							<default type="bool" value="false"/>
+							<longdesc>
+         Prevent the user to lock his screen.
+        </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="disable_user_switching" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Disable user switching">
+							<default type="bool" value="false"/>
+							<longdesc>
+         Prevent the user from switching to another account while his
+         session is active.
+        </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="disable_print_setup" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Disable print setup">
+							<default type="bool" value="false"/>
+							<longdesc>
+         Prevent the user from modifying print settings. For example,
+         this would disable access to all applications&apos; &quot;Print Setup&quot;
+         dialogs.
+        </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="disable_printing" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Disable printing">
+							<default type="bool" value="false"/>
+							<longdesc>
+          Prevent the user from printing. For example, this would
+          disable access to all applications&apos; &quot;Print&quot; dialogs.
+        </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="disable_save_to_disk" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Disable saving files to disk">
+							<default type="bool" value="false"/>
+							<longdesc>
+          Prevent the user from saving files to disk. For example,
+          this would disable access to all applications&apos; &quot;Save as&quot;
+          dialogs.
+        </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="disable_command_line" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Disable command line">
+							<default type="bool" value="false"/>
+							<longdesc>
+          Prevent the user from accessing the terminal or specifying
+          a command line to be executed. For example, this would
+          disable access to the panel&apos;s &quot;Run Application&quot; dialog.
+        </longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="interface">
+					<entry name="show_unicode_menu" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Show the &apos;Unicode Control Character&apos; menu">
+							<default type="bool" value="true"/>
+							<longdesc>Whether the context menus of entries and text views 
+        should offer to insert control characters.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="show_input_method_menu" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Show the &apos;Input Methods&apos; menu">
+							<default type="bool" value="true"/>
+							<longdesc>Whether the context menus of entries and text views 
+        should offer to change the input method.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="menubar_accel" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Menubar accelerator">
+							<default type="string">
+								<stringvalue>F10</stringvalue>
+							</default>
+							<longdesc>Keyboard shortcut to open the menu bars.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="file_chooser_backend" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Module for GtkFileChooser">
+							<default type="string">
+								<stringvalue>gio</stringvalue>
+							</default>
+							<longdesc>Module to use as the filesystem model for the
+	GtkFileChooser widget.  Possible values are &quot;gio&quot;, &quot;gnome-vfs&quot; and
+	&quot;gtk+&quot;.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="status_bar_meter_on_right" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Status Bar on Right">
+							<default type="bool" value="false"/>
+							<longdesc>Whether to display a status bar meter on the right.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="use_custom_font" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Use Custom Font">
+							<default type="bool" value="false"/>
+							<longdesc>Whether to use a custom font in gtk+ applications.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="monospace_font_name" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Monospace font">
+							<default type="string">
+								<stringvalue>Monospace 10</stringvalue>
+							</default>
+							<longdesc>Name of a monospaced (fixed-width) font for use
+              in locations like terminals.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="document_font_name" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Document font">
+							<default type="string">
+								<stringvalue>Sans 10</stringvalue>
+							</default>
+							<longdesc>Name of the default font used for reading documents.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="gtk-im-module" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="GTK IM Module">
+							<default type="string">
+								<stringvalue></stringvalue>
+							</default>
+							<longdesc>Name of the input method module used by GTK+.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="gtk-im-status-style" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="GTK IM Status Style">
+							<default type="string">
+								<stringvalue>callback</stringvalue>
+							</default>
+							<longdesc>Name of the GTK+ input method Status Style used by gtk+.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="gtk-im-preedit-style" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="GTK IM Preedit Style">
+							<default type="string">
+								<stringvalue>callback</stringvalue>
+							</default>
+							<longdesc>Name of the GTK+ input method Preedit Style used by gtk+.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="font_name" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Default font">
+							<default type="string">
+								<stringvalue>Sans 10</stringvalue>
+							</default>
+							<longdesc>Name of the default font used by gtk+.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="gtk_key_theme" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Gtk+ Theme">
+							<default type="string">
+								<stringvalue>Default</stringvalue>
+							</default>
+							<longdesc>Basename of the default theme used by gtk+.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="gtk_theme" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Gtk+ Theme">
+							<default type="string">
+								<stringvalue>Adwaita</stringvalue>
+							</default>
+							<longdesc>Basename of the default theme used by gtk+.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="icon_theme" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Icon Theme">
+							<default type="string">
+								<stringvalue>gnome</stringvalue>
+							</default>
+							<longdesc>Icon theme to use for the panel, nautilus etc.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="cursor_blink_time" mtime="1464360522" type="schema" stype="int" owner="gnome">
+						<local_schema locale="C" short_desc="Cursor Blink Time">
+							<default type="int" value="1200"/>
+							<longdesc>Length of the cursor blink cycle, in milliseconds.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="cursor_blink" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Cursor Blink">
+							<default type="bool" value="true"/>
+							<longdesc>Whether the cursor should blink.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="toolbar_icons_size" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Toolbar Icon Size">
+							<default type="string">
+								<stringvalue>large-toolbar</stringvalue>
+							</default>
+							<longdesc>Size of icons in toolbars, either &quot;small-toolbar&quot; or
+        &quot;large-toolbar&quot;.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="toolbar_detachable" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Toolbar Detachable">
+							<default type="bool" value="false"/>
+							<longdesc>Whether the user can detach toolbars and move them around.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="menubar_detachable" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Menubar Detachable">
+							<default type="bool" value="false"/>
+							<longdesc>Whether the user can detach menubars and move them around.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="buttons_have_icons" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Buttons Have Icons">
+							<default type="bool" value="false"/>
+							<longdesc>Whether buttons may display an icon in addition to the button text.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="menus_have_icons" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Menus Have Icons">
+							<default type="bool" value="true"/>
+							<longdesc>Whether menus may display an icon next to a menu entry.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="toolbar_style" mtime="1464360522" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Toolbar Style">
+							<default type="string">
+								<stringvalue>both-horiz</stringvalue>
+							</default>
+							<longdesc>Toolbar Style. Valid values are &quot;both&quot;, &quot;both-horiz&quot;, &quot;icons&quot;, and
+	&quot;text&quot;.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="can_change_accels" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Can Change Accels">
+							<default type="bool" value="false"/>
+							<longdesc>Whether the user can dynamically type a new accelerator when 
+	positioned over an active menuitem.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="menus_have_tearoff" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Menus Have Tearoff">
+							<default type="bool" value="false"/>
+							<longdesc>Whether menus should have a tearoff.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="enable_animations" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Enable Animations">
+							<default type="bool" value="true"/>
+							<longdesc>Whether animations should be displayed. Note: This is a global
+	key, it changes the behaviour of the window manager, the panel etc.
+	</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="accessibility" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Enable Accessibility">
+							<default type="bool" value="false"/>
+							<longdesc>Whether Applications should have accessibility support.</longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="sound">
+					<entry name="input_feedback_sounds" mtime="1464360521" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Input feedback sounds">
+							<default type="bool" value="false"/>
+							<longdesc>Whether to play sounds on input events.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="theme_name" mtime="1464360521" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Sound theme name">
+							<default type="string">
+								<stringvalue>freedesktop</stringvalue>
+							</default>
+							<longdesc>The XDG sound theme to use for event sounds.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="event_sounds" mtime="1464360521" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Sounds for events">
+							<default type="bool" value="false"/>
+							<longdesc>Whether to play sounds on user events.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="enable_esd" mtime="1464360521" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Enable ESD">
+							<default type="bool" value="false"/>
+							<longdesc>Enable sound server startup.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="default_mixer_tracks" mtime="1464360521" type="schema" stype="list" owner="gnome" list_type="string">
+						<local_schema locale="C" short_desc="Default mixer tracks">
+							<default type="list" ltype="string">
+							</default>
+							<longdesc>The default mixer tracks used by the multimedia key bindings.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="default_mixer_device" mtime="1464360521" type="schema" stype="string" owner="gnome">
+						<local_schema locale="C" short_desc="Default mixer device">
+							<default type="string">
+								<stringvalue></stringvalue>
+							</default>
+							<longdesc>The default mixer device used by the multimedia key bindings.</longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="thumbnail_cache">
+					<entry name="maximum_size" mtime="1464360521" type="schema" stype="int" owner="gnome">
+						<local_schema locale="C" short_desc="">
+							<default type="int" value="512"/>
+							<longdesc>Maximum size of the thumbnail cache, in megabytes. Set to -1 to disable cleaning.</longdesc>
+						</local_schema>
+					</entry>
+					<entry name="maximum_age" mtime="1464360521" type="schema" stype="int" owner="gnome">
+						<local_schema locale="C" short_desc="">
+							<default type="int" value="180"/>
+							<longdesc>Maximum age for thumbnails in the cache, in days. Set to -1 to disable cleaning.</longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="typing_break">
+					<entry name="enabled" mtime="1464360521" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Whether or not keyboard locking is enabled">
+							<default type="bool" value="false"/>
+							<longdesc>
+	  Whether or not keyboard locking is enabled.
+         </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="allow_postpone" mtime="1464360521" type="schema" stype="bool" owner="gnome">
+						<local_schema locale="C" short_desc="Allow postponing of breaks">
+							<default type="bool" value="false"/>
+							<longdesc>
+          Whether or not the typing break screen can be postponed.
+         </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="break_time" mtime="1464360521" type="schema" stype="int" owner="gnome">
+						<local_schema locale="C" short_desc="Break time">
+							<default type="int" value="3"/>
+							<longdesc>
+          Number of minutes that the typing break should last.
+         </longdesc>
+						</local_schema>
+					</entry>
+					<entry name="type_time" mtime="1464360521" type="schema" stype="int" owner="gnome">
+						<local_schema locale="C" short_desc="Type time">
+							<default type="int" value="60"/>
+							<longdesc>
+	  Number of minutes of typing time before break mode starts.
+         </longdesc>
+						</local_schema>
+					</entry>
+				</dir>
+				<dir name="accessibility">
+					<dir name="startup">
+						<entry name="exec_ats" mtime="1464360521" type="schema" stype="list" owner="gnome" list_type="string">
+							<local_schema locale="C" short_desc="Startup Assistive Technology Applications">
+								<default type="list" ltype="string">
+								</default>
+								<longdesc>List of assistive technology applications to start when logging into the GNOME desktop.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="keyboard">
+						<entry name="togglekeys_enable" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="stickykeys_modifier_beep" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+								<longdesc>Beep when a modifier is pressed.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="stickykeys_two_key_off" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+								<longdesc>Disable if two keys are pressed at the same time.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="stickykeys_enable" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="slowkeys_beep_reject" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="slowkeys_beep_accept" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="slowkeys_beep_press" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="slowkeys_delay" mtime="1464360520" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="Minimum interval in milliseconds">
+								<default type="int" value="300"/>
+								<longdesc>Do not accept a key as being pressed unless held for @delay milliseconds.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="slowkeys_enable" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="mousekeys_init_delay" mtime="1464360520" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="Initial delay in milliseconds">
+								<default type="int" value="300"/>
+								<longdesc>How many milliseconds to wait before mouse movement keys start to operate.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="mousekeys_accel_time" mtime="1464360520" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="How long to accelerate in milliseconds">
+								<default type="int" value="300"/>
+								<longdesc>How many milliseconds it takes to go from 0 to maximum speed.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="mousekeys_max_speed" mtime="1464360520" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="Pixels per seconds">
+								<default type="int" value="10"/>
+								<longdesc>How many pixels per second to move at the maximum speed.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="mousekeys_enable" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="bouncekeys_beep_reject" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="bouncekeys_delay" mtime="1464360520" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="minimum interval in milliseconds">
+								<default type="int" value="300"/>
+								<longdesc>Ignore multiple presses of the _same_ key within @delay milliseconds.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="bouncekeys_enable" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="timeout" mtime="1464360520" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="int" value="200"/>
+							</local_schema>
+						</entry>
+						<entry name="timeout_enable" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="feature_state_change_beep" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="enable" mtime="1464360520" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+				<dir name="url-handlers">
+					<dir name="h323">
+						<entry name="needs_terminal" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Run the command in a terminal">
+								<default type="bool" value="false"/>
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1475410925" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="The handler for &quot;h323&quot; URLs">
+								<default type="string">
+									<stringvalue>gnomemeeting -c %s</stringvalue>
+								</default>
+								<longdesc>The command used to handle &quot;h323&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Whether the specified command should handle &quot;h323&quot; URLs">
+								<default type="bool" value="true"/>
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;h323&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="callto">
+						<entry name="needs_terminal" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Run the command in a terminal">
+								<default type="bool" value="false"/>
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1475410925" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="The handler for &quot;callto&quot; URLs">
+								<default type="string">
+									<stringvalue>gnomemeeting -c %s</stringvalue>
+								</default>
+								<longdesc>The command used to handle &quot;callto&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Whether the specified command should handle &quot;callto&quot; URLs">
+								<default type="bool" value="true"/>
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;callto&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="aim">
+						<entry name="needs_terminal" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Run the command in a terminal">
+								<default type="bool" value="false"/>
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1475410925" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="The handler for &quot;aim&quot; URLs">
+								<default type="string">
+									<stringvalue>gaim-remote uri &quot;%s&quot;</stringvalue>
+								</default>
+								<longdesc>The command used to handle &quot;aim&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Whether the specified command should handle &quot;aim&quot; URLs">
+								<default type="bool" value="true"/>
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;aim&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="mailto">
+						<entry name="needs_terminal" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Run the command in a terminal">
+								<default type="bool" value="false"/>
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1475410925" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="The handler for &quot;mailto&quot; URLs">
+								<default type="string">
+									<stringvalue>evolution %s</stringvalue>
+								</default>
+								<longdesc>The command used to handle &quot;mailto&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Whether the specified command should handle &quot;mailto&quot; URLs">
+								<default type="bool" value="true"/>
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;mailto&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="https">
+						<entry name="needs_terminal" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Run the command in a terminal">
+								<default type="bool" value="false"/>
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1475410925" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="The handler for &quot;https&quot; URLs">
+								<default type="string">
+									<stringvalue>epiphany %s</stringvalue>
+								</default>
+								<longdesc>The command used to handle &quot;https&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Whether the specified command should handle &quot;https&quot; URLs">
+								<default type="bool" value="true"/>
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;https&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="http">
+						<entry name="needs_terminal" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Run the command in a terminal">
+								<default type="bool" value="false"/>
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1475410925" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="The handler for &quot;http&quot; URLs">
+								<default type="string">
+									<stringvalue>epiphany %s</stringvalue>
+								</default>
+								<longdesc>The command used to handle &quot;http&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Whether the specified command should handle &quot;http&quot; URLs">
+								<default type="bool" value="true"/>
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;http&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="man">
+						<entry name="needs_terminal" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Run the command in a terminal">
+								<default type="bool" value="false"/>
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1475410925" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="The handler for &quot;man&quot; URLs">
+								<default type="string">
+									<stringvalue>gnome-help &quot;%s&quot;</stringvalue>
+								</default>
+								<longdesc>The command used to handle &quot;man&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Whether the specified command should handle &quot;man&quot; URLs">
+								<default type="bool" value="true"/>
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;man&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="info">
+						<entry name="needs_terminal" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Run the command in a terminal">
+								<default type="bool" value="false"/>
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1475410925" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="The handler for &quot;info&quot; URLs">
+								<default type="string">
+									<stringvalue>gnome-help &quot;%s&quot;</stringvalue>
+								</default>
+								<longdesc>The command used to handle &quot;info&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Whether the specified command should handle &quot;info&quot; URLs">
+								<default type="bool" value="true"/>
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;info&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="ghelp">
+						<entry name="needs_terminal" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Run the command in a terminal">
+								<default type="bool" value="false"/>
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1475410925" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="The handler for &quot;ghelp&quot; URLs">
+								<default type="string">
+									<stringvalue>gnome-help &quot;%s&quot;</stringvalue>
+								</default>
+								<longdesc>The command used to handle &quot;ghelp&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Whether the specified command should handle &quot;ghelp&quot; URLs">
+								<default type="bool" value="true"/>
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;ghelp&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="trash">
+						<entry name="needs_terminal" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Run the command in a terminal">
+								<default type="bool" value="false"/>
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1475410925" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="The handler for &quot;trash&quot; URLs">
+								<default type="string">
+									<stringvalue>nautilus &quot;%s&quot;</stringvalue>
+								</default>
+								<longdesc>The command used to handle &quot;trash&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1475410925" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Whether the specified command should handle &quot;trash&quot; URLs">
+								<default type="bool" value="true"/>
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;trash&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+				<dir name="applications">
+					<dir name="at">
+						<dir name="visual">
+							<entry name="startup" mtime="1464360523" type="schema" stype="bool" owner="gnome">
+								<local_schema locale="C" short_desc="Start preferred Visual assistive technology application">
+									<default type="bool" value="false"/>
+									<longdesc>GNOME to start preferred Visual assistive technology application during login.</longdesc>
+								</local_schema>
+							</entry>
+							<entry name="exec" mtime="1464360523" type="schema" stype="string" owner="gnome">
+								<local_schema locale="C" short_desc="Preferred Visual assistive technology application">
+									<default type="string">
+										<stringvalue>orca</stringvalue>
+									</default>
+									<longdesc>Preferred Visual assistive technology application be used for login, menu, or command line.</longdesc>
+								</local_schema>
+							</entry>
+						</dir>
+						<dir name="mobility">
+							<entry name="startup" mtime="1464360523" type="schema" stype="bool" owner="gnome">
+								<local_schema locale="C" short_desc="Start preferred Mobility assistive technology application">
+									<default type="bool" value="false"/>
+									<longdesc>GNOME to start preferred Mobility assistive technology application during login.</longdesc>
+								</local_schema>
+							</entry>
+							<entry name="exec" mtime="1464360523" type="schema" stype="string" owner="gnome">
+								<local_schema locale="C" short_desc="Preferred Mobility assistive technology application">
+									<default type="string">
+										<stringvalue>dasher</stringvalue>
+									</default>
+									<longdesc>Preferred Mobility assistive technology application to be used for login, menu, or command line.</longdesc>
+								</local_schema>
+							</entry>
+						</dir>
+					</dir>
+					<dir name="tasks">
+						<entry name="needs_term" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Tasks needs terminal">
+								<default type="bool" value="false"/>
+								<longdesc>Whether the default tasks application needs a terminal to run</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="exec" mtime="1464360522" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="Default tasks">
+								<default type="string">
+									<stringvalue>evolution</stringvalue>
+								</default>
+								<longdesc>Default tasks application</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="calendar">
+						<entry name="needs_term" mtime="1464360522" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Calendar needs terminal">
+								<default type="bool" value="false"/>
+								<longdesc>Whether the default calendar application needs a terminal to run</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="exec" mtime="1464360522" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="Default calendar">
+								<default type="string">
+									<stringvalue>evolution</stringvalue>
+								</default>
+								<longdesc>Default calendar application</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="browser">
+						<entry name="nremote" mtime="1464360521" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Browser understands remote">
+								<default type="bool" value="true"/>
+								<longdesc>Whether the default browser understands netscape remote.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="needs_term" mtime="1464360521" type="schema" stype="bool" owner="gnome">
+							<local_schema locale="C" short_desc="Browser needs terminal">
+								<default type="bool" value="false"/>
+								<longdesc>Whether the default browser needs a terminal to run.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="exec" mtime="1464360521" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="Default browser">
+								<default type="string">
+									<stringvalue>mozilla</stringvalue>
+								</default>
+								<longdesc>Default browser for all URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="window_manager">
+						<entry name="workspace_names" mtime="1464360519" type="schema" stype="list" owner="gnome" list_type="string">
+							<local_schema locale="C" short_desc="Names of the workspaces (deprecated)">
+								<longdesc>
+          A list with names of the first window manager workspaces.
+          This key has been deprecated since GNOME 2.12.
+        </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="number_of_workspaces" mtime="1464360519" type="schema" stype="int" owner="gnome">
+							<local_schema locale="C" short_desc="The number of workspaces (deprecated)">
+								<longdesc>
+          The number of workspaces the window manager should use
+          This key has been deprecated since GNOME 2.12.
+        </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="current" mtime="1464360519" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="User window manager (deprecated)">
+								<longdesc>
+          Window manager to try first.
+          This key has been deprecated since GNOME 2.12.
+        </longdesc>
+							</local_schema>
+						</entry>
+						<entry name="default" mtime="1464360519" type="schema" stype="string" owner="gnome">
+							<local_schema locale="C" short_desc="Fallback window manager (deprecated)">
+								<longdesc>
+          Fallback window manager if user window manager can&apos;t be found.
+          This key has been deprecated since GNOME 2.12.
+        </longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="component_viewer">
+						<entry name="exec" mtime="1475410923" type="schema" stype="string" owner="gnome-vfs">
+							<local_schema locale="C" short_desc="Default component viewer application">
+								<default type="string">
+									<stringvalue>nautilus %s</stringvalue>
+								</default>
+								<longdesc>The application to use for viewing files that require a component to view them. The parameter %s will be replaced by the file&apos;s URIs, the parameter %c will be replaced by the component IID.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="terminal">
+						<entry name="exec_arg" mtime="1475410923" type="schema" stype="string" owner="gnome-vfs">
+							<local_schema locale="C" short_desc="Exec argument for default terminal">
+								<default type="string">
+									<stringvalue>-x</stringvalue>
+								</default>
+								<longdesc>The exec argument to use for the default terminal application.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="exec" mtime="1475410923" type="schema" stype="string" owner="gnome-vfs">
+							<local_schema locale="C" short_desc="Default terminal application">
+								<default type="string">
+									<stringvalue>gnome-terminal</stringvalue>
+								</default>
+								<longdesc>The default terminal application to use for applications that require a terminal.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+		<dir name="apps">
+			<dir name="gnome-phone-manager">
+				<entry name="sound_alert" mtime="1475423355" type="schema" stype="bool" owner="gnome-phone-manager">
+					<local_schema locale="C" short_desc="Whether to play a sound alert when a new message comes in">
+						<default type="bool" value="true"/>
+						<longdesc>
+	    Whether to play a sound alert when a new message comes in.
+	  </longdesc>
+					</local_schema>
+				</entry>
+				<entry name="popup_messages" mtime="1475423355" type="schema" stype="bool" owner="gnome-phone-manager">
+					<local_schema locale="C" short_desc="Whether to popup new messages on the desktop">
+						<default type="bool" value="false"/>
+						<longdesc>
+	    Whether to popup new messages on the desktop as soon as they&apos;re
+	    received, as opposed to showing them when clicking on the tray icon.
+	  </longdesc>
+					</local_schema>
+				</entry>
+				<entry name="sync_clock" mtime="1475423355" type="schema" stype="bool" owner="gnome-phone-manager">
+					<local_schema locale="C" short_desc="Whether to synchronise the phone clock with the computer&apos;s">
+						<default type="bool" value="true"/>
+						<longdesc>
+	    Whether to synchronise the phone clock with the computer&apos;s.
+	  </longdesc>
+					</local_schema>
+				</entry>
+				<entry name="auto_retry" mtime="1475423355" type="schema" stype="bool" owner="gnome-phone-manager">
+					<local_schema locale="C" short_desc="Whether to retry connecting to the mobile phone">
+						<default type="bool" value="true"/>
+						<longdesc>
+	    Whether to retry connecting to the mobile phone if the connection
+	    fails at some point.
+	  </longdesc>
+					</local_schema>
+				</entry>
+				<entry name="other_serial" mtime="1475423355" type="schema" stype="string" owner="gnome-phone-manager">
+					<local_schema locale="C" short_desc="The device node for the serial device to connect to">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>
+	    The device node for the serial device to connect to. Requires
+	    connection_type to be 4 to be used.
+	  </longdesc>
+					</local_schema>
+				</entry>
+				<entry name="bluetooth_addr" mtime="1475423355" type="schema" stype="string" owner="gnome-phone-manager">
+					<local_schema locale="C" short_desc="Bluetooth address of the device to connect to">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+						<longdesc>
+	    Bluetooth address of the device to connect to. Requires
+	    connection_type to be 1 to be used.
+	  </longdesc>
+					</local_schema>
+				</entry>
+				<entry name="connection_type" mtime="1475423355" type="schema" stype="int" owner="gnome-phone-manager">
+					<local_schema locale="C" short_desc="The connection type used by gnome-phone-manager">
+						<default type="int" value="0"/>
+						<longdesc>
+	    The connection type used by gnome-phone-manager:
+	    Bluetooth is 0
+	    Serial 1 is 1
+	    Serial 2 is 2
+	    IrDa is 3
+	    Other connection types are 4
+	  </longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+			<dir name="gconf-editor">
+				<entry name="bookmarks" mtime="1461629522" type="schema" stype="list" owner="gconf-editor" list_type="string">
+					<local_schema locale="C" short_desc="Bookmarks">
+						<default type="list" ltype="string">
+						</default>
+						<longdesc>gconf-editor folder bookmarks</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+		</dir>
+	</dir>
+	<dir name="apps">
+		<dir name="gnome-phone-manager">
+			<entry name="sound_alert" mtime="1475423355" schema="/schemas/apps/gnome-phone-manager/sound_alert"/>
+			<entry name="popup_messages" mtime="1475423355" schema="/schemas/apps/gnome-phone-manager/popup_messages"/>
+			<entry name="sync_clock" mtime="1475423355" schema="/schemas/apps/gnome-phone-manager/sync_clock"/>
+			<entry name="auto_retry" mtime="1475423355" schema="/schemas/apps/gnome-phone-manager/auto_retry"/>
+			<entry name="other_serial" mtime="1475423355" schema="/schemas/apps/gnome-phone-manager/other_serial"/>
+			<entry name="bluetooth_addr" mtime="1475423355" schema="/schemas/apps/gnome-phone-manager/bluetooth_addr"/>
+			<entry name="connection_type" mtime="1475423355" schema="/schemas/apps/gnome-phone-manager/connection_type"/>
+		</dir>
+		<dir name="gconf-editor">
+			<entry name="bookmarks" mtime="1461629522" schema="/schemas/apps/gconf-editor/bookmarks"/>
+		</dir>
+	</dir>
+</gconf>

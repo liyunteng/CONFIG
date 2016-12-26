@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/desktop/gnome/accessibility/keyboard/enable</key>
+      <applyto>/desktop/gnome/accessibility/keyboard/enable</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short></short>
+        <long></long>
+      </locale>
+    </schema>
+	<schema>
+	  <key>/schemas/desktop/gnome/accessibility/keyboard/feature_state_change_beep</key>
+	  <applyto>/desktop/gnome/accessibility/keyboard/feature_state_change_beep</applyto>
+	  <owner>gnome</owner>
+	  <type>bool</type>
+	  <default>false</default>
+	  <locale name="C">
+	    <short></short>
+	    <long></long>
+	  </locale>
+	</schema>
+	<schema>
+	  <key>/schemas/desktop/gnome/accessibility/keyboard/timeout_enable</key>
+	  <applyto>/desktop/gnome/accessibility/keyboard/timeout_enable</applyto>
+	  <owner>gnome</owner>
+	  <type>bool</type>
+	  <default>false</default>
+	  <locale name="C">
+	    <short></short>
+	    <long></long>
+	  </locale>
+	</schema>
+	<schema>
+	  <key>/schemas/desktop/gnome/accessibility/keyboard/timeout</key>
+	  <applyto>/desktop/gnome/accessibility/keyboard/timeout</applyto>
+	  <owner>gnome</owner>
+	  <type>int</type>
+	  <default>200</default>
+	  <locale name="C">
+	    <short></short>
+	    <long></long>
+	  </locale>
+	</schema>
+
+	<schema>
+	  <key>/schemas/desktop/gnome/accessibility/keyboard/bouncekeys_enable</key>
+	  <applyto>/desktop/gnome/accessibility/keyboard/bouncekeys_enable</applyto>
+	  <owner>gnome</owner>
+	  <type>bool</type>
+	  <default>false</default>
+	  <locale name="C">
+	    <short></short>
+	    <long></long>
+	  </locale>
+	</schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/bouncekeys_delay</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/bouncekeys_delay</applyto>
+	      <owner>gnome</owner>
+	      <type>int</type>
+	      <default>300</default>
+	      <locale name="C">
+		<short>minimum interval in milliseconds</short>
+		<long>Ignore multiple presses of the _same_ key within @delay milliseconds.</long>
+	      </locale>
+
+	      <locale name="zh_CN">
+		<short>最小间隔毫秒数</short>
+		<long>忽略在 @delay 毫秒内多次按下的“同一个”键。</long>
+	      </locale>
+	    </schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/bouncekeys_beep_reject</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/bouncekeys_beep_reject</applyto>
+	      <owner>gnome</owner>
+	      <type>bool</type>
+	      <default>false</default>
+	      <locale name="C">
+		<short></short>
+		<long></long>
+	      </locale>
+	    </schema>
+
+	<schema>
+	  <key>/schemas/desktop/gnome/accessibility/keyboard/mousekeys_enable</key>
+	  <applyto>/desktop/gnome/accessibility/keyboard/mousekeys_enable</applyto>
+	  <owner>gnome</owner>
+	  <type>bool</type>
+	  <default>false</default>
+	  <locale name="C">
+	    <short></short>
+	    <long></long>
+	  </locale>
+	</schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/mousekeys_max_speed</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/mousekeys_max_speed</applyto>
+	      <owner>gnome</owner>
+	      <type>int</type>
+	      <default>10</default>
+	      <locale name="C">
+		<short>Pixels per seconds</short>
+		<long>How many pixels per second to move at the maximum speed.</long>
+	      </locale>
+
+	      <locale name="zh_CN">
+		<short>每秒像素点</short>
+		<long>最大速度时每秒钟移动多少个像素点。</long>
+	      </locale>
+	    </schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/mousekeys_accel_time</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/mousekeys_accel_time</applyto>
+	      <owner>gnome</owner>
+	      <type>int</type>
+	      <default>300</default>
+	      <locale name="C">
+		<short>How long to accelerate in milliseconds</short>
+		<long>How many milliseconds it takes to go from 0 to maximum speed.</long>
+	      </locale>
+
+	      <locale name="zh_CN">
+		<short>经过多少毫秒后开始加速</short>
+		<long>在多少毫秒内从 0 增长到最大速度。</long>
+	      </locale>
+	    </schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/mousekeys_init_delay</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/mousekeys_init_delay</applyto>
+	      <owner>gnome</owner>
+	      <type>int</type>
+	      <default>300</default>
+	      <locale name="C">
+		<short>Initial delay in milliseconds</short>
+		<long>How many milliseconds to wait before mouse movement keys start to operate.</long>
+	      </locale>
+
+	      <locale name="zh_CN">
+		<short>初始延迟毫秒数</short>
+		<long>在鼠标移动键起作用前等待多少毫秒。</long>
+	      </locale>
+	    </schema>
+
+	<schema>
+	  <key>/schemas/desktop/gnome/accessibility/keyboard/slowkeys_enable</key>
+	  <applyto>/desktop/gnome/accessibility/keyboard/slowkeys_enable</applyto>
+	  <owner>gnome</owner>
+	  <type>bool</type>
+	  <default>false</default>
+	  <locale name="C">
+	    <short></short>
+	    <long></long>
+	  </locale>
+	</schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/slowkeys_delay</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/slowkeys_delay</applyto>
+	      <owner>gnome</owner>
+	      <type>int</type>
+	      <default>300</default>
+	      <locale name="C">
+		<short>Minimum interval in milliseconds</short>
+		<long>Do not accept a key as being pressed unless held for @delay milliseconds.</long>
+	      </locale>
+
+	      <locale name="zh_CN">
+		<short>最小间隔毫秒数</short>
+		<long>除非按住 @delay 毫秒不放，否则不接受按键输入。</long>
+	      </locale>
+	    </schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/slowkeys_beep_press</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/slowkeys_beep_press</applyto>
+	      <owner>gnome</owner>
+	      <type>bool</type>
+	      <default>false</default>
+	      <locale name="C">
+		<short></short>
+		<long></long>
+	      </locale>
+	    </schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/slowkeys_beep_accept</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/slowkeys_beep_accept</applyto>
+	      <owner>gnome</owner>
+	      <type>bool</type>
+	      <default>false</default>
+	      <locale name="C">
+		<short></short>
+		<long></long>
+	      </locale>
+	    </schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/slowkeys_beep_reject</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/slowkeys_beep_reject</applyto>
+	      <owner>gnome</owner>
+	      <type>bool</type>
+	      <default>false</default>
+	      <locale name="C">
+		<short></short>
+		<long></long>
+	      </locale>
+	    </schema>
+
+	<schema>
+	  <key>/schemas/desktop/gnome/accessibility/keyboard/stickykeys_enable</key>
+	  <applyto>/desktop/gnome/accessibility/keyboard/stickykeys_enable</applyto>
+	  <owner>gnome</owner>
+	  <type>bool</type>
+	  <default>false</default>
+	  <locale name="C">
+	    <short></short>
+	    <long></long>
+	  </locale>
+	</schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/stickykeys_two_key_off</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/stickykeys_two_key_off</applyto>
+	      <owner>gnome</owner>
+	      <type>bool</type>
+	      <default>false</default>
+	      <locale name="C">
+		<short></short>
+		<long>Disable if two keys are pressed at the same time.</long>
+	      </locale>
+
+	      <locale name="zh_CN">
+		
+		<long>如果两个键同时按下则禁用。</long>
+	      </locale>
+	    </schema>
+	    <schema>
+	      <key>/schemas/desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep</key>
+	      <applyto>/desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep</applyto>
+	      <owner>gnome</owner>
+	      <type>bool</type>
+	      <default>false</default>
+	      <locale name="C">
+		<short></short>
+		<long>Beep when a modifier is pressed.</long>
+	      </locale>
+
+	      <locale name="zh_CN">
+		
+		<long>按下修改键时响铃。</long>
+	      </locale>
+	    </schema>
+
+	<schema>
+	  <key>/schemas/desktop/gnome/accessibility/keyboard/togglekeys_enable</key>
+	  <applyto>/desktop/gnome/accessibility/keyboard/togglekeys_enable</applyto>
+	  <owner>gnome</owner>
+	  <type>bool</type>
+	  <default>false</default>
+	  <locale name="C">
+	    <short></short>
+	    <long></long>
+	  </locale>
+	</schema>
+
+  </schemalist>
+</gconfschemafile>

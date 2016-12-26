@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/desktop/gnome/applications/browser/exec</key>
+      <applyto>/desktop/gnome/applications/browser/exec</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>mozilla</default>
+      <locale name="C">
+        <short>Default browser</short>
+        <long>Default browser for all URLs.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>默认浏览器</short>
+        <long>全部 URL 的默认浏览器。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/applications/browser/needs_term</key>
+      <applyto>/desktop/gnome/applications/browser/needs_term</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Browser needs terminal</short>
+        <long>Whether the default browser needs a terminal to run.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>浏览器需要终端</short>
+        <long>默认的浏览器是否需要终端来运行。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/applications/browser/nremote</key>
+      <applyto>/desktop/gnome/applications/browser/nremote</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Browser understands remote</short>
+        <long>Whether the default browser understands netscape remote.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>浏览器理解远程命令</short>
+        <long>默认的浏览器是否理解 netscape 远程控制命令。</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

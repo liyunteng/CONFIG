@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/accessibility</key>
+      <applyto>/desktop/gnome/interface/accessibility</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Enable Accessibility</short>
+        <long>Whether Applications should have accessibility support.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>启用辅助工具</short>
+        <long>应用程序是否应该有辅助访问支持。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/enable_animations</key>
+      <applyto>/desktop/gnome/interface/enable_animations</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Enable Animations</short>
+	<long>Whether animations should be displayed. Note: This is a global
+	key, it changes the behaviour of the window manager, the panel etc.
+	</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>启用动画</short>
+	<long>是否应该显示动画。注意：这是一个全局的设置，它将改变窗口管理器、面板等的行为。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/menus_have_tearoff</key>
+      <applyto>/desktop/gnome/interface/menus_have_tearoff</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Menus Have Tearoff</short>
+        <long>Whether menus should have a tearoff.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>菜单具有分离条</short>
+        <long>菜单是否应该有分离条。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/can_change_accels</key>
+      <applyto>/desktop/gnome/interface/can_change_accels</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Can Change Accels</short>
+        <long>Whether the user can dynamically type a new accelerator when 
+	positioned over an active menuitem.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>能改变加速键</short>
+        <long>当指针指向激活菜单项时，用户是否能动态地输入新的加速键。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/toolbar_style</key>
+      <applyto>/desktop/gnome/interface/toolbar_style</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>both-horiz</default>
+      <locale name="C">
+        <short>Toolbar Style</short>
+        <long>Toolbar Style. Valid values are "both", "both-horiz", "icons", and
+	"text".</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>工具栏风格</short>
+        <long>工具栏风格。有效的值是“都有”，“都有(水平)”，“图表”和“文本”。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/menus_have_icons</key>
+      <applyto>/desktop/gnome/interface/menus_have_icons</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Menus Have Icons</short>
+        <long>Whether menus may display an icon next to a menu entry.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>菜单上使用图标</short>
+        <long>是否在菜单上菜单项的旁边显示图标。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/buttons_have_icons</key>
+      <applyto>/desktop/gnome/interface/buttons_have_icons</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Buttons Have Icons</short>
+        <long>Whether buttons may display an icon in addition to the button text.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>按钮上有图标</short>
+        <long>是否在按钮文本旁边显示图标。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/menubar_detachable</key>
+      <applyto>/desktop/gnome/interface/menubar_detachable</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Menubar Detachable</short>
+        <long>Whether the user can detach menubars and move them around.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>菜单栏可分离</short>
+        <long>用户是否能分离菜单栏并四处移动它们。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/toolbar_detachable</key>
+      <applyto>/desktop/gnome/interface/toolbar_detachable</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Toolbar Detachable</short>
+        <long>Whether the user can detach toolbars and move them around.</long>
+	</locale>
+
+      <locale name="zh_CN">
+        <short>工具栏可分离</short>
+        <long>用户是否能分离工具栏并四处移动它们。</long>
+	</locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/toolbar_icons_size</key>
+      <applyto>/desktop/gnome/interface/toolbar_icons_size</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>large-toolbar</default>
+      <locale name="C">
+        <short>Toolbar Icon Size</short>
+        <long>Size of icons in toolbars, either "small-toolbar" or
+        "large-toolbar".</long>
+	</locale>
+
+      <locale name="zh_CN">
+        <short>工具栏图标大小</short>
+        <long>工具栏图标的大小，“小号工具栏”或者“大号工具栏”。</long>
+	</locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/cursor_blink</key>
+      <applyto>/desktop/gnome/interface/cursor_blink</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Cursor Blink</short>
+	<long>Whether the cursor should blink.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>光标闪烁</short>
+	<long>光标是否应该闪烁。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/cursor_blink_time</key>
+      <applyto>/desktop/gnome/interface/cursor_blink_time</applyto>
+      <owner>gnome</owner>
+      <type>int</type>
+      <default>1200</default>
+      <locale name="C">
+	<short>Cursor Blink Time</short>
+	<long>Length of the cursor blink cycle, in milliseconds.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>光标闪烁时间</short>
+	<long>光标闪烁周期的长度，单位为毫秒。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/icon_theme</key>
+      <applyto>/desktop/gnome/interface/icon_theme</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>gnome</default>
+      <locale name="C">
+        <short>Icon Theme</short>
+        <long>Icon theme to use for the panel, nautilus etc.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>图标主题</short>
+        <long>用于面板、Nautilus 等的图标主题。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/gtk_theme</key>
+      <applyto>/desktop/gnome/interface/gtk_theme</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>Adwaita</default>
+      <locale name="C">
+	<short>Gtk+ Theme</short>
+	<long>Basename of the default theme used by gtk+.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>Gtk+ 主题</short>
+	<long>gtk+ 使用的默认主题的基本名称。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/gtk_key_theme</key>
+      <applyto>/desktop/gnome/interface/gtk_key_theme</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>Default</default>
+      <locale name="C">
+	<short>Gtk+ Theme</short>
+	<long>Basename of the default theme used by gtk+.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>Gtk+ 主题</short>
+	<long>gtk+ 使用的默认主题的基本名称。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/font_name</key>
+      <applyto>/desktop/gnome/interface/font_name</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>Sans 10</default>
+      <locale name="C">
+	<short>Default font</short>
+	<long>Name of the default font used by gtk+.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>默认字体</short>
+	<long>gtk+ 使用的默认字体的名称。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/gtk-im-preedit-style</key>
+      <applyto>/desktop/gnome/interface/gtk-im-preedit-style</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>callback</default>
+      <locale name="C">
+	<short>GTK IM Preedit Style</short>
+	<long>Name of the GTK+ input method Preedit Style used by gtk+.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>GTK IM 预编辑风格</short>
+	<long>gtk+ 使用的 GTK+ 输入法预编辑风格的名称。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/gtk-im-status-style</key>
+      <applyto>/desktop/gnome/interface/gtk-im-status-style</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>callback</default>
+      <locale name="C">
+	<short>GTK IM Status Style</short>
+	<long>Name of the GTK+ input method Status Style used by gtk+.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>GTK IM 状态风格</short>
+	<long>gtk+ 使用的 GTK+ 输入法状态风格的名称。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/gtk-im-module</key>
+      <applyto>/desktop/gnome/interface/gtk-im-module</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default></default>
+      <locale name="C">
+        <short>GTK IM Module</short>
+        <long>Name of the input method module used by GTK+.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>GTK IM 模块</short>
+        <long>GTK+ 使用的输入法模块的名称。</long>
+      </locale>
+    </schema>
+    <schema>
+      <applyto>/desktop/gnome/interface/document_font_name</applyto>
+      <key>/schemas/desktop/gnome/interface/document_font_name</key>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>Sans 10</default>
+      <locale name="C">
+	<short>Document font</short>
+	<long>Name of the default font used for reading documents.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>文档字体</short>
+	<long>读取文档所使用的默认字体的名称。</long>
+      </locale>
+    </schema>
+    <schema>
+      <applyto>/desktop/gnome/interface/monospace_font_name</applyto>
+      <key>/schemas/desktop/gnome/interface/monospace_font_name</key>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>Monospace 10</default>
+      <locale name="C">
+	<short>Monospace font</short>
+	<long>Name of a monospaced (fixed-width) font for use
+              in locations like terminals.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>等距字体</short>
+	<long>类似终端程序等位置中所用的等距(固定宽度)字体。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/use_custom_font</key>
+      <applyto>/desktop/gnome/interface/use_custom_font</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Use Custom Font</short>
+	<long>Whether to use a custom font in gtk+ applications.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>使用自定义字体</short>
+	<long>是否在 gtk+ 程序中使用自定义字体。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/status_bar_meter_on_right</key>
+      <applyto>/desktop/gnome/interface/status_bar_meter_on_right</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Status Bar on Right</short>
+	<long>Whether to display a status bar meter on the right.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>状态栏位于右边</short>
+	<long>是否在右边显示状态栏指示。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/file_chooser_backend</key>
+      <applyto>/desktop/gnome/interface/file_chooser_backend</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>gio</default>
+      <locale name="C">
+	<short>Module for GtkFileChooser</short>
+	<long>Module to use as the filesystem model for the
+	GtkFileChooser widget.  Possible values are "gio", "gnome-vfs" and
+	"gtk+".</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>GtkFileChooser 的模块</short>
+	<long>GtkFileChooser 部件所用的文件系统模型的模块。可供选择的值是“gio”、“gnome-vfs”和“gtk+”。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/menubar_accel</key>
+      <applyto>/desktop/gnome/interface/menubar_accel</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>F10</default>
+      <locale name="C">
+	<short>Menubar accelerator</short>
+	<long>Keyboard shortcut to open the menu bars.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>菜单栏加速键</short>
+	<long>打开菜单栏的键盘快捷键。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/show_input_method_menu</key>
+      <applyto>/desktop/gnome/interface/show_input_method_menu</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Show the 'Input Methods' menu</short>
+	<long>Whether the context menus of entries and text views 
+        should offer to change the input method.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>显示“输入法”菜单</short>
+	<long>输入框和文本视图中的快捷菜单是否应提供更改输入法的选项。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/interface/show_unicode_menu</key>
+      <applyto>/desktop/gnome/interface/show_unicode_menu</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Show the 'Unicode Control Character' menu</short>
+	<long>Whether the context menus of entries and text views 
+        should offer to insert control characters.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>显示“Unicode 控制字符”菜单</short>
+	<long>输入框和文本视图中的快捷菜单是否应提供插入控制字符的选项。</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>
