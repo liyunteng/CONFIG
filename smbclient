@@ -1,0 +1,11 @@
+smbclient -L  //192.168.86.1  -U lyt%password
+
+smbclient //192.168.86.1/d$ -U lyt%password
+smb
+ls
+cd
+get
+q
+
+mount //192.168.86.1/d$ /mnt -o username=lyt%password
+
