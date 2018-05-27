@@ -1,7 +1,0 @@
-# 
-# /etc/fstab: static file system information
-#
-# <file system>	<dir>	<type>	<options>	<dump>	<pass>
-# /dev/sda1
-UUID=240b1379-96ca-4736-a464-e29a6afc2f3e	/         	ext4      	rw,relatime,data=ordered	0 1
-
