@@ -14,6 +14,7 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
 # it regains control.  #65623
@@ -36,7 +37,8 @@ shopt -s histappend
 # the history will halt the shell prompt until it's finished.
 #PROMPT_COMMAND='history -a'
 
-# Change the window title of X terminals 
+
+# Change the window title of X terminals
 case ${TERM} in
 	[aEkx]term*|rxvt*|gnome*|konsole*|interix)
 		PS1='\[\033]0;\u@\h:\w\007\]'
@@ -90,11 +92,6 @@ if ${use_color} ; then
 	else
 		PS1+='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 	fi
-
-	alias ls='ls --color=auto'
-	alias grep='grep --colour=auto'
-	alias egrep='egrep --colour=auto'
-	alias fgrep='fgrep --colour=auto'
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
@@ -111,11 +108,15 @@ done
 # Try to keep environment pollution down, EPA loves us.
 unset use_color sh
 
-alias ls='ls --color=auto'
+if [[ -f ~/.xprofile ]]; then
+. ~/.xprofile
+fi
+
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
+alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l.='ls -d .*'
