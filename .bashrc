@@ -112,12 +112,28 @@ if [[ -f ~/.xprofile ]]; then
 . ~/.xprofile
 fi
 
-alias grep='grep --colour=auto'
-alias egrep='egrep --colour=auto'
-alias fgrep='fgrep --colour=auto'
+alias l='ls -CF'   
+alias la='ls -A'   
+alias ll='ls -laF'
+alias l.='ls -ld .*'
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
 
-alias ls='ls --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l.='ls -d .*'
-alias l='ls -CF'
+alias bashrc='$EDITOR ~/.bashrc' # Quick access to the ~/.zshrc file
+
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+
+alias t='tail -f'
+
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+alias h='history'
+alias p='ps -f'
+alias sortnr='sort -n -r'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
