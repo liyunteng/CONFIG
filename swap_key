@@ -1,8 +1,9 @@
 console 下交换键位
-1.复制/usr/share/keymaps/i386/qwerty/us.map.gz 到lyt.map.gz
-2.解压lyt.map.gz,修改其中的Caps_lock 和 Control对应的keycodes
-3.压缩lyt.map 
-4.修改/etc/vconsole.conf 改为KEYMAP=lyt
+#1.复制/usr/share/keymaps/i386/qwerty/us.map.gz 到Swap_Cap_Ctl.map.gz
+#2.解压Swap_Cap_Ctl.map.gz,修改其中的Caps_lock 和 Control对应的keycodes
+#3.压缩Swap_Cap_Ctl.map 
+#4.修改/etc/vconsole.conf 改为KEYMAP=Swap_Cap_Ctl
+1. 修改/etc/vconsole.conf 改为KEYMAP=emacs
 
 X 下交换键位
 添加以下内容到/etc/X11/xorg.conf.d/00-keyboard.conf
