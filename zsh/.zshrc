@@ -1,3 +1,10 @@
+if [ "$TERM" = "dumb" ]
+then
+    unsetopt zle
+    PS1='$ '
+    return
+fi
+
 if [ "$TERM" = "eterm-color" ]
 then
     chpwd() { print -P "\033AnSiTc %d" }
@@ -152,3 +159,7 @@ alias -g NUL='> /dev/null 2>&1'
 
 # Make zsh know about hosts already accessed by SSH
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+
+autoload -U compinit
+compinit
+zstyle ':completion::complete:*' use-cache 1
