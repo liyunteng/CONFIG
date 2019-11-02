@@ -112,6 +112,7 @@ if [[ -f ~/.xprofile ]]; then
 . ~/.xprofile
 fi
 
+alias ls='ls --color=auto'
 alias l='ls -CF'   
 alias la='ls -A'   
 alias ll='ls -laF'
