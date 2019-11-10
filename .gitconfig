@@ -3,6 +3,7 @@
 	name = liyunteng
 [github]
 	user = liyunteng
+	oauth-token =
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -11,6 +12,7 @@
 [core]
 	quotePath = false
 [alias]
+	dc = diff --cached
 	st = status
 	co = checkout
 	ci = commit
@@ -19,3 +21,5 @@
 	last = log -1
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[credential]
+	helper = store
