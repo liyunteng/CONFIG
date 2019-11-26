@@ -1,8 +1,8 @@
 if [ "$TERM" = "dumb" ]
 then
     unsetopt zle
-    PS1='$ '
-    return
+    # PS1='$ '
+    # return
 fi
 
 if [ "$TERM" = "eterm-color" ]
