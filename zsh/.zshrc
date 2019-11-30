@@ -129,8 +129,8 @@ alias zshrc='vi ~/.zshrc'
 alias grep='grep --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
 
-alias ff='find . -type d -name'
-alias fd='find . -type f -name'
+alias ff='find . -type f -name'
+alias fd='find . -type d -name'
 
 alias t='tail -f'
 alias h='history'
