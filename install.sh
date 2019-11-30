@@ -4,16 +4,16 @@
 # Copyright (C) 2019 liyunteng
 # Last-Updated: <2019/11/16 03:19:02 liyunteng>
 set -e
-cp -nf .bash_profile ~/
-cp -nf .bashrc ~/
-cp -nf .clang-format ~/
-cp -nf .gitconfig ~/
-cp -nf .git-credentials ~/
-cp -nf .tmux.conf ~/
-cp -nf zsh/.zshrc ~/
+cp -fr .bash_profile ~/
+cp -fr .bashrc ~/
+cp -fr .clang-format ~/
+cp -fr .gitconfig ~/
+cp -fr .git-credentials ~/
+cp -fr .tmux.conf ~/
+cp -fr zsh/.zshrc ~/
 if [ -d ~/.oh-my-zsh ]; then
-    cp -nfr zsh/plugins ~/.oh-my-zsh/
-    cp -nfr zsh/themes ~/.oh-my-zsh/
+    cp -fr zsh/plugins ~/.oh-my-zsh/
+    cp -fr zsh/themes ~/.oh-my-zsh/
 fi
 
 if [ ! -d ~/.vim_runtime ]; then
