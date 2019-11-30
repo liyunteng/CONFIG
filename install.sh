@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Description: install
 
 # Copyright (C) 2019 liyunteng
