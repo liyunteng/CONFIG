@@ -13,7 +13,7 @@ cp -nf .tmux.conf ~/
 cp -nf zsh/.zshrc ~/
 if [ -d ~/.oh-my-zsh ]; then
     cp -nfr zsh/plugins ~/.oh-my-zsh/
-    cp -nfr zsh/thems ~/.oh-my-zsh/
+    cp -nfr zsh/themes ~/.oh-my-zsh/
 fi
 
 if [ ! -d ~/.vim_runtime ]; then
