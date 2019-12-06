@@ -142,7 +142,7 @@ IncludeIsMainRegex: '(Test)?$'
 # 缩进case标签
 IndentCaseLabels: false
 # None 宏不indent, AfterHash #总是在第一列 BeforeHash #不在第一列
-IndentPPDirectives: None
+IndentPPDirectives: AfterHash
 # 缩进宽度
 IndentWidth: 4
 # 函数返回类型换行时，缩进函数声明或函数定义的函数名
