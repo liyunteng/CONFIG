@@ -117,8 +117,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alF'
+alias la='ls -alF'
+alias ll='ls -lF'
 alias l.='ls -ld .*'
 alias lr='ls -tRFh'
 alias lt='ls -ltFh'

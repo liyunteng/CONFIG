@@ -114,8 +114,8 @@ fi
 
 alias ls='ls --color=auto'
 alias l='ls -CF'   
-alias la='ls -A'   
-alias ll='ls -laF'
+alias la='ls -AlF'   
+alias ll='ls -lF'
 alias l.='ls -ld .*'
 alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
 alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable

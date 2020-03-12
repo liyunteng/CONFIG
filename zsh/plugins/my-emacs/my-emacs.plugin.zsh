@@ -11,7 +11,11 @@
 
 
 if "$ZSH/tools/require_tool.sh" emacsclient 24 2>/dev/null ; then
-    export EMACS_PLUGIN_LAUNCHER="$ZSH/plugins/emacs/emacsclient.sh"
+    if [ -f `which emacsclient` ] ; then
+        export EMACS_PLUGIN_LAUNCHER="/usr/bin/emacsclient"
+    else
+        export EMACS_PLUGIN_LAUNCHER="$ZSH/plugins/emacs/emacsclient.sh"
+    fi
 
     # set EDITOR if not already defined.
     # export EDITOR="${EDITOR:-${EMACS_PLUGIN_LAUNCHER}}"
@@ -21,7 +25,7 @@ if "$ZSH/tools/require_tool.sh" emacsclient 24 2>/dev/null ; then
     alias et="$EMACS_PLUGIN_LAUNCHER -nw"
 
     # same than M-x eval but from outside Emacs.
-    alias eeval="$EMACS_PLUGIN_LAUNCHER --eval"
+    alias eeval="$EMACS_PLUGIN_LAUNCHER -n --eval"
     # create a new X frame
     alias ec='emacsclient --alternate-editor "" --create-frame'
 
