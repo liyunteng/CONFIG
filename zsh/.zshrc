@@ -216,6 +216,7 @@ fi
 alias ...='cd ../../'
 alias da='du -sch'
 
+alias tailf='tail -f'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
 
 alias ff='find . -type f -name'
@@ -231,7 +232,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
-alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1 -nr'
+alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1'
 alias se=simple-extract
 
 
