@@ -112,29 +112,236 @@ if [[ -f ~/.xprofile ]]; then
 . ~/.xprofile
 fi
 
-alias ls='ls --color=auto'
-alias l='ls -CF'   
-alias la='ls -AlF'   
-alias ll='ls -lF'
-alias l.='ls -ld .*'
-alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
-alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
 
-alias bashrc='$EDITOR ~/.bashrc' # Quick access to the ~/.zshrc file
 
-alias grep='grep --color'
-alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+# support colors in less
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
 
-alias t='tail -f'
+alias bashrc='vi ~/.bashrc'
 
-alias fd='find . -type d -name'
+# color on GNU ls(1)
+if ls --color=auto / > /dev/null 2>&1; then
+    ls_options+=( --color=auto )
+# color on FreeBSD and OSX ls(1)
+elif ls -G / > /dev/null 2>&1; then
+    ls_options+=( -G )
+fi
+
+# Natural sorting order on GNU ls(1)
+# OSX and IllumOS have a -v option that is not natural sorting
+if ls --version |& grep -q 'GNU' > /dev/null 2>&1 && ls -v / > /dev/null 2>&1; then
+    ls_options+=( -v )
+fi
+
+# color on GNU and FreeBSD grep(1)
+if grep --color=auto -q "a" <<< "a" > /dev/null 2>&1; then
+    grep_options+=( --color=auto )
+fi
+
+# do we have GNU ls with color-support?
+if [[ "$TERM" != dumb ]]; then
+    #a1# List files with colors (\kbd{ls \ldots})
+    alias ls="command ls ${ls_options:+${ls_options[*]}}"
+    #a1# List all files, with colors (\kbd{ls -la \ldots})
+    alias la="command ls -la ${ls_options:+${ls_options[*]}}"
+    #a1# List files with long colored list, without dotfiles (\kbd{ls -l \ldots})
+    alias ll="command ls -l ${ls_options:+${ls_options[*]}}"
+    #a1# List files with long colored list, human readable sizes (\kbd{ls -hAl \ldots})
+    alias lh="command ls -hAl ${ls_options:+${ls_options[*]}}"
+    alias grep="command grep ${grep_options:+${grep_options[*]}}"
+    alias egrep="command egrep ${grep_options:+${grep_options[*]}}"
+    #a1# List files with long colored list, append qualifier to filenames (\kbd{ls -l \ldots})\\&\quad(\kbd{/} for directories, \kbd{@} for symlinks ...)
+    alias l="command ls -l ${ls_options:+${ls_options[*]}}"
+else
+    alias la='command ls -la'
+    alias ll='command ls -l'
+    alias lh='command ls -hAl'
+    alias l='command ls -l'
+fi
+
+# listing stuff
+#a2# Execute \kbd{ls -lSrah}
+alias dir="ls -lSrah"
+#a2# Only show dot-directories
+alias l.d='ls -d .*/'
+#a2# Only show dot-files
+alias l.='ls -d .*'
+#a2# Only files with setgid/setuid/sticky flag
+alias lss='ls -l *(s,S,t)'
+#a2# Only show symlinks
+alias lsl='ls -l *(@)'
+#a2# Display only executables
+alias lsx='ls -l *(*)'
+#a2# Display world-{readable,writable,executable} files
+alias lsw='ls -ld *(R,W,X.^ND/)'
+#a2# Display the ten biggest files
+alias lsbig="ls -flh *(.OL[1,10])"
+#a2# Only show directories
+alias lsd='ls -d *(/)'
+#a2# Only show empty directories
+alias lse='ls -d *(/^F)'
+#a2# Display the ten newest files
+alias lsnew="ls -rtlh *(D.om[1,10])"
+#a2# Display the ten oldest files
+alias lsold="ls -rtlh *(D.Om[1,10])"
+#a2# Display the ten smallest files
+alias lssmall="ls -Srl *(.oL[1,10])"
+#a2# Display the ten newest directories and ten newest .directories
+alias lsnewdir="ls -rthdl *(/om[1,10]) .*(D/om[1,10])"
+#a2# Display the ten oldest directories and ten oldest .directories
+alias lsolddir="ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])"
+
+# use /var/log/syslog iff present, fallback to journalctl otherwise
+if [ -e /var/log/syslog ] ; then
+  #a1# Take a look at the syslog: \kbd{\$PAGER /var/log/syslog || journalctl}
+  alias llog="$PAGER /var/log/syslog"     # take a look at the syslog
+  #a1# Take a look at the syslog: \kbd{tail -f /var/log/syslog || journalctl}
+  alias tlog="tail -f /var/log/syslog"    # follow the syslog
+elif [[ -f /usr/bin/journalctl ]]; then
+  alias llog="journalctl"
+  alias tlog="journalctl -f"
+fi
+
+
+alias ...='cd ../../'
+alias da='du -sch'
+
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
+
 alias ff='find . -type f -name'
+alias fd='find . -type d -name'
 
 alias h='history'
 alias p='ps -f'
+alias sortn='sort -n'
 alias sortnr='sort -n -r'
 
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+
+alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
+alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1 -nr'
+
+
+#
+# useful functions
+
+#f5# Backup \kbd{file_or_folder {\rm to} file_or_folder\_timestamp}
+function bk () {
+    emulate -L zsh
+    local current_date=$(date -u "+%Y%m%dT%H%M%SZ")
+    local clean keep move verbose result all to_bk
+    setopt extended_glob
+    keep=1
+    while getopts ":hacmrv" opt; do
+        case $opt in
+            a) (( all++ ));;
+            c) unset move clean && (( ++keep ));;
+            m) unset keep clean && (( ++move ));;
+            r) unset move keep && (( ++clean ));;
+            v) verbose="-v";;
+            h) <<__EOF0__
+bk [-hcmv] FILE [FILE ...]
+bk -r [-av] [FILE [FILE ...]]
+Backup a file or folder in place and append the timestamp
+Remove backups of a file or folder, or all backups in the current directory
+
+Usage:
+-h    Display this help text
+-c    Keep the file/folder as is, create a copy backup using cp(1) (default)
+-m    Move the file/folder, using mv(1)
+-r    Remove backups of the specified file or directory, using rm(1). If none
+      is provided, remove all backups in the current directory.
+-a    Remove all (even hidden) backups.
+-v    Verbose
+
+The -c, -r and -m options are mutually exclusive. If specified at the same time,
+the last one is used.
+
+The return code is the sum of all cp/mv/rm return codes.
+__EOF0__
+return 0;;
+            \?) bk -h >&2; return 1;;
+        esac
+    done
+    shift "$((OPTIND-1))"
+    if (( keep > 0 )); then
+        if islinux || isfreebsd; then
+            for to_bk in "$@"; do
+                cp $verbose -a "${to_bk%/}" "${to_bk%/}_$current_date"
+                (( result += $? ))
+            done
+        else
+            for to_bk in "$@"; do
+                cp $verbose -pR "${to_bk%/}" "${to_bk%/}_$current_date"
+                (( result += $? ))
+            done
+        fi
+    elif (( move > 0 )); then
+        while (( $# > 0 )); do
+            mv $verbose "${1%/}" "${1%/}_$current_date"
+            (( result += $? ))
+            shift
+        done
+    elif (( clean > 0 )); then
+        if (( $# > 0 )); then
+            for to_bk in "$@"; do
+                rm $verbose -rf "${to_bk%/}"_.*T.*Z$
+                (( result += $? ))
+            done
+        else
+            if (( all > 0 )); then
+                rm $verbose -rf "${to_bk%/}"_.*T.*Z.*
+            else
+                rm $verbose -rf "${to_bk%/}"_.*T.*Z$
+            fi
+            (( result += $? ))
+        fi
+    fi
+    return $result
+}
+
+#f5# cd to directory and list files
+function cl () {
+    emulate -L zsh
+    cd $1 && ls -a
+}
+
+# smart cd function, allows switching to /etc when running 'cd /etc/fstab'
+function cd () {
+    if (( ${#argv} == 1 )) && [[ -f ${1} ]]; then
+        [[ ! -e ${1:h} ]] && return 1
+        print "Correcting ${1} to ${1:h}"
+        builtin cd ${1:h}
+    else
+        builtin cd "$@"
+    fi
+}
+
+#f5# Create Directory and \kbd{cd} to it
+function mkcd () {
+    if (( ARGC != 1 )); then
+        printf 'usage: mkcd <new-directory>\n'
+        return 1;
+    fi
+    if [[ ! -d "$1" ]]; then
+        command mkdir -p "$1"
+    else
+        printf '`%s'\'' already exists: cd-ing.\n' "$1"
+    fi
+    builtin cd "$1"
+}
+
+#f5# Create temporary directory and \kbd{cd} to it
+function cdt () {
+    builtin cd "$(mktemp -d)"
+    builtin pwd
+}
 

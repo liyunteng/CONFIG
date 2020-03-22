@@ -171,35 +171,35 @@ fi
 
 # listing stuff
 #a2# Execute \kbd{ls -lSrah}
-alias dir="command ls -lSrah"
+alias dir="ls -lSrah"
 #a2# Only show dot-directories
-alias l.d='command ls -d .*(/)'
+alias l.d='ls -d .*(/)'
 #a2# Only show dot-files
-alias l.='command ls -a .*(.)'
+alias l.='ls -a .*(.)'
 #a2# Only files with setgid/setuid/sticky flag
-alias lss='command ls -l *(s,S,t)'
+alias lss='ls -l *(s,S,t)'
 #a2# Only show symlinks
-alias lsl='command ls -l *(@)'
+alias lsl='ls -l *(@)'
 #a2# Display only executables
-alias lsx='command ls -l *(*)'
+alias lsx='ls -l *(*)'
 #a2# Display world-{readable,writable,executable} files
-alias lsw='command ls -ld *(R,W,X.^ND/)'
+alias lsw='ls -ld *(R,W,X.^ND/)'
 #a2# Display the ten biggest files
-alias lsbig="command ls -flh *(.OL[1,10])"
+alias lsbig="ls -flh *(.OL[1,10])"
 #a2# Only show directories
-alias lsd='command ls -d *(/)'
+alias lsd='ls -d *(/)'
 #a2# Only show empty directories
-alias lse='command ls -d *(/^F)'
+alias lse='ls -d *(/^F)'
 #a2# Display the ten newest files
-alias lsnew="command ls -rtlh *(D.om[1,10])"
+alias lsnew="ls -rtlh *(D.om[1,10])"
 #a2# Display the ten oldest files
-alias lsold="command ls -rtlh *(D.Om[1,10])"
+alias lsold="ls -rtlh *(D.Om[1,10])"
 #a2# Display the ten smallest files
-alias lssmall="command ls -Srl *(.oL[1,10])"
+alias lssmall="ls -Srl *(.oL[1,10])"
 #a2# Display the ten newest directories and ten newest .directories
-alias lsnewdir="command ls -rthdl *(/om[1,10]) .*(D/om[1,10])"
+alias lsnewdir="ls -rthdl *(/om[1,10]) .*(D/om[1,10])"
 #a2# Display the ten oldest directories and ten oldest .directories
-alias lsolddir="command ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])"
+alias lsolddir="ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])"
 
 # use /var/log/syslog iff present, fallback to journalctl otherwise
 if [ -e /var/log/syslog ] ; then
