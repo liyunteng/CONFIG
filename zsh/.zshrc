@@ -238,6 +238,50 @@ alias se=simple-extract
 
 # useful functions
 
+# this function checks if a command exists and return either true
+# or false. Tihs avoids using 'which' and whence, which will avoid
+# porblems with aliases for which on certain weird system.
+# Usage: check_comman [-c|-g] word
+#   -c  only check for external commands
+#   -g  does the usual tests and also checks for global aliases
+function check_command ()  {
+    emulate -L zsh
+    local -i comonly gatoo
+    comonly=0
+    gatoo=0
+
+    if [[ $1 == '-c' ]]; then
+        comonly=1
+        shift 1
+    elif [[ $1 == '-g' ]]; then
+        gatoo=1
+        shift
+    fi
+
+    if (( ${#argv} != 1 )); then
+        printf 'Usage: check_command [-c|-g] <command>\n' >&2
+        return 1
+    fi
+
+    if (( comonly > 0 )); then
+        (( ${+commands[$1]} )) && return 0
+        return 1
+    fi
+
+    if     (( ${+commands[$1]}    )) \
+        || (( ${+functions[$1]}   )) \
+        || (( ${+aliases[$1]}     )) \
+        || (( ${+reswords[(r)$1]} )) ; then
+        return 0
+    fi
+
+    if (( gatoo > 0 )) && (( ${+galiases[$1]} )) ; then
+        return 0
+    fi
+
+    return 1
+}
+
 #f5# Backup \kbd{file_or_folder {\rm to} file_or_folder\_timestamp}
 function bk () {
     emulate -L zsh
@@ -349,6 +393,39 @@ function cdt () {
     builtin cd "$(mktemp -d)"
     builtin pwd
 }
+
+#f5# List files which have been accessed within the last {\it n} days, {\it n} defaults to 1
+function accessed () {
+    emulate -L zsh
+    print -l -- *(a-${1:-1})
+}
+
+#f5# List files which have been changed within the last {\it n} days, {\it n} defaults to 1
+function changed () {
+    emulate -L zsh
+    print -l -- *(c-${1:-1})
+}
+
+#f5# List files which have been modified within the last {\it n} days, {\it n} defaults to 1
+function modified () {
+    emulate -L zsh
+    print -l -- *(m-${1:-1})
+}
+
+
+# grep for running process, like: 'any vim'
+function any () {
+    emulate -L zsh
+    unsetopt KSH_ARRAYS
+    if [[ -z "$1" ]] ; then
+        echo "any - grep for process(es) by keyword" >&2
+        echo "Usage: any <keyword>" >&2 ; return 1
+    else
+        ps xauwww | grep -i "${grep_options[@]}" "[${1[1]}]${1[2,-1]}"
+    fi
+}
+
+
 
 # Usage: simple-extract <file>
 # Using option -d deletes the original archive file.
