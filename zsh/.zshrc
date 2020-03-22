@@ -86,10 +86,11 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 #plugins=(z colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search zsh_reload)
 plugins=(z colorize docker my-emacs extract gitfast history-substring-search web-search zsh-navigation-tools zsh_reload)
 
+source $ZSH/oh-my-zsh.sh
+
 bindkey -M emacs '^[p' history-substring-search-up
 bindkey -M emacs '^[n' history-substring-search-down
 
-source $ZSH/oh-my-zsh.sh
 
 # support colors in less
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -208,7 +209,7 @@ if [ -e /var/log/syslog ] ; then
   #a1# Take a look at the syslog: \kbd{tail -f /var/log/syslog || journalctl}
   alias tlog="tail -f /var/log/syslog"    # follow the syslog
 elif (( ${+commands[journalctl]} )); then
-  alias llog="journalctl"
+  alias llog="journalctl -e"
   alias tlog="journalctl -f"
 fi
 
