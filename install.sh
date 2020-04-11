@@ -41,7 +41,6 @@ if which git > /dev/null; then
         cp -fr zsh/plugins ~/.oh-my-zsh/
         cp -fr zsh/themes ~/.oh-my-zsh/
     fi
-    zsh && source ~/.zshrc && src
 
     if [ ! -d ~/.emacs.d ]; then
         git clone https://github.com/liyunteng/emacs ~/.emacs.d
