@@ -233,21 +233,40 @@ alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1 -nr'
 #
 # useful functions
 
+MY_OSTYPE=$(uname -s)
+function islinux () {
+    [[ $MY_OSTYPE == "Linux" ]]
+}
+
+function isdarwin () {
+    [[ $GRML_OSTYPE == "Darwin" ]]
+}
+
+function isfreebsd () {
+    [[ $GRML_OSTYPE == "FreeBSD" ]]
+}
+
+function isopenbsd () {
+    [[ $GRML_OSTYPE == "OpenBSD" ]]
+}
+
+function issolaris () {
+    [[ $GRML_OSTYPE == "SunOS" ]]
+}
+
+#f1# are we running within an utf environment?
+function isutfenv () {
+    case "$LANG $CHARSET $LANGUAGE" in
+        *utf*) return 0 ;;
+        *UTF*) return 0 ;;
+        *)     return 1 ;;
+    esac
+}
+
+
 #f5# Backup \kbd{file_or_folder {\rm to} file_or_folder\_timestamp}
-function bk () {
-    emulate -L zsh
-    local current_date=$(date -u "+%Y%m%dT%H%M%SZ")
-    local clean keep move verbose result all to_bk
-    setopt extended_glob
-    keep=1
-    while getopts ":hacmrv" opt; do
-        case $opt in
-            a) (( all++ ));;
-            c) unset move clean && (( ++keep ));;
-            m) unset keep clean && (( ++move ));;
-            r) unset move keep && (( ++clean ));;
-            v) verbose="-v";;
-            h) <<__EOF0__
+function bk_usage () {
+    cat <<EOF0
 bk [-hcmv] FILE [FILE ...]
 bk -r [-av] [FILE [FILE ...]]
 Backup a file or folder in place and append the timestamp
@@ -265,10 +284,35 @@ Usage:
 The -c, -r and -m options are mutually exclusive. If specified at the same time,
 the last one is used.
 
-The return code is the sum of all cp/mv/rm return codes.
-__EOF0__
-return 0;;
-            \?) bk -h >&2; return 1;;
+The return code is the sum of all cp/mv/rm return codes."
+EOF0
+}
+function bk () {
+    local current_date=$(date -u "+%Y%m%dT%H%M%SZ")
+    local clean keep move verbose result all to_bk
+    local opt OPTIND
+    keep=1
+    verbose="-v"
+    while getopts ":hacmrv" opt; do
+        case $opt in
+            a) 
+                (( all++ ))
+                ;;
+            c) 
+                unset move clean && (( ++keep ))
+                ;;
+            m) 
+                unset keep clean && (( ++move ))
+                ;;
+            r) 
+                unset move keep && (( ++clean ))
+                ;;
+            v) 
+                verbose="-v"
+                ;;
+            h)                 
+                bk_usage && return 0;
+                ;;
         esac
     done
     shift "$((OPTIND-1))"
@@ -293,14 +337,14 @@ return 0;;
     elif (( clean > 0 )); then
         if (( $# > 0 )); then
             for to_bk in "$@"; do
-                rm $verbose -rf "${to_bk%/}"_.*T.*Z$
+                ls | egrep "${to_bk%/}_[0-9]{8}T([0-1][0-9]|2[0-3])([0-5][0-9]){2}Z" | xargs rm $verbose -rf
                 (( result += $? ))
             done
         else
             if (( all > 0 )); then
-                rm $verbose -rf "${to_bk%/}"_.*T.*Z.*
+                ls | egrep ".*_[0-9]{8}T([0-1][0-9]|2[0-3])([0-5][0-9]){2}Z" | xargs rm $verbose -rf
             else
-                rm $verbose -rf "${to_bk%/}"_.*T.*Z$
+                ls | egrep ".*_[0-9]{8}T([0-1][0-9]|2[0-3])([0-5][0-9]){2}Z" | xargs rm $verbose -rf
             fi
             (( result += $? ))
         fi
@@ -310,7 +354,6 @@ return 0;;
 
 #f5# cd to directory and list files
 function cl () {
-    emulate -L zsh
     cd $1 && ls -a
 }
 

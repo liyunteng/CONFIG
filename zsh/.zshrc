@@ -238,6 +238,36 @@ alias se=simple-extract
 
 
 # useful functions
+MY_OSTYPE=$(uname -s)
+function islinux () {
+    [[ $MY_OSTYPE == "Linux" ]]
+}
+
+function isdarwin () {
+    [[ $GRML_OSTYPE == "Darwin" ]]
+}
+
+function isfreebsd () {
+    [[ $GRML_OSTYPE == "FreeBSD" ]]
+}
+
+function isopenbsd () {
+    [[ $GRML_OSTYPE == "OpenBSD" ]]
+}
+
+function issolaris () {
+    [[ $GRML_OSTYPE == "SunOS" ]]
+}
+
+#f1# are we running within an utf environment?
+function isutfenv () {
+    case "$LANG $CHARSET $LANGUAGE" in
+        *utf*) return 0 ;;
+        *UTF*) return 0 ;;
+        *)     return 1 ;;
+    esac
+}
+
 
 # this function checks if a command exists and return either true
 # or false. Tihs avoids using 'which' and whence, which will avoid
@@ -290,6 +320,7 @@ function bk () {
     local clean keep move verbose result all to_bk
     setopt extended_glob
     keep=1
+    verbose="-v"
     while getopts ":hacmrv" opt; do
         case $opt in
             a) (( all++ ));;
