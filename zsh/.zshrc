@@ -84,7 +84,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(z colored-man-pages colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search)
 #plugins=(z colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search zsh_reload)
-plugins=(z colorize docker my-emacs extract gitfast history-substring-search web-search zsh-navigation-tools zsh_reload)
+plugins=(z colorize my-emacs gitfast history-substring-search web-search zsh-navigation-tools zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -234,7 +234,7 @@ alias mv='mv -i'
 
 alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
 alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1'
-alias se=simple-extract
+alias x=simple-extract
 
 
 # useful functions
@@ -537,7 +537,7 @@ function simple-extract () {
                 ;;
         esac
 
-        if ! check_com ${DECOMP_CMD[(w)1]}; then
+        if ! check_command ${DECOMP_CMD[(w)1]}; then
             echo "ERROR: ${DECOMP_CMD[(w)1]} not installed." >&2
             RC=$((RC+2))
             continue
@@ -563,11 +563,11 @@ function simple-extract () {
             [[ $? -eq 0 && -n "$DELETE_ORIGINAL" ]] && rm -f "$ARCHIVE"
 
         elif [[ "$ARCHIVE" == (#s)(https|http|ftp)://* ]] ; then
-            if check_com curl; then
+            if check_command curl; then
                 WGET_CMD="curl -L -s -o -"
-            elif check_com wget; then
+            elif check_command wget; then
                 WGET_CMD="wget -q -O -"
-            elif check_com fetch; then
+            elif check_command fetch; then
                 WGET_CMD="fetch -q -o -"
             else
                 print "ERROR: neither wget, curl nor fetch is installed" >&2
