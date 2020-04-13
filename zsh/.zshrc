@@ -117,19 +117,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#alias zshrc='${=EDITOR} ~/.zshrc'
-alias zshrc='vi ~/.zshrc'
-
-
 # color on GNU ls(1)
 if ls --color=auto / > /dev/null 2>&1; then
     ls_options+=( --color=auto )
@@ -149,92 +136,6 @@ if grep --color=auto -q "a" <<< "a" > /dev/null 2>&1; then
     grep_options+=( --color=auto )
 fi
 
-# do we have GNU ls with color-support?
-if [[ "$TERM" != dumb ]]; then
-    #a1# List files with colors (\kbd{ls \ldots})
-    alias ls="command ls ${ls_options:+${ls_options[*]}}"
-    #a1# List all files, with colors (\kbd{ls -la \ldots})
-    alias la="command ls -la ${ls_options:+${ls_options[*]}}"
-    #a1# List files with long colored list, without dotfiles (\kbd{ls -l \ldots})
-    alias ll="command ls -l ${ls_options:+${ls_options[*]}}"
-    #a1# List files with long colored list, human readable sizes (\kbd{ls -hAl \ldots})
-    alias lh="command ls -hAl ${ls_options:+${ls_options[*]}}"
-    alias grep="command grep ${grep_options:+${grep_options[*]}}"
-    alias egrep="command egrep ${grep_options:+${grep_options[*]}}"
-    #a1# List files with long colored list, append qualifier to filenames (\kbd{ls -l \ldots})\\&\quad(\kbd{/} for directories, \kbd{@} for symlinks ...)
-    alias l="command ls -l ${ls_options:+${ls_options[*]}}"
-else
-    alias la='command ls -la'
-    alias ll='command ls -l'
-    alias lh='command ls -hAl'
-    alias l='command ls -l'
-fi
-
-# listing stuff
-#a2# Execute \kbd{ls -lSrah}
-alias dir="ls -lSrah"
-#a2# Only show dot-directories
-alias l.d='ls -d .*(/)'
-#a2# Only show dot-files
-alias l.='ls -a .*(.)'
-#a2# Only files with setgid/setuid/sticky flag
-alias lss='ls -l *(s,S,t)'
-#a2# Only show symlinks
-alias lsl='ls -l *(@)'
-#a2# Display only executables
-alias lsx='ls -l *(*)'
-#a2# Display world-{readable,writable,executable} files
-alias lsw='ls -ld *(R,W,X.^ND/)'
-#a2# Display the ten biggest files
-alias lsbig="ls -flh *(.OL[1,10])"
-#a2# Only show directories
-alias lsd='ls -d *(/)'
-#a2# Only show empty directories
-alias lse='ls -d *(/^F)'
-#a2# Display the ten newest files
-alias lsnew="ls -rtlh *(D.om[1,10])"
-#a2# Display the ten oldest files
-alias lsold="ls -rtlh *(D.Om[1,10])"
-#a2# Display the ten smallest files
-alias lssmall="ls -Srl *(.oL[1,10])"
-#a2# Display the ten newest directories and ten newest .directories
-alias lsnewdir="ls -rthdl *(/om[1,10]) .*(D/om[1,10])"
-#a2# Display the ten oldest directories and ten oldest .directories
-alias lsolddir="ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])"
-
-# use /var/log/syslog iff present, fallback to journalctl otherwise
-if [ -e /var/log/syslog ] ; then
-  #a1# Take a look at the syslog: \kbd{\$PAGER /var/log/syslog || journalctl}
-  alias llog="$PAGER /var/log/syslog"     # take a look at the syslog
-  #a1# Take a look at the syslog: \kbd{tail -f /var/log/syslog || journalctl}
-  alias tlog="tail -f /var/log/syslog"    # follow the syslog
-elif (( ${+commands[journalctl]} )); then
-  alias llog="journalctl -e"
-  alias tlog="journalctl -f"
-fi
-
-
-alias ...='cd ../../'
-alias da='du -sch'
-
-alias tailf='tail -f'
-alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
-
-alias ff='find . -type f -name'
-alias fd='find . -type d -name'
-
-alias h='history'
-alias p='ps -f'
-alias sortn='sort -n'
-alias sortnr='sort -n -r'
-
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
-alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
-alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1'
-alias x=simple-extract
 
 
 # useful functions
@@ -598,6 +499,109 @@ function simple-extract () {
     done
     return $RC
 }
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+#alias zshrc='${=EDITOR} ~/.zshrc'
+alias zshrc='vi ~/.zshrc'
+
+# do we have GNU ls with color-support?
+if [[ "$TERM" != dumb ]]; then
+    #a1# List files with colors (\kbd{ls \ldots})
+    alias ls="command ls ${ls_options:+${ls_options[*]}}"
+    #a1# List all files, with colors (\kbd{ls -la \ldots})
+    alias la="command ls -a ${ls_options:+${ls_options[*]}}"
+    #a1# List files with long colored list, without dotfiles (\kbd{ls -l \ldots})
+    alias ll="command ls -l ${ls_options:+${ls_options[*]}}"
+    #a1# List files with long colored list, human readable sizes (\kbd{ls -hAl \ldots})
+    alias lh="command ls -hAl ${ls_options:+${ls_options[*]}}"
+    alias grep="command grep ${grep_options:+${grep_options[*]}}"
+    alias egrep="command egrep ${grep_options:+${grep_options[*]}}"
+    #a1# List files with long colored list, append qualifier to filenames (\kbd{ls -l \ldots})\\&\quad(\kbd{/} for directories, \kbd{@} for symlinks ...)
+    alias l="command ls -l ${ls_options:+${ls_options[*]}}"
+else
+    alias la='command ls -a'
+    alias ll='command ls -l'
+    alias lh='command ls -hAl'
+    alias l='command ls -l'
+fi
+
+# listing stuff
+#a2# Execute \kbd{ls -lSrah}
+alias dir="ls -lSrah"
+#a2# Only show dot-directories
+alias l.d='ls -d .*(/)'
+#a2# Only show dot-files
+alias l.f='ls -a .*(.)'
+#a2# show dot files or directories
+alias l.='ls -d .*'
+#a2# Only files with setgid/setuid/sticky flag
+alias lss='ls -l *(s,S,t)'
+#a2# Only show symlinks
+alias lsl='ls -l *(@)'
+#a2# Display only executables
+alias lsx='ls -l *(*)'
+#a2# Display world-{readable,writable,executable} files
+alias lsw='ls -ld *(R,W,X.^ND/)'
+#a2# Display the ten biggest files
+alias lsbig="ls -flh *(.OL[1,10])"
+#a2# Only show directories
+alias lsd='ls -d *(/)'
+#a2# Only show empty directories
+alias lse='ls -d *(/^F)'
+#a2# Display the ten newest files
+alias lsnew="ls -rtlh *(D.om[1,10])"
+#a2# Display the ten oldest files
+alias lsold="ls -rtlh *(D.Om[1,10])"
+#a2# Display the ten smallest files
+alias lssmall="ls -Srl *(.oL[1,10])"
+#a2# Display the ten newest directories and ten newest .directories
+alias lsnewdir="ls -rthdl *(/om[1,10]) .*(D/om[1,10])"
+#a2# Display the ten oldest directories and ten oldest .directories
+alias lsolddir="ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])"
+
+# use /var/log/syslog iff present, fallback to journalctl otherwise
+if [ -e /var/log/syslog ] ; then
+  #a1# Take a look at the syslog: \kbd{\$PAGER /var/log/syslog || journalctl}
+  alias llog="$PAGER /var/log/syslog"     # take a look at the syslog
+  #a1# Take a look at the syslog: \kbd{tail -f /var/log/syslog || journalctl}
+  alias tlog="tail -f /var/log/syslog"    # follow the syslog
+elif (( ${+commands[journalctl]} )); then
+  alias llog="journalctl -e"
+  alias tlog="journalctl -f"
+fi
+
+
+# Common Alias
+alias ...='cd ../../'
+alias da='du -sch'
+
+alias tailf='tail -f'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
+
+alias ff='find . -type f -name'
+alias fd='find . -type d -name'
+
+alias h='history'
+alias p='ps -f'
+alias sortn='sort -n'
+alias sortnr='sort -n -r'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
+alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1'
+alias x=simple-extract
+
+
 
 # Make zsh know about hosts already accessed by SSH
 #zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
