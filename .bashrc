@@ -6,6 +6,20 @@
 # anything or bad things will happen !
 
 
+#############################################################################################################
+#### Tramp emacs mandatory step
+#############################################################################################################
+case "$TERM" in
+    "dumb")
+        export PS1="> "
+        return
+        ;;
+    xterm*|rxvt*|eterm*|screen*)
+        tty -s && export PS1="$ "
+        ;;
+esac
+
+
 # Test for an interactive shell.  There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
@@ -35,21 +49,29 @@ shopt -s histappend
 # Disabled by default due to concerns related to system recovery when $HOME
 # is under duress, or lives somewhere flaky (like NFS).  Constantly syncing
 # the history will halt the shell prompt until it's finished.
-#PROMPT_COMMAND='history -a'
+# PROMPT_COMMAND='history -a'
 
-
-# Change the window title of X terminals
-case ${TERM} in
-	[aEkx]term*|rxvt*|gnome*|konsole*|interix)
-		PS1='\[\033]0;\u@\h:\w\007\]'
-		;;
-	screen*)
-		PS1='\[\033k\u@\h:\w\033\\\]'
-		;;
-	*)
-		unset PS1
-		;;
+############################################################################################################
+#### Titles
+#############################################################################################################
+case "$TERM" in
+    xterm*|rxvt*)
+        PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+        ;;
+    *)
+        ;;
 esac
+
+
+
+BGREEN='\[\033[1;32m\]'
+GREEN='\[\033[0;32m\]'
+BRED='\[\033[1;31m\]'
+RED='\[\033[0;31m\]'
+BBLUE='\[\033[1;34m\]'
+BLUE='\[\033[0;34m\]'
+NORMAL='\[\033[00m\]'
+TIME=$(date +%H:%M)
 
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
@@ -88,18 +110,20 @@ fi
 
 if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
-		PS1+='\[\033[01;31m\]\h\[\033[01;34m\] \w \$\[\033[00m\] '
+		PS1="${BRED}\h ${BBLUE}\W ${BRED}\# ${NORMAL}"
 	else
-		PS1+='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+		PS1="${BGREEN}\u@\h ${BBLUE}\w ${BGREEN}\$ ${NORMAL}"
 	fi
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
-		PS1+='\u@\h \W \$ '
+		PS1='\u@\h \W \# '
 	else
-		PS1+='\u@\h \w \$ '
+		PS1='\u@\h \w \$ '
 	fi
 fi
+
+
 
 for sh in /etc/bash/bashrc.d/* ; do
 	[[ -r ${sh} ]] && source "${sh}"
