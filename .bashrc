@@ -110,7 +110,7 @@ fi
 
 if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
-		PS1="${BRED}\h ${BBLUE}\W ${BRED}\# ${NORMAL}"
+		PS1="${BRED}\h ${BBLUE}\W ${BRED}# ${NORMAL}"
 	else
 		PS1="${BGREEN}\u@\h ${BBLUE}\w ${BGREEN}\$ ${NORMAL}"
 	fi
