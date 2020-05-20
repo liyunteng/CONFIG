@@ -113,6 +113,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR=${EDITOR:-"vim"}
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
