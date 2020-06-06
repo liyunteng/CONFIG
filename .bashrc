@@ -110,14 +110,14 @@ fi
 
 if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
-		PS1="${BRED}\h ${BBLUE}\W ${BRED}# ${NORMAL}"
+		PS1="${BRED}\h ${BBLUE}\w ${BRED}# ${NORMAL}"
 	else
 		PS1="${BGREEN}\u@\h ${BBLUE}\w ${BGREEN}\$ ${NORMAL}"
 	fi
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
-		PS1='\u@\h \W \# '
+		PS1='\u@\h \w \# '
 	else
 		PS1='\u@\h \w \$ '
 	fi
