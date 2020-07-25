@@ -29,7 +29,7 @@ if which git > /dev/null; then
     if [ ! -d ~/.vim_runtime ]; then
         git clone https://github.com/liyunteng/vim ~/.vim_runtime
         ~/.vim_runtime/install_awesome_parameterized.sh ~/.vim_runtime lyt
-        cd ~/.vim_runtime && python update_plugins.py && cd -
+        cd ~/.vim_runtime && python3 update_plugins.py && cd -
     fi
 
     if [ ! -d ~/.oh-my-zsh ]; then
