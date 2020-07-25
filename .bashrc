@@ -215,22 +215,22 @@ function bk () {
     verbose="-v"
     while getopts ":hacmrv" opt; do
         case $opt in
-            a) 
+            a)
                 (( all++ ))
                 ;;
-            c) 
+            c)
                 unset move clean && (( ++keep ))
                 ;;
-            m) 
+            m)
                 unset keep clean && (( ++move ))
                 ;;
-            r) 
+            r)
                 unset move keep && (( ++clean ))
                 ;;
-            v) 
+            v)
                 verbose="-v"
                 ;;
-            h)                 
+            h)
                 bk_usage && return 0;
                 ;;
         esac
@@ -333,6 +333,11 @@ if grep --color=auto -q "a" <<< "a" > /dev/null 2>&1; then
     grep_options+=( --color=auto )
 fi
 
+EXCLUDE_FOLDERS="{.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
+grep_options+=( --exclude-dir=${EXCLUDE_FOLDERS} )
+unset EXCLUDE_FOLDERS
+
+
 # do we have GNU ls with color-support?
 if [[ "$TERM" != dumb ]]; then
     #a1# List files with colors (\kbd{ls \ldots})
@@ -345,6 +350,8 @@ if [[ "$TERM" != dumb ]]; then
     alias lh="command ls -hAl ${ls_options:+${ls_options[*]}}"
     alias grep="command grep ${grep_options:+${grep_options[*]}}"
     alias egrep="command egrep ${grep_options:+${grep_options[*]}}"
+    alias fgrep="command fgrep ${grep_options:+${grep_options[*]}}
+"
     #a1# List files with long colored list, append qualifier to filenames (\kbd{ls -l \ldots})\\&\quad(\kbd{/} for directories, \kbd{@} for symlinks ...)
     alias l="command ls -l ${ls_options:+${ls_options[*]}}"
 else
@@ -422,8 +429,8 @@ alias mv='mv -i'
 alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
 alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1 -nr'
 
-
 umask 022
+
 GIT_HOME=~/git
 KERNEL_HOME=/usr/src/linux
 alias tog='cd ${GIT_HOME}'

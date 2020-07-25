@@ -137,6 +137,9 @@ if grep --color=auto -q "a" <<< "a" > /dev/null 2>&1; then
     grep_options+=( --color=auto )
 fi
 
+EXCLUDE_FOLDERS="{.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
+grep_options+=( --exclude-dir=${EXCLUDE_FOLDERS} )
+unset EXCLUDE_FOLDERS
 
 
 # useful functions
@@ -524,6 +527,7 @@ if [[ "$TERM" != dumb ]]; then
     alias lh="command ls -hAl ${ls_options:+${ls_options[*]}}"
     alias grep="command grep ${grep_options:+${grep_options[*]}}"
     alias egrep="command egrep ${grep_options:+${grep_options[*]}}"
+    alias fgrep="command fgrep ${grep_options:+${grep_options[*]}}"
     #a1# List files with long colored list, append qualifier to filenames (\kbd{ls -l \ldots})\\&\quad(\kbd{/} for directories, \kbd{@} for symlinks ...)
     alias l="command ls -l ${ls_options:+${ls_options[*]}}"
 else
@@ -584,7 +588,7 @@ alias ...='cd ../../'
 alias da='du -sch'
 
 alias tailf='tail -f'
-alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.bzr,CVS,.git,.gh,.svn,.idea,.tox}'
 
 alias ff='find . -type f -name'
 alias fd='find . -type d -name'
