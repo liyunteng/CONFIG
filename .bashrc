@@ -423,6 +423,7 @@ alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
 alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1 -nr'
 
 
+umask 022
 GIT_HOME=~/git
 KERNEL_HOME=/usr/src/linux
 alias tog='cd ${GIT_HOME}'
