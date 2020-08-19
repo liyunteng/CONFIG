@@ -81,11 +81,15 @@ if [[ $TERM != linux && $TERM != dumb ]]; then
         #   prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
         # fi
         local prompt
+
+        [[ $EUID -eq 0 ]] && prompt+="⚡"
+
+        prompt+="%n"
+
         if [[ -n "$SSH_CLIENT" ]]; then
-            prompt="%n%{%F{magenta}%}@%m"
-        else
-            prompt="%n"
+            prompt+="%{%F{magenta}%}@%m"
         fi
+
         if [[ "$EUID" == 0 ]]; then
             prompt_segment black red $prompt
         else
@@ -224,7 +228,6 @@ if [[ $TERM != linux && $TERM != dumb ]]; then
 
         # [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
         [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}➜ ${RETVAL}"
-        [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
         [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
         [[ -n "$symbols" ]] && prompt_segment_bold white red "$symbols"
