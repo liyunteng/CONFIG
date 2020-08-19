@@ -84,7 +84,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(z colored-man-pages colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search)
 #plugins=(z colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search zsh_reload)
-plugins=(z osx colorize my-emacs gitfast history-substring-search web-search zsh-navigation-tools zsh_reload)
+plugins=(z osx colorize my-emacs gitfast history-substring-search web-search zsh-navigation-tools virtualenv zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -292,6 +292,10 @@ vcs_info='$(prompt_git)'
 
 ret_code="%(?::${BOLDRED}%? )${NO_COLOR}"
 host="${SSH_TTY:+${MAGENTA}@${MAGENTA}%m} ${NO_COLOR}"
+virtualenv=""
+if [[ -n $VIRTUAL_ENV && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
+        virtualenv="${CYAN}(`basename $VIRTUAL_ENV`) ${NO_COLOR}"
+fi
 if [[ $EUID == 0 ]]; then
     user="${BOLDRED}%n%f%b${NO_COLOR}"
     currentdir="${BOLDRED}%~ ${NO_COLOR}"
@@ -301,5 +305,5 @@ else
     currentdir="${BOLDCYAN}%~ ${NO_COLOR}"
     prompt="${BOLDGREEN}$ ${NO_COLOR}"
 fi
-PROMPT="${ret_code}${user}${host}${currentdir}${vcs_info}${prompt}"
+PROMPT="${ret_code}${virtualenv}${user}${host}${currentdir}${vcs_info}${prompt}"
 fi
