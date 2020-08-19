@@ -211,7 +211,7 @@ if [[ $TERM != linux && $TERM != dumb ]]; then
     prompt_virtualenv() {
         local virtualenv_path="$VIRTUAL_ENV"
         if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-            prompt_segment blue black "(`basename $virtualenv_path`)"
+            prompt_segment cyan black "(`basename $virtualenv_path`)"
         fi
     }
 
@@ -227,7 +227,7 @@ if [[ $TERM != linux && $TERM != dumb ]]; then
         [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
         [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
-        [[ -n "$symbols" ]] && prompt_segment_bold black default "$symbols"
+        [[ -n "$symbols" ]] && prompt_segment_bold white red "$symbols"
         RETVAL=0
     }
 
