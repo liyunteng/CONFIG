@@ -281,7 +281,7 @@ else
     NO_COLOR="%{${reset_color}%}"
 
     ZSH_THEME_GIT_PROMPT_PREFIX="${BLUE}(${RED}"
-    ZSH_THEME_GIT_PROMPT_SUFFIX="${BLUE})${NO_COLOR} "
+    ZSH_THEME_GIT_PROMPT_SUFFIX="${BLUE})${NO_COLOR}"
     # ZSH_THEME_GIT_PROMPT_DIRTY=" ${YELLOW}✗"
     ZSH_THEME_GIT_PROMPT_DIRTY=" ${YELLOW}x"
     ZSH_THEME_GIT_PROMPT_CLEAN=""
@@ -293,12 +293,12 @@ else
     # ZSH_THEME_GIT_PROMPT_UNMERGED="${YELLOW}═ ${NO_COLOR}"
     # ZSH_THEME_GIT_PROMPT_UNTRACKED="${CYAN}✭ ${NO_COLOR}"
 
-    ZSH_THEME_GIT_PROMPT_ADDED="${GREEN}+ ${NO_COLOR}"
-    ZSH_THEME_GIT_PROMPT_MODIFIED="${BLUE}! ${NO_COLOR}"
-    ZSH_THEME_GIT_PROMPT_DELETED="${RED}- ${NO_COLOR}"
-    ZSH_THEME_GIT_PROMPT_RENAMED="${MAGENTA}-> ${NO_COLOR}"
-    ZSH_THEME_GIT_PROMPT_UNMERGED="${YELLOW}= ${NO_COLOR}"
-    ZSH_THEME_GIT_PROMPT_UNTRACKED="${CYAN}* ${NO_COLOR}"
+    ZSH_THEME_GIT_PROMPT_ADDED=" ${GREEN}+${NO_COLOR}"
+    ZSH_THEME_GIT_PROMPT_MODIFIED=" ${BLUE}!${NO_COLOR}"
+    ZSH_THEME_GIT_PROMPT_DELETED=" ${RED}-${NO_COLOR}"
+    ZSH_THEME_GIT_PROMPT_RENAMED=" ${MAGENTA}->${NO_COLOR}"
+    ZSH_THEME_GIT_PROMPT_UNMERGED=" ${YELLOW}=${NO_COLOR}"
+    ZSH_THEME_GIT_PROMPT_UNTRACKED=" ${CYAN}*${NO_COLOR}"
     prompt_git() {
         (($+commands[git])) || return
         if [[ "$(git config --get oh-my-zsh.hide-status 2>/dev/null)" = 1 ]]; then
@@ -328,5 +328,5 @@ else
         currentdir="${BOLDCYAN}%~ ${NO_COLOR}"
         prompt="${BOLDGREEN}$ ${NO_COLOR}"
     fi
-    PROMPT="${ret_code}${virtualenv}${user}${host}${currentdir}${vcs_info}${prompt}"
+    PROMPT="${ret_code}${virtualenv}${user}${host}${currentdir}${vcs_info} ${prompt}"
 fi

@@ -601,6 +601,7 @@ alias sortnr='sort -n -r'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias rsync='rsync -av'
 
 alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
 alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1'
