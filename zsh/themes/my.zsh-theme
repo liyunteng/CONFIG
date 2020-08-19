@@ -291,7 +291,7 @@ vcs_info='$(prompt_git)'
 
 
 ret_code="%(?::${BOLDRED}%? )${NO_COLOR}"
-host="${SSH_TTY:+${MAGENTA}@${MAGENTA}%m} ${NO_COLOR}"
+host="${SSH_CLIENT:+${MAGENTA}@%m} ${NO_COLOR}"
 virtualenv=""
 if [[ -n $VIRTUAL_ENV && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
         virtualenv="${CYAN}(`basename $VIRTUAL_ENV`) ${NO_COLOR}"
