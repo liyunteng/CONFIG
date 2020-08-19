@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ $TERM != linux ]]; then
+if [[ $TERM != linux && $TERM != dumb ]]; then
     # A few utility functions to make it easy and re-usable to draw segmented prompts
     CURRENT_BG='NONE'
 
@@ -204,11 +204,13 @@ prompt_virtualenv() {
 prompt_status() {
     local -a symbols
 
-    [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
+    # [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
+    [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}➜ ${RETVAL}"
     [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
     [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
     [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+    RETVAL=0
 }
 
 #AWS Profile:
