@@ -5,7 +5,8 @@
 # Last-Updated: <2019/11/16 03:19:02 liyunteng>
 set -e
 INSTALL_GIT_REPOS=1
-if [[ $# > 1 && $1 == "-n" ]]; then
+
+if [[ $# -ge 1 && $1 == "-n" ]]; then
     INSTALL_GIT_REPOS=0
 fi
 
