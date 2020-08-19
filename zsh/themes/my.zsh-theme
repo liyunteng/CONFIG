@@ -64,7 +64,7 @@ prompt_context() {
     # fi
     local prompt
     if [[ -n "$SSH_CLIENT" ]]; then
-        prompt="%n%{%F{yellow}%}@%m"
+        prompt="%n%{%F{magenta}%}@%m"
     else
         prompt="%n"
     fi
