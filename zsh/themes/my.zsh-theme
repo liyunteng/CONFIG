@@ -103,12 +103,13 @@ if [[ $TERM != linux && $TERM != dumb ]]; then
         if [[ "$(git config --get oh-my-zsh.hide-status 2>/dev/null)" = 1 ]]; then
             return
         fi
-        local PL_BRANCH_CHAR
+        local PL_BRANCH_CHAR PL_IGNORE_CHAR
         () {
             local LC_ALL="" LC_CTYPE="en_US.UTF-8"
             PL_BRANCH_CHAR=$'\ue0a0'         # 
+            PL_IGNORE_CHAR=$'\u2b07'
         }
-        local ref dirty mode repo_path
+        local ref dirty mode repo_path 
 
         if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]]; then
             repo_path=$(git rev-parse --git-dir 2>/dev/null)
@@ -126,6 +127,11 @@ if [[ $TERM != linux && $TERM != dumb ]]; then
                 mode=" >M<"
             elif [[ -e "${repo_path}/rebase" || -e "${repo_path}/rebase-apply" || -e "${repo_path}/rebase-merge" || -e "${repo_path}/../.dotest" ]]; then
                 mode=" >R>"
+            fi
+            
+            if [[ "$(git config --get oh-my-zsh.hide-dirty 2>/dev/null)" = 1 ]]; then
+                echo -n "${ref/refs\/heads\//$PL_BRANCH_CHAR } ${PL_IGNORE_CHAR}${mode}"
+                return
             fi
 
             setopt promptsubst
@@ -301,11 +307,12 @@ else
     ZSH_THEME_GIT_PROMPT_UNTRACKED=" ${CYAN}*${NO_COLOR}"
     prompt_git() {
         (($+commands[git])) || return
+        local PL_IGNORE_CHAR=" ${YELLOW}&${NO_COLOR}"
         if [[ "$(git config --get oh-my-zsh.hide-status 2>/dev/null)" = 1 ]]; then
             return
         fi
         if [[ "$(git config --get oh-my-zsh.hide-dirty 2>/dev/null)" = 1 ]]; then
-            echo -n $(git_prompt_info)
+            echo -n $(git_prompt_info)${PL_IGNORE_CHAR}
         else
             echo -n $(git_prompt_info)$(git_prompt_status)
         fi
