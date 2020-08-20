@@ -15,7 +15,12 @@ cp -fr .bashrc ~/
 cp -fr .clang-format ~/
 cp -fr .gitconfig ~/
 cp -fr .git-credentials ~/
+cp -fr .gitignore ~/
 cp -fr .tmux.conf ~/
+cp -fr .curlrc ~/
+cp -fr .editorconfig ~/
+cp -fr .wgetrc ~/
+[[ `uname` == "Darwin" ]] && cp -fr .macos ~/
 cp -fr zsh/.zshrc ~/
 
 if [[ $INSTALL_GIT_REPOS == 0 ]]; then
