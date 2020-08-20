@@ -91,15 +91,22 @@
 	# Remove the old tag with this name and tag the latest commit with it.
 	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
 
+
+    # http://www.jukie.net/bart/blog/pimping-out-git-log
+    lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+    #lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	last = log -1
+
+    # Serve local repo. http://coderwall.com/p/eybtga
+    # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
+    serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+
+
 	dc = diff --cached
 	co = checkout
 	ci = commit
 	br = branch
 	unstage = reset HEAD
-
-	last = log -1
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 
 [credential]
 
@@ -165,9 +172,9 @@
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
 
-[url "git://github.com/"]
+[url "https://github.com/"]
 
-	insteadOf = "github:"
+	insteadOf = "github://"
 
 [url "git@gist.github.com:"]
 
@@ -175,8 +182,8 @@
 	pushInsteadOf = "gist:"
 	pushInsteadOf = "git://gist.github.com/"
 
-[url "git://gist.github.com/"]
+[url "https://gist.github.com/"]
 
-	insteadOf = "gist:"
+	insteadOf = "gist://"
 
 
