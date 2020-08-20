@@ -107,6 +107,7 @@
 	dc = diff --cached
 	co = checkout
 	ci = commit
+    adda = add --all
 	br = branch
 	unstage = reset HEAD
 
