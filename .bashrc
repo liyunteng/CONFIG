@@ -435,3 +435,18 @@ GIT_HOME=~/git
 KERNEL_HOME=/usr/src/linux
 alias tog='cd ${GIT_HOME}'
 alias tok='cd ${KERNEL_HOME}'
+
+MY_HOME=/data1/liyunteng
+if [[ -d ${MY_HOME} ]]; then
+    alias toh='cd ${MY_HOME}'
+fi
+
+G1_SYS=${MY_HOME}/g1_sys
+if [[ -d ${G1_SYS} ]]; then
+    alias tor='cd ${G1_SYS}'
+    alias tov='cd ${G1_SYS}/reference/battery_ipcam/modules'
+    alias tob='cd ${G1_SYS}/reference/out/hi3518ev300_battery_ipcam_GC2053/burn'
+    alias tol='cd ${G1_SYS}/osdrv/platform/liteos/liteos'
+fi
+
+[[ -d ${MY_HOME}/arm-himix100-linux ]] && export PATH=${MY_HOME}/arm-himix100-linux/bin:$PATH
