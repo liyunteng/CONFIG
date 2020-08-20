@@ -64,7 +64,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -84,12 +84,14 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(z colored-man-pages colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search)
 #plugins=(z colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search zsh_reload)
-plugins=(z osx colorize my-emacs gitfast history-substring-search web-search zsh-navigation-tools virtualenv zsh_reload)
+plugins=(z osx colorize my-emacs web-search zsh-navigation-tools rsync virtualenv zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
-bindkey -M emacs '^[p' history-substring-search-up
-bindkey -M emacs '^[n' history-substring-search-down
+[[ -d /usr/local/share/zsh-syntax-highlighting ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# bindkey -M emacs '^[p' history-substring-search-up
+# bindkey -M emacs '^[n' history-substring-search-down
 
 
 # support colors in less
@@ -613,9 +615,5 @@ alias tok='cd ${KERNEL_HOME}'
 
 umask 022
 
-# Make zsh know about hosts already accessed by SSH
-#zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
-
-#autoload -U compinit
-#compinit
-#zstyle ':completion::complete:*' use-cache 1
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
