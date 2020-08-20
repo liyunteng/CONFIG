@@ -48,6 +48,7 @@
 	# View the current working tree status using the short format.
 	s = status -s
 	st = status
+    sti = status --ignored
 
 	# Show the diff between the latest commit and the current state.
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -65,7 +66,8 @@
 	aliases = config --get-regexp alias
 
 	# Amend the currently staged files to the latest commit.
-	amend = commit --amend --reuse-message=HEAD
+    amend = commit --amend
+	ca = commit --amend --reuse-message=HEAD
 
 	# Find branches containing commit
 	fb = "!f() { git branch -a --contains $1; }; f"

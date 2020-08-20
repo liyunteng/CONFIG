@@ -7,12 +7,16 @@ set -e
 INSTALL_GIT_REPOS=${INSTALL_GIT_REPOS:-yes}
 
 install_configs() {
-    local my_configs=(".bash_profile" ".bashrc" ".alias"
-        ".gitconfig" ".git-credentials" ".tmux.conf" ".clang-format"
-        ".curlrc" ".wgetrc" ".editorconfig" "zsh/.zshrc")
+    local my_configs=(
+    ".bash_profile" ".bashrc" ".alias"
+    ".gitconfig" ".git-credentials"  ".gitignore"
+    ".tmux.conf" ".clang-format"
+    ".curlrc" ".wgetrc" ".editorconfig"
+    "zsh/.zshrc" ".ssh")
+
     local target="${HOME}"
     for x in ${my_configs[@]}; do
-        cp -fr ${x} ${target}
+        cp -afr ${x} ${target}
     done
 }
 
@@ -78,8 +82,8 @@ install_zsh() {
         zsh/install-zsh.sh
     fi
 
-    cp -fr zsh/plugins ${target}
-    cp -fr zsh/themes ${target}
+    cp -afr zsh/plugins ${target}
+    cp -afr zsh/themes ${target}
 }
 
 install_emacs() {
