@@ -86,7 +86,6 @@ COMPLETION_WAITING_DOTS="true"
 #plugins=(z colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search zsh_reload)
 plugins=(z osx colorize my-emacs web-search zsh-navigation-tools rsync virtualenv zsh_reload)
 
-source $ZSH/oh-my-zsh.sh
 
 # bindkey -M emacs '^[p' history-substring-search-up
 # bindkey -M emacs '^[n' history-substring-search-down
@@ -485,7 +484,8 @@ umask 022
 [[ -d /usr/local/share/zsh-syntax-highlighting ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ -d /usr/share/zsh-syntax-highlighting ]] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ -d /usr/share/zsh/plugins/zsh-syntax-highlighting ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+source $ZSH/oh-my-zsh.sh
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
