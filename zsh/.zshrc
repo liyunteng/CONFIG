@@ -89,6 +89,8 @@ plugins=(z osx colorize my-emacs web-search zsh-navigation-tools rsync virtualen
 source $ZSH/oh-my-zsh.sh
 
 [[ -d /usr/local/share/zsh-syntax-highlighting ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -d /usr/share/zsh-syntax-highlighting ]] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -d /usr/share/zsh/plugins/zsh-syntax-highlighting ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # bindkey -M emacs '^[p' history-substring-search-up
 # bindkey -M emacs '^[n' history-substring-search-down
