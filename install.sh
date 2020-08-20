@@ -7,8 +7,9 @@ set -e
 INSTALL_GIT_REPOS=${INSTALL_GIT_REPOS:-yes}
 
 install_configs() {
-    local my_configs=(".bash_profile" ".bashrc" ".clang-format" ".gitconfig" ".git-credentials" ".tmux.conf"
-    ".curlrc" ".wgetrc" ".editorconfig" "zsh/.zshrc")
+    local my_configs=(".bash_profile" ".bashrc" ".alias"
+        ".gitconfig" ".git-credentials" ".tmux.conf" ".clang-format"
+        ".curlrc" ".wgetrc" ".editorconfig" "zsh/.zshrc")
     local target="${HOME}"
     for x in ${my_configs[@]}; do
         cp -fr ${x} ${target}
