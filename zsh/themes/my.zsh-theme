@@ -196,7 +196,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-    prompt_segment_bold blue $CURRENT_FG '%~'
+    prompt_segment_bold blue $CURRENT_FG '%70<..<%~'
 }
 
 # Virtualenv: current working virtualenv
