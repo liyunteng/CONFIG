@@ -16,7 +16,7 @@ install_configs() {
 
     local target="${HOME}"
     for x in ${my_configs[@]}; do
-        cp -afr ${x} ${target}
+        cp -af ${x} ${target}
     done
 }
 
@@ -82,8 +82,8 @@ install_zsh() {
         zsh/install-zsh.sh
     fi
 
-    cp -afr zsh/plugins ${target}
-    cp -afr zsh/themes ${target}
+    cp -af zsh/plugins ${target}
+    cp -af zsh/themes ${target}
 }
 
 install_emacs() {
