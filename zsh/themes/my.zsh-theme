@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ $TERM != linux && $TERM != dumb && $TERM != screen ]]; then
+if [[ 1 = 2 && $TERM != linux && $TERM != dumb && $TERM != screen ]]; then
     # A few utility functions to make it easy and re-usable to draw segmented prompts
     CURRENT_BG='NONE'
 
@@ -44,18 +44,8 @@ if [[ $TERM != linux && $TERM != dumb && $TERM != screen ]]; then
     }
 
     prompt_segment_bold() {
-        local bg fg
-
-        [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
-        [[ -n $2 ]] && fg="%B%F{$2}" || fg="%f"
-        if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
-            echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%} "
-        else
-            echo -n "%{$bg%}%{$fg%} "
-        fi
-        CURRENT_BG=$1
-        [[ -n $3 ]] && echo -n $3
-        echo -n "%b"
+        prompt_segment $1 $2
+        [[ -n $3 ]] && echo -n %B$3%b
     }
 
 
@@ -68,7 +58,7 @@ if [[ $TERM != linux && $TERM != dumb && $TERM != screen ]]; then
             echo -n "%{%k%}"
         fi
         echo -n "%{%f%}"
-        CURRENT_BG=''
+        CURRENT_BG='NONE'
     }
 
 
@@ -272,6 +262,7 @@ if [[ $TERM != linux && $TERM != dumb && $TERM != screen ]]; then
 
 else
 
+    USE_UNICODE=0
 
     BLUE="%{${fg[blue]}%}"
     BOLDBLUE="%{${fg_bold[blud]}%}"
@@ -288,52 +279,66 @@ else
 
     ZSH_THEME_GIT_PROMPT_PREFIX="${BLUE}(${RED}"
     ZSH_THEME_GIT_PROMPT_SUFFIX="${BLUE})${NO_COLOR}"
-    # ZSH_THEME_GIT_PROMPT_DIRTY=" ${YELLOW}✗"
-    ZSH_THEME_GIT_PROMPT_DIRTY=" ${YELLOW}x"
     ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-    # ZSH_THEME_GIT_PROMPT_ADDED="${GREEN}✚ ${NO_COLOR}"
-    # ZSH_THEME_GIT_PROMPT_MODIFIED="${BLUE}✹ ${NO_COLOR}"
-    # ZSH_THEME_GIT_PROMPT_DELETED="${RED}✖ ${NO_COLOR}"
-    # ZSH_THEME_GIT_PROMPT_RENAMED="${MAGENTA}➜ ${NO_COLOR}"
-    # ZSH_THEME_GIT_PROMPT_UNMERGED="${YELLOW}═ ${NO_COLOR}"
-    # ZSH_THEME_GIT_PROMPT_UNTRACKED="${CYAN}✭ ${NO_COLOR}"
+# More symbols to choose from:
+# ☀ ✹ ☄ ♆ ♀ ♁ ♐ ♇ ♈ ♉ ♚ ♛ ♜ ♝ ♞ ♟ ♠ ♣ ⚢ ⚲ ⚳ ⚴ ⚥ ⚤ ⚦ ⚒ ⚑ ⚐ ♺ ♻ ♼ ☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷
+# ✡ ✔ ✖ ✚ ✱ ✤ ✦ ❤ ➜ ➟ ➼ ✂ ✎ ✐ ⨀ ⨁ ⨂ ⨍ ⨎ ⨏ ⨷ ⩚ ⩛ ⩡ ⩱ ⩲ ⩵  ⩶ ⨠ 
+# ⬅ ⬆ ⬇ ⬈ ⬉ ⬊ ⬋ ⬒ ⬓ ⬔ ⬕ ⬖ ⬗ ⬘ ⬙ ⬟  ⬤ 〒 ǀ ǁ ǂ ĭ Ť Ŧ
 
-    ZSH_THEME_GIT_PROMPT_ADDED=" ${GREEN}+${NO_COLOR}"
-    ZSH_THEME_GIT_PROMPT_MODIFIED=" ${BLUE}!${NO_COLOR}"
-    ZSH_THEME_GIT_PROMPT_DELETED=" ${RED}-${NO_COLOR}"
-    ZSH_THEME_GIT_PROMPT_RENAMED=" ${MAGENTA}->${NO_COLOR}"
-    ZSH_THEME_GIT_PROMPT_UNMERGED=" ${YELLOW}=${NO_COLOR}"
-    ZSH_THEME_GIT_PROMPT_UNTRACKED=" ${CYAN}*${NO_COLOR}"
+    if [[ ${USE_UNICODE} == 1 ]]; then
+        ZSH_THEME_GIT_PROMPT_DIRTY=" ${BOLDRED}✗${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_ADDED=" ${GREEN}✚${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_MODIFIED=" ${BLUE}✹${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_DELETED=" ${RED}✖${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_RENAMED=" ${MAGENTA}➜${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_UNMERGED=" ${YELLOW}═${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_UNTRACKED=" ${CYAN}✭${NO_COLOR}"
+
+        VCS_IGNORE_CHAR=" ${YELLOW}⬇${NO_COLOR}"
+        RETTURN_SUCCESS="" 
+        RETTURN_FAILED="${BOLDRED}➜ %? ${NO_COLOR}" 
+    else
+        ZSH_THEME_GIT_PROMPT_DIRTY=" ${BOLDRED}x${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_ADDED=" ${GREEN}+${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_MODIFIED=" ${BLUE}*${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_DELETED=" ${RED}-${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_RENAMED=" ${MAGENTA}->${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_UNMERGED=" ${YELLOW}=${NO_COLOR}"
+        ZSH_THEME_GIT_PROMPT_UNTRACKED=" ${CYAN}^${NO_COLOR}"
+
+        VCS_IGNORE_CHAR=" ${YELLOW}&${NO_COLOR}"
+        RETTURN_SUCCESS=""
+        RETTURN_FAILED="${BOLDRED}%? ${NO_COLOR}"
+    fi
     prompt_git() {
         (($+commands[git])) || return
-        local PL_IGNORE_CHAR=" ${YELLOW}&${NO_COLOR}"
         if [[ "$(git config --get oh-my-zsh.hide-status 2>/dev/null)" = 1 ]]; then
             return
         fi
         if [[ "$(git config --get oh-my-zsh.hide-dirty 2>/dev/null)" = 1 ]]; then
-            echo -n $(git_prompt_info)${PL_IGNORE_CHAR}
+            echo -n $(git_prompt_info)${VCS_IGNORE_CHAR}
         else
             echo -n $(git_prompt_info)$(git_prompt_status)
         fi
     }
-    vcs_info='$(prompt_git)'
 
-
-    ret_code="%(?::${BOLDRED}%? )${NO_COLOR}"
+    vcs_info='$(prompt_git) '
+    # ret_code="%(?::${BOLDRED}%? )${NO_COLOR}"
+    ret_code="%(?:${RETTURN_SUCCESS}:${RETTURN_FAILED})"
     host="${SSH_CLIENT:+${MAGENTA}@%m} ${NO_COLOR}"
     virtualenv=""
     if [[ -n $VIRTUAL_ENV && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
         virtualenv="${CYAN}(`basename $VIRTUAL_ENV`) ${NO_COLOR}"
     fi
     if [[ $EUID == 0 ]]; then
-        user="${BOLDRED}%n%f%b${NO_COLOR}"
+        user="${RED}%n%f%b${NO_COLOR}"
         currentdir="${BOLDRED}%~ ${NO_COLOR}"
         prompt="${BOLDRED}# ${NO_COLOR}"
     else
-        user="${BOLDGREEN}%n%f%b${NO_COLOR}"
+        user="${GREEN}%n%f%b${NO_COLOR}"
         currentdir="${BOLDCYAN}%~ ${NO_COLOR}"
         prompt="${BOLDGREEN}$ ${NO_COLOR}"
     fi
-    PROMPT="${ret_code}${virtualenv}${user}${host}${currentdir}${vcs_info} ${prompt}"
+    PROMPT="${ret_code}${virtualenv}${user}${host}${currentdir}${vcs_info}${prompt}"
 fi
