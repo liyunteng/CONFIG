@@ -10,7 +10,7 @@ install_configs() {
     local my_configs=(
     ".bash_profile" ".bashrc" ".alias"
     ".gitconfig" ".git-credentials"  ".gitignore"
-    ".tmux.conf" ".clang-format"
+    ".tmux.conf" ".tmux.conf.local" ".clang-format"
     ".curlrc" ".wgetrc" ".editorconfig"
     "zsh/.zshrc" ".ssh")
 
