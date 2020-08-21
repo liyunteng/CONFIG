@@ -43,7 +43,12 @@
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	l = !"git --no-pager log --pretty=oneline -n 20 --graph --abbrev-commit"
+    # http://www.jukie.net/bart/blog/pimping-out-git-log
+    lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+    #lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	last = !"git --no-pager log -n 5"
+
 
 	# View the current working tree status using the short format.
 	s = status -s
@@ -55,19 +60,23 @@
 
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state.
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+    df = diff
+	dc = diff --cached
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
+
 	; branches = branch --all
 	brs = branch --all
-	remotes = remote --verbose
+	br = branch
 
 	# List aliases.
-	aliases = config --get-regexp alias
+	aliases = config --get-regexp alias 
 
 	# Amend the currently staged files to the latest commit.
     amend = commit --amend
 	ca = commit --amend --reuse-message=HEAD
+	ci = commit
 
 	# Find branches containing commit
 	fb = "!f() { git branch -a --contains $1; }; f"
@@ -93,22 +102,13 @@
 	# Remove the old tag with this name and tag the latest commit with it.
 	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
 
-
-    # http://www.jukie.net/bart/blog/pimping-out-git-log
-    lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
-    #lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	last = log -1
-
     # Serve local repo. http://coderwall.com/p/eybtga
     # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
     serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 
-
-	dc = diff --cached
 	co = checkout
-	ci = commit
+	remotes = remote --verbose
     adda = add --all
-	br = branch
 	unstage = reset HEAD
 
 [credential]
