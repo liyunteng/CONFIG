@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ $TERM != linux && $TERM != dumb ]]; then
+if [[ $TERM != linux && $TERM != dumb && $TERM != screen ]]; then
     # A few utility functions to make it easy and re-usable to draw segmented prompts
     CURRENT_BG='NONE'
 

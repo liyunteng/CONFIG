@@ -332,3 +332,6 @@ bind / command-prompt -k -p key "list-keys -1 \"%%%\""
 
 # mouse
 unbind m
+
+# color
+if-shell -b '[[ ${TERM} == "linux" || ${TERM} == "dumb" || ${TERM} == "screen" ]]' 'set -g default-terminal "screen"' 'set -g default-terminal "screen-256color"'
