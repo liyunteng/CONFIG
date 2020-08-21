@@ -43,7 +43,8 @@ prompt_segment() {
 
 prompt_segment_bold() {
     prompt_segment $1 $2
-    [[ -n $3 ]] && echo -n %B$3%b
+    # fix in ubuntu %b cause space
+    [[ -n $3 ]] && echo -n "%B$3%b%K{$CURRENT_BG}"
 }
 
 # End the prompt, closing any open segments
@@ -213,7 +214,8 @@ prompt_virtualenv() {
 prompt_status() {
     local -a symbols
 
-    [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}➜ ${RETVAL}"
+    # [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}➜ ${RETVAL}"
+    [[ $RETVAL -ne 0 ]] && symbols+="➜ ${RETVAL}"
     [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
     [[ -n "$symbols" ]] && prompt_segment_bold white red "$symbols"
