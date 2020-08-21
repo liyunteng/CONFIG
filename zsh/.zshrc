@@ -86,7 +86,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(z colored-man-pages colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search)
 #plugins=(z colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search zsh_reload)
-plugins=(z osx colorize my-emacs web-search zsh-navigation-tools rsync virtualenv zsh_reload)
+plugins=(z osx colorize my-emacs web-search zsh-navigation-tools rsync virtualenv zsh_reload zsh-syntax-highlighting)
 
 
 # bindkey -M emacs '^[p' history-substring-search-up
@@ -482,9 +482,9 @@ function simple-extract () {
 umask 022
 
 
-[[ -d /usr/local/share/zsh-syntax-highlighting ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[[ -d /usr/share/zsh-syntax-highlighting ]] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[[ -d /usr/share/zsh/plugins/zsh-syntax-highlighting ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# [[ -d /usr/local/share/zsh-syntax-highlighting ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# [[ -d /usr/share/zsh-syntax-highlighting ]] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# [[ -d /usr/share/zsh/plugins/zsh-syntax-highlighting ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $ZSH/oh-my-zsh.sh
 

@@ -4,7 +4,7 @@
 # Copyright (C) 2019 liyunteng
 # Last-Updated: <2019/11/16 03:19:02 liyunteng>
 set -e
-INSTALL_GIT_REPOS=${INSTALL_GIT_REPOS:-yes}
+INSTALL_GIT_REPOS=${INSTALL_GIT_REPOS:-no}
 
 install_configs() {
     local my_configs=(
@@ -126,9 +126,9 @@ main() {
 
 
     install_configs
+    install_zsh
     if [[ ${INSTALL_GIT_REPOS} == "yes" ]]; then
         install_repos
-        install_zsh
         install_vim
         install_emacs
     fi
