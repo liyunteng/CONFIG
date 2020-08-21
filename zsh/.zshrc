@@ -1,12 +1,10 @@
-if [ "$TERM" = "dumb" ]
-then
+if [[ "$TERM" = "dumb" ]]; then
     unsetopt zle
     # PS1='$ '
     # return
 fi
 
-if [ "$TERM" = "eterm-color" ]
-then
+if [[ "$TERM" = "eterm-color" ]]; then
     chpwd() { print -P "\033AnSiTc %d" }
     print -P "\033AnSiTu %n"
     print -P "\033AnSiTc %d"
@@ -22,7 +20,11 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="my"
+if [[ "$TERM" = linux || "$TERM" = dumb || "$TERM" = screen ]]; then
+    ZSH_THEME="my-clear"
+else
+    ZSH_THEME="my"
+fi
 # ZSH_THEME="agnoster"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
