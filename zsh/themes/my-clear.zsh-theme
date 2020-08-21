@@ -18,7 +18,7 @@ MAGENTA="%{${fg[magenta]}%}"
 BOLDMAGENTA="%{${fg_bold[magenta]}%}"
 NO_COLOR="%{${reset_color}%}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="${BLUE}(${RED}"
+ZSH_THEME_GIT_PROMPT_PREFIX="${BLUE}(${YELLOW}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="${BLUE}) ${NO_COLOR}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
@@ -58,10 +58,21 @@ prompt_git() {
     if [[ "$(git config --get oh-my-zsh.hide-status 2>/dev/null)" = 1 ]]; then
         return
     fi
+
+    local mode repo_path
+    repo_path=$(git rev-parse --git-dir 2>/dev/null)
+    if [[ -e "${repo_path}/BISECT_LOG" ]]; then
+        mode="${BOLDRED}<B> ${NO_COLOR}"
+    elif [[ -e "${repo_path}/MERGE_HEAD" ]]; then
+        mode="${BOLDRED}>M< ${NO_COLOR}"
+    elif [[ -e "${repo_path}/rebase" || -e "${repo_path}/rebase-apply" || -e "${repo_path}/rebase-merge" || -e "${repo_path}/../.dotest" ]]; then
+        mode="${BOLDRED}>R> ${NO_COLOR}"
+    fi
+
     if [[ "$(git config --get oh-my-zsh.hide-dirty 2>/dev/null)" = 1 ]]; then
-        echo -n $(git_prompt_info)${VCS_IGNORE_CHAR}
+        echo -n $(git_prompt_info)${VCS_IGNORE_CHAR}${mode}
     else
-        echo -n $(git_prompt_info)$(git_prompt_status)
+        echo -n $(git_prompt_info)$(git_prompt_status)${mode}
     fi
 }
 
@@ -70,7 +81,6 @@ prompt_virtualenv() {
         echo -n "${CYAN}(`basename $VIRTUAL_ENV`) ${NO_COLOR}"
     fi
 }
-
 
 
 ret_code="%(?:${RETTURN_SUCCESS}:${RETTURN_FAILED})"
