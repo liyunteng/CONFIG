@@ -1,192 +1,192 @@
 [user]
 
-	email = li_yunteng@163.com
-	name = liyunteng
+    email = li_yunteng@163.com
+    name = liyunteng
 
 [github]
 
-	user = liyunteng
-	oauth-token =
+    user = liyunteng
+    oauth-token =
 
 [filter "lfs"]
 
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [core]
 
-	quotePath = false
+    quotePath = false
 
-	# Use custom `.gitignore` and `.gitattributes`.
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
+    # Use custom `.gitignore` and `.gitattributes`.
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
 
-	# Treat spaces before tabs and all kinds of trailing whitespace as an error.
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error.
+    # [default] trailing-space: looks for spaces at the end of a line
+    # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+    whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
-	# Make `git rebase` safer on macOS.
-	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	trustctime = false
+    # Make `git rebase` safer on macOS.
+    # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+    trustctime = false
 
-	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
-	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
-	precomposeunicode = false
+    # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+    # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+    precomposeunicode = false
 
-	# Speed up commands involving untracked files such as `git status`.
-	# https://git-scm.com/docs/git-update-index#_untracked_cache
-	untrackedCache = true
+    # Speed up commands involving untracked files such as `git status`.
+    # https://git-scm.com/docs/git-update-index#_untracked_cache
+    untrackedCache = true
 
 [alias]
 
-	# View abbreviated SHA, description, and history graph of the latest 20 commits.
-	l = !"git --no-pager log --pretty=oneline -n 20 --graph --abbrev-commit"
+    # View abbreviated SHA, description, and history graph of the latest 20 commits.
+    l = !"git --no-pager log --pretty=oneline -n 20 --graph --abbrev-commit"
     # http://www.jukie.net/bart/blog/pimping-out-git-log
     lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
     #lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	last = !"git --no-pager log -n 5"
+    last = !"git --no-pager log -n 5"
 
 
-	# View the current working tree status using the short format.
-	s = status -s
-	st = status
+    # View the current working tree status using the short format.
+    s = status -s
+    st = status
     sti = status --ignored
 
-	# Show the diff between the latest commit and the current state.
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    # Show the diff between the latest commit and the current state.
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state.
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+    # `git di $number` shows the diff between the state `$number` revisions ago and the current state.
+    di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
     df = diff
-	dc = diff --cached
+    dc = diff --cached
 
-	# Show verbose output about tags, branches or remotes
-	tags = tag -l
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
 
-	; branches = branch --all
-	brs = branch --all
-	br = branch
+    ; branches = branch --all
+    brs = branch --all
+    br = branch
 
-	# List aliases.
-	aliases = config --get-regexp alias 
+    # List aliases.
+    aliases = config --get-regexp alias 
 
-	# Amend the currently staged files to the latest commit.
+    # Amend the currently staged files to the latest commit.
     amend = commit --amend
-	ca = commit --amend --reuse-message=HEAD
-	ci = commit
+    ca = commit --amend --reuse-message=HEAD
+    ci = commit
 
-	# Find branches containing commit
-	fb = "!f() { git branch -a --contains $1; }; f"
+    # Find branches containing commit
+    fb = "!f() { git branch -a --contains $1; }; f"
 
-	# Find tags containing commit
-	ft = "!f() { git describe --always --contains $1; }; f"
+    # Find tags containing commit
+    ft = "!f() { git describe --always --contains $1; }; f"
 
-	# Find commits by source code
-	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+    # Find commits by source code
+    fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
 
-	# Find commits by commit message
-	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+    # Find commits by commit message
+    fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
-	# List contributors with number of commits.
-	contributors = shortlog --summary --numbered
+    # List contributors with number of commits.
+    contributors = shortlog --summary --numbered
 
-	# Show the user email for the current repository.
-	whoami = config user.email
+    # Show the user email for the current repository.
+    whoami = config user.email
 
-	# Interactive rebase with the given number of latest commits.
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
+    # Interactive rebase with the given number of latest commits.
+    reb = "!r() { git rebase -i HEAD~$1; }; r"
 
-	# Remove the old tag with this name and tag the latest commit with it.
-	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+    # Remove the old tag with this name and tag the latest commit with it.
+    retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
 
     # Serve local repo. http://coderwall.com/p/eybtga
     # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
     serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 
-	co = checkout
-	remotes = remote --verbose
+    co = checkout
+    remotes = remote --verbose
     adda = add --all
-	unstage = reset HEAD
+    unstage = reset HEAD
 
 [credential]
 
-	helper = store
+    helper = store
 
 [pull]
 
-	ff = only
+    ff = only
 
 [push]
 
-	# https://git-scm.com/docs/git-config#git-config-pushdefault
-	default = simple
-	# Make `git push` push relevant annotated tags when pushing branches out.
-	followTags = true
+    # https://git-scm.com/docs/git-config#git-config-pushdefault
+    default = simple
+    # Make `git push` push relevant annotated tags when pushing branches out.
+    followTags = true
 
 
 [apply]
 
-	# Detect whitespace errors when applying a patch.
-	whitespace = fix
+    # Detect whitespace errors when applying a patch.
+    whitespace = fix
 
 [branch]
 
-	# Show most recently changed branches first.
-	sort = -committerdate
+    # Show most recently changed branches first.
+    sort = -committerdate
 
 [color]
 
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = auto
+    # Use colors in Git commands that are capable of colored output when
+    # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+    ui = auto
 
 [color "branch"]
 
-	current = green reverse
-	local = green 
-	remote = yellow 
+    current = green reverse
+    local = green 
+    remote = yellow 
 
 [color "diff"]
 
-	meta = yellow bold
-	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
+    meta = yellow bold
+    frag = magenta bold # line info
+    old = red # deletions
+    new = green # additions
 
 [color "status"]
 
-	added = green 
-	changed = red
-	untracked = red 
+    added = green 
+    changed = red
+    untracked = red 
 
 [help]
 
-	# Automatically correct and execute mistyped commands.
-	autocorrect = 1
+    # Automatically correct and execute mistyped commands.
+    autocorrect = 1
 
 # URL shorthands
 
 [url "git@github.com:"]
 
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
+    insteadOf = "gh:"
+    pushInsteadOf = "github:"
+    pushInsteadOf = "git://github.com/"
 
 [url "https://github.com/"]
 
-	insteadOf = "github://"
+    insteadOf = "github://"
 
 [url "git@gist.github.com:"]
 
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
+    insteadOf = "gst:"
+    pushInsteadOf = "gist:"
+    pushInsteadOf = "git://gist.github.com/"
 
 [url "https://gist.github.com/"]
 
-	insteadOf = "gist://"
+    insteadOf = "gist://"
 
 

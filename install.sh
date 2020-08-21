@@ -100,7 +100,7 @@ install_emacs() {
 }
 
 usage() {
-cat <<-EOF
+    cat <<-EOF
 ${0} [-a | -n | -h].
 
     -a      install all.
@@ -111,18 +111,18 @@ EOF
 
 ###############################
 main() {
-	# Parse arguments
-	while [ $# -gt 0 ]; do
-		case $1 in
-			-a) INSTALL_GIT_REPOS=yes ;;
+    # Parse arguments
+    while [ $# -gt 0 ]; do
+        case $1 in
+            -a) INSTALL_GIT_REPOS=yes ;;
             -n) INSTALL_GIT_REPOS=no ;;
-			-h) usage
+            -h) usage
                 exit 0;;
             *) usage
                 exit -1;;
-		esac
-		shift
-	done
+        esac
+        shift
+    done
 
 
     install_configs

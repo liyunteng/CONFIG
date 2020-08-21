@@ -140,7 +140,7 @@ function issolaris () {
     [[ $MY_OSTYPE == "SunOS" ]]
 }
 
-#f1# are we running within an utf environment?
+# are we running within an utf environment?
 function isutfenv () {
     case "$LANG $CHARSET $LANGUAGE" in
         *utf*) return 0 ;;
@@ -184,7 +184,7 @@ function check_command ()  {
         || (( ${+functions[$1]}   )) \
         || (( ${+aliases[$1]}     )) \
         || (( ${+reswords[(r)$1]} )) ; then
-        return 0
+            return 0
     fi
 
     if (( gatoo > 0 )) && (( ${+galiases[$1]} )) ; then
@@ -194,7 +194,7 @@ function check_command ()  {
     return 1
 }
 
-#f5# Backup \kbd{file_or_folder {\rm to} file_or_folder\_timestamp}
+# Backup \kbd{file_or_folder {\rm to} file_or_folder\_timestamp}
 function bk () {
     emulate -L zsh
     local current_date=$(date -u "+%Y%m%dT%H%M%SZ")
@@ -230,53 +230,53 @@ the last one is used.
 The return code is the sum of all cp/mv/rm return codes.
 __EOF0__
 return 0;;
-            \?) bk -h >&2; return 1;;
-        esac
-    done
-    shift "$((OPTIND-1))"
-    if (( keep > 0 )); then
-        if islinux || isfreebsd; then
-            for to_bk in "$@"; do
-                cp $verbose -a "${to_bk%/}" "${to_bk%/}_$current_date"
-                (( result += $? ))
-            done
-        else
-            for to_bk in "$@"; do
-                cp $verbose -pR "${to_bk%/}" "${to_bk%/}_$current_date"
-                (( result += $? ))
-            done
-        fi
-    elif (( move > 0 )); then
-        while (( $# > 0 )); do
-            mv $verbose "${1%/}" "${1%/}_$current_date"
+\?) bk -h >&2; return 1;;
+esac
+done
+shift "$((OPTIND-1))"
+if (( keep > 0 )); then
+    if islinux || isfreebsd; then
+        for to_bk in "$@"; do
+            cp $verbose -a "${to_bk%/}" "${to_bk%/}_$current_date"
             (( result += $? ))
-            shift
         done
-    elif (( clean > 0 )); then
-        if (( $# > 0 )); then
-            for to_bk in "$@"; do
-                rm $verbose -rf "${to_bk%/}"_[0-9](#c8)T([0-1][0-9]|2[0-3])([0-5][0-9])(#c2)Z
-                (( result += $? ))
-            done
-        else
-            if (( all > 0 )); then
-                rm $verbose -rf *_[0-9](#c8)T([0-1][0-9]|2[0-3])([0-5][0-9])(#c2)Z(D)
-            else
-                rm $verbose -rf *_[0-9](#c8)T([0-1][0-9]|2[0-3])([0-5][0-9])(#c2)Z
-            fi
+    else
+        for to_bk in "$@"; do
+            cp $verbose -pR "${to_bk%/}" "${to_bk%/}_$current_date"
             (( result += $? ))
-        fi
+        done
     fi
-    return $result
+elif (( move > 0 )); then
+    while (( $# > 0 )); do
+        mv $verbose "${1%/}" "${1%/}_$current_date"
+        (( result += $? ))
+        shift
+    done
+elif (( clean > 0 )); then
+    if (( $# > 0 )); then
+        for to_bk in "$@"; do
+            rm $verbose -rf "${to_bk%/}"_[0-9](#c8)T([0-1][0-9]|2[0-3])([0-5][0-9])(#c2)Z
+            (( result += $? ))
+        done
+    else
+        if (( all > 0 )); then
+            rm $verbose -rf *_[0-9](#c8)T([0-1][0-9]|2[0-3])([0-5][0-9])(#c2)Z(D)
+        else
+            rm $verbose -rf *_[0-9](#c8)T([0-1][0-9]|2[0-3])([0-5][0-9])(#c2)Z
+        fi
+        (( result += $? ))
+    fi
+fi
+return $result
 }
 
-#f5# cd to directory and list files
+# cd to directory and list files
 function cl () {
     emulate -L zsh
     cd $1 && ls -a
 }
 
-# smart cd function, allows switching to /etc when running 'cd /etc/fstab'
+# Smart cd function, allows switching to /etc when running 'cd /etc/fstab'
 function cd () {
     if (( ${#argv} == 1 )) && [[ -f ${1} ]]; then
         [[ ! -e ${1:h} ]] && return 1
@@ -287,7 +287,7 @@ function cd () {
     fi
 }
 
-#f5# Create Directory and \kbd{cd} to it
+# Create Directory and \kbd{cd} to it
 function mkcd () {
     if (( ARGC != 1 )); then
         printf 'usage: mkcd <new-directory>\n'
@@ -301,32 +301,32 @@ function mkcd () {
     builtin cd "$1"
 }
 
-#f5# Create temporary directory and \kbd{cd} to it
+# Create temporary directory and \kbd{cd} to it
 function cdt () {
     builtin cd "$(mktemp -d)"
     builtin pwd
 }
 
-#f5# List files which have been accessed within the last {\it n} days, {\it n} defaults to 1
+# List files which have been accessed within the last {\it n} days, {\it n} defaults to 1
 function accessed () {
     emulate -L zsh
     print -l -- *(a-${1:-1})
 }
 
-#f5# List files which have been changed within the last {\it n} days, {\it n} defaults to 1
+# List files which have been changed within the last {\it n} days, {\it n} defaults to 1
 function changed () {
     emulate -L zsh
     print -l -- *(c-${1:-1})
 }
 
-#f5# List files which have been modified within the last {\it n} days, {\it n} defaults to 1
+# List files which have been modified within the last {\it n} days, {\it n} defaults to 1
 function modified () {
     emulate -L zsh
     print -l -- *(m-${1:-1})
 }
 
 
-# grep for running process, like: 'any vim'
+# Grep for running process, like: 'any vim'
 function any () {
     emulate -L zsh
     unsetopt KSH_ARRAYS
@@ -338,153 +338,147 @@ function any () {
     fi
 }
 
-
 # Usage: simple-extract <file>
 # Using option -d deletes the original archive file.
-#f5# Smart archive extractor
+# Smart archive extractor
 function simple-extract () {
-    emulate -L zsh
-    setopt extended_glob noclobber
-    local ARCHIVE DELETE_ORIGINAL DECOMP_CMD USES_STDIN USES_STDOUT GZTARGET WGET_CMD
-    local RC=0
-    zparseopts -D -E "d=DELETE_ORIGINAL"
-    for ARCHIVE in "${@}"; do
-        case $ARCHIVE in
-            *(tar.bz2|tbz2|tbz))
-                DECOMP_CMD="tar -xvjf -"
-                USES_STDIN=true
-                USES_STDOUT=false
-                ;;
-            *(tar.gz|tgz))
-                DECOMP_CMD="tar -xvzf -"
-                USES_STDIN=true
-                USES_STDOUT=false
-                ;;
-            *(tar.xz|txz|tar.lzma))
-                DECOMP_CMD="tar -xvJf -"
-                USES_STDIN=true
-                USES_STDOUT=false
-                ;;
-            *tar)
-                DECOMP_CMD="tar -xvf -"
-                USES_STDIN=true
-                USES_STDOUT=false
-                ;;
-            *rar)
-                DECOMP_CMD="unrar x"
-                USES_STDIN=false
-                USES_STDOUT=false
-                ;;
-            *lzh)
-                DECOMP_CMD="lha x"
-                USES_STDIN=false
-                USES_STDOUT=false
-                ;;
-            *7z)
-                DECOMP_CMD="7z x"
-                USES_STDIN=false
-                USES_STDOUT=false
-                ;;
-            *(zip|jar))
-                DECOMP_CMD="unzip"
-                USES_STDIN=false
-                USES_STDOUT=false
-                ;;
-            *deb)
-                DECOMP_CMD="ar -x"
-                USES_STDIN=false
-                USES_STDOUT=false
-                ;;
-            *bz2)
-                DECOMP_CMD="bzip2 -d -c -"
-                USES_STDIN=true
-                USES_STDOUT=true
-                ;;
-            *(gz|Z))
-                DECOMP_CMD="gzip -d -c -"
-                USES_STDIN=true
-                USES_STDOUT=true
-                ;;
-            *(xz|lzma))
-                DECOMP_CMD="xz -d -c -"
-                USES_STDIN=true
-                USES_STDOUT=true
-                ;;
-            *)
-                print "ERROR: '$ARCHIVE' has unrecognized archive type." >&2
-                RC=$((RC+1))
-                continue
-                ;;
-        esac
+emulate -L zsh
+setopt extended_glob noclobber
+local ARCHIVE DELETE_ORIGINAL DECOMP_CMD USES_STDIN USES_STDOUT GZTARGET WGET_CMD
+local RC=0
+zparseopts -D -E "d=DELETE_ORIGINAL"
+for ARCHIVE in "${@}"; do
+    case $ARCHIVE in
+        *(tar.bz2|tbz2|tbz))
+            DECOMP_CMD="tar -xvjf -"
+            USES_STDIN=true
+            USES_STDOUT=false
+            ;;
+        *(tar.gz|tgz))
+            DECOMP_CMD="tar -xvzf -"
+            USES_STDIN=true
+            USES_STDOUT=false
+            ;;
+        *(tar.xz|txz|tar.lzma))
+            DECOMP_CMD="tar -xvJf -"
+            USES_STDIN=true
+            USES_STDOUT=false
+            ;;
+        *tar)
+            DECOMP_CMD="tar -xvf -"
+            USES_STDIN=true
+            USES_STDOUT=false
+            ;;
+        *rar)
+            DECOMP_CMD="unrar x"
+            USES_STDIN=false
+            USES_STDOUT=false
+            ;;
+        *lzh)
+            DECOMP_CMD="lha x"
+            USES_STDIN=false
+            USES_STDOUT=false
+            ;;
+        *7z)
+            DECOMP_CMD="7z x"
+            USES_STDIN=false
+            USES_STDOUT=false
+            ;;
+        *(zip|jar))
+            DECOMP_CMD="unzip"
+            USES_STDIN=false
+            USES_STDOUT=false
+            ;;
+        *deb)
+            DECOMP_CMD="ar -x"
+            USES_STDIN=false
+            USES_STDOUT=false
+            ;;
+        *bz2)
+            DECOMP_CMD="bzip2 -d -c -"
+            USES_STDIN=true
+            USES_STDOUT=true
+            ;;
+        *(gz|Z))
+            DECOMP_CMD="gzip -d -c -"
+            USES_STDIN=true
+            USES_STDOUT=true
+            ;;
+        *(xz|lzma))
+            DECOMP_CMD="xz -d -c -"
+            USES_STDIN=true
+            USES_STDOUT=true
+            ;;
+        *)
+            print "ERROR: '$ARCHIVE' has unrecognized archive type." >&2
+            RC=$((RC+1))
+            continue
+            ;;
+    esac
 
-        if ! check_command ${DECOMP_CMD[(w)1]}; then
-            echo "ERROR: ${DECOMP_CMD[(w)1]} not installed." >&2
-            RC=$((RC+2))
+    if ! check_command ${DECOMP_CMD[(w)1]}; then
+        echo "ERROR: ${DECOMP_CMD[(w)1]} not installed." >&2
+        RC=$((RC+2))
+        continue
+    fi
+
+    GZTARGET="${ARCHIVE:t:r}"
+    if [[ -f $ARCHIVE ]] ; then
+
+        print "Extracting '$ARCHIVE' ..."
+        if $USES_STDIN; then
+            if $USES_STDOUT; then
+                ${=DECOMP_CMD} < "$ARCHIVE" > $GZTARGET
+            else
+                ${=DECOMP_CMD} < "$ARCHIVE"
+            fi
+        else
+            if $USES_STDOUT; then
+                ${=DECOMP_CMD} "$ARCHIVE" > $GZTARGET
+            else
+                ${=DECOMP_CMD} "$ARCHIVE"
+            fi
+        fi
+        [[ $? -eq 0 && -n "$DELETE_ORIGINAL" ]] && rm -f "$ARCHIVE"
+
+    elif [[ "$ARCHIVE" == (#s)(https|http|ftp)://* ]] ; then
+        if check_command curl; then
+            WGET_CMD="curl -L -s -o -"
+        elif check_command wget; then
+            WGET_CMD="wget -q -O -"
+        elif check_command fetch; then
+            WGET_CMD="fetch -q -o -"
+        else
+            print "ERROR: neither wget, curl nor fetch is installed" >&2
+            RC=$((RC+4))
             continue
         fi
-
-        GZTARGET="${ARCHIVE:t:r}"
-        if [[ -f $ARCHIVE ]] ; then
-
-            print "Extracting '$ARCHIVE' ..."
-            if $USES_STDIN; then
-                if $USES_STDOUT; then
-                    ${=DECOMP_CMD} < "$ARCHIVE" > $GZTARGET
-                else
-                    ${=DECOMP_CMD} < "$ARCHIVE"
-                fi
+        print "Downloading and Extracting '$ARCHIVE' ..."
+        if $USES_STDIN; then
+            if $USES_STDOUT; then
+                ${=WGET_CMD} "$ARCHIVE" | ${=DECOMP_CMD} > $GZTARGET
+                RC=$((RC+$?))
             else
-                if $USES_STDOUT; then
-                    ${=DECOMP_CMD} "$ARCHIVE" > $GZTARGET
-                else
-                    ${=DECOMP_CMD} "$ARCHIVE"
-                fi
+                ${=WGET_CMD} "$ARCHIVE" | ${=DECOMP_CMD}
+                RC=$((RC+$?))
             fi
-            [[ $? -eq 0 && -n "$DELETE_ORIGINAL" ]] && rm -f "$ARCHIVE"
-
-        elif [[ "$ARCHIVE" == (#s)(https|http|ftp)://* ]] ; then
-            if check_command curl; then
-                WGET_CMD="curl -L -s -o -"
-            elif check_command wget; then
-                WGET_CMD="wget -q -O -"
-            elif check_command fetch; then
-                WGET_CMD="fetch -q -o -"
-            else
-                print "ERROR: neither wget, curl nor fetch is installed" >&2
-                RC=$((RC+4))
-                continue
-            fi
-            print "Downloading and Extracting '$ARCHIVE' ..."
-            if $USES_STDIN; then
-                if $USES_STDOUT; then
-                    ${=WGET_CMD} "$ARCHIVE" | ${=DECOMP_CMD} > $GZTARGET
-                    RC=$((RC+$?))
-                else
-                    ${=WGET_CMD} "$ARCHIVE" | ${=DECOMP_CMD}
-                    RC=$((RC+$?))
-                fi
-            else
-                if $USES_STDOUT; then
-                    ${=DECOMP_CMD} =(${=WGET_CMD} "$ARCHIVE") > $GZTARGET
-                else
-                    ${=DECOMP_CMD} =(${=WGET_CMD} "$ARCHIVE")
-                fi
-            fi
-
         else
-            print "ERROR: '$ARCHIVE' is neither a valid file nor a supported URI." >&2
-            RC=$((RC+8))
+            if $USES_STDOUT; then
+                ${=DECOMP_CMD} =(${=WGET_CMD} "$ARCHIVE") > $GZTARGET
+            else
+                ${=DECOMP_CMD} =(${=WGET_CMD} "$ARCHIVE")
+            fi
         fi
-    done
-    return $RC
+
+    else
+        print "ERROR: '$ARCHIVE' is neither a valid file nor a supported URI." >&2
+        RC=$((RC+8))
+    fi
+done
+return $RC
 }
 
 umask 022
-
-
-# [[ -d /usr/local/share/zsh-syntax-highlighting ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# [[ -d /usr/share/zsh-syntax-highlighting ]] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# [[ -d /usr/share/zsh/plugins/zsh-syntax-highlighting ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $ZSH/oh-my-zsh.sh
 
