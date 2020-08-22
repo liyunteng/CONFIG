@@ -3,7 +3,6 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
-
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
@@ -111,9 +110,13 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 tmux_conf_theme_window_status_fg='#8a8a8a'              # light gray
 tmux_conf_theme_window_status_bg='#080808'              # dark gray
 tmux_conf_theme_window_status_attr='none'
-tmux_conf_theme_window_status_format='#I #W'
-tmux_conf_theme_window_status_format='#{circled_window_index} #W'
+%if "#{==:#{default-terminal},screen}"
+tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag, *,}#{?window_zoomed_flag, +,}'
+# tmux_conf_theme_window_status_format='#I #W'
+# tmux_conf_theme_window_status_format='#{circled_window_index} #W'
+%else
 tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag, 🔔,}#{?window_zoomed_flag, 🔍,}'
+%endif
 
 # window current status style
 #   - built-in variables are:
@@ -126,9 +129,13 @@ tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag, 🔔,}#{?window_
 tmux_conf_theme_window_status_current_fg='#000000'      # black
 tmux_conf_theme_window_status_current_bg='#00afff'      # light blue
 tmux_conf_theme_window_status_current_attr='bold'
-tmux_conf_theme_window_status_current_format='#I #W'
-tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
+%if "#{==:#{default-terminal},screen}"
+tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag, +,}'
+# tmux_conf_theme_window_status_current_format='#I #W'
+# tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
+%else
 tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag, 🔍,}'
+%endif
 
 # window activity status style
 tmux_conf_theme_window_status_activity_fg='default'
@@ -146,14 +153,17 @@ tmux_conf_theme_window_status_last_bg='default'
 tmux_conf_theme_window_status_last_attr='none'
 
 # status left/right sections separators
-# tmux_conf_theme_left_separator_main=''
-# tmux_conf_theme_left_separator_sub='|'
-# tmux_conf_theme_right_separator_main=''
-# tmux_conf_theme_right_separator_sub='|'
+%if "#{==:#{default-terminal},screen}"
+tmux_conf_theme_left_separator_main=''
+tmux_conf_theme_left_separator_sub='|'
+tmux_conf_theme_right_separator_main=''
+tmux_conf_theme_right_separator_sub='|'
+%else
 tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
 tmux_conf_theme_left_separator_sub='\uE0B1'   #   you only need fonts patched with
 tmux_conf_theme_right_separator_main='\uE0B2' #   Powerline symbols or the standalone
 tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see README.md
+%endif
 
 # status left/right content:
 #   - separate main sections with '|'
@@ -193,13 +203,21 @@ tmux_conf_theme_status_right_bg='#080808,#d70000,#e4e4e4' # dark gray, red, whit
 tmux_conf_theme_status_right_attr='none,none,bold'
 
 # pairing indicator
+%if "#{==:#{default-terminal},screen}"
+tmux_conf_theme_pairing=': ' 
+%else
 tmux_conf_theme_pairing='👓 '          # U+1F453
+%endif
 tmux_conf_theme_pairing_fg='none'
 tmux_conf_theme_pairing_bg='none'
 tmux_conf_theme_pairing_attr='none'
 
 # prefix indicator
+%if "#{==:#{default-terminal},screen}"
+tmux_conf_theme_prefix='-'
+%else
 tmux_conf_theme_prefix='⌨ '            # U+2328
+%endif
 tmux_conf_theme_prefix_fg='none'
 tmux_conf_theme_prefix_bg='none'
 tmux_conf_theme_prefix_attr='none'
@@ -211,7 +229,11 @@ tmux_conf_theme_root_bg='none'
 tmux_conf_theme_root_attr='bold,blink'
 
 # synchronized indicator
+%if "#{==:#{default-terminal},screen}"
+tmux_conf_theme_synchronized='@'
+%else
 tmux_conf_theme_synchronized='🔒'     # U+1F512
+%endif
 tmux_conf_theme_synchronized_fg='none'
 tmux_conf_theme_synchronized_bg='none'
 tmux_conf_theme_synchronized_attr='none'
@@ -249,11 +271,14 @@ tmux_conf_theme_synchronized_attr='none'
 #tmux_conf_battery_vbar_palette='#d70000,#ff5f00,#5fff00'  # red, orange, green
 
 # symbols used to indicate whether battery is charging or discharging
-# tmux_conf_battery_status_charging='↑'       # U+2191
-# tmux_conf_battery_status_discharging='↓'    # U+2193
-tmux_conf_battery_status_charging='⚡ '    # U+26A1
-# tmux_conf_battery_status_charging='🔌 '    # U+1F50C
+%if "#{==:#{default-terminal},screen}"
+tmux_conf_battery_status_charging='↑'       # U+2191
+tmux_conf_battery_status_discharging='↓'    # U+2193
+%else
+# tmux_conf_battery_status_charging='⚡ '    # U+26A1
+tmux_conf_battery_status_charging='🔌 '    # U+1F50C
 tmux_conf_battery_status_discharging='🔋 ' # U+1F50B
+%endif
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
@@ -337,4 +362,13 @@ bind / command-prompt -k -p key "list-keys -1 \"%%%\""
 unbind m
 
 # color
-if-shell -b '[[ ${TERM} == "linux" || ${TERM} == "dumb" || ${TERM} == "screen" ]]' 'set -g default-terminal "screen"' 'set -g default-terminal "screen-256color"'
+# have added to .tmux.conf
+# %if "#{==:${TERM},linux}"
+# set -g default-terminal "screen"
+# %elif "#{==:${TERMM},screen}"
+# set -g default-terminal "screen"
+# %elif "#{==:${TERM},dumb}"
+# set -g default-terminal "screen"
+# %endif
+
+
