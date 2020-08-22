@@ -52,6 +52,7 @@ alias lsa='ls -a'
 alias la='ls -a'
 alias lla='ls -al'
 #a2# show dot files or directories
+alias l.='ls -d .*'
 alias ls.='ls -d .*'
 alias ll.='ls -ld .*'
 
