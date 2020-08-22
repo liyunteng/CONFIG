@@ -86,7 +86,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(z colored-man-pages colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search)
 #plugins=(z colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search zsh_reload)
-plugins=(z osx colorize my-emacs web-search zsh-navigation-tools rsync virtualenv zsh_reload zsh-syntax-highlighting)
+plugins=(z osx colorize my-emacs web-search zsh-navigation-tools rsync virtualenv zsh_reload zsh-syntax-highlighting zsh-autosuggestions)
 
 
 # bindkey -M emacs '^[p' history-substring-search-up
