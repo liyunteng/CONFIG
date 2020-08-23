@@ -496,4 +496,6 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -f ${HOME}/.alias ]] && source ${HOME}/.alias
 
-check_command neofetch && neofetch
+if check_command neofetch; then 
+    neofetch
+fi
