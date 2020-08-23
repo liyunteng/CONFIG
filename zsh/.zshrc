@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 if [[ "$TERM" = "dumb" ]]; then
     unsetopt zle
     # PS1='$ '
@@ -86,20 +88,13 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(z colored-man-pages colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search)
 #plugins=(z colorize common-aliases cp dircycle emacs extract history-substring-search python rsync timer web-search zsh_reload)
-plugins=(z osx colorize my-emacs web-search zsh-navigation-tools rsync virtualenv zsh_reload zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(z web-search zsh-navigation-tools zsh_reload history-substring-search zsh-syntax-highlighting zsh-autosuggestions)
 
 
-# bindkey -M emacs '^[p' history-substring-search-up
-# bindkey -M emacs '^[n' history-substring-search-down
-
-# support colors in less
-# export LESS_TERMCAP_mb=$'\E[01;31m'
-# export LESS_TERMCAP_md=$'\E[01;31m'
-# export LESS_TERMCAP_me=$'\E[0m'
-# export LESS_TERMCAP_se=$'\E[0m'
-# export LESS_TERMCAP_so=$'\E[01;44;33m'
-# export LESS_TERMCAP_ue=$'\E[0m'
-# export LESS_TERMCAP_us=$'\E[01;32m'
+# bindkey -M emacs '^[p' history-substring-search-up # M-n
+# bindkey -M emacs '^[n' history-substring-search-up # M-n
+bindkey -M emacs '^P' history-substring-search-up    # C-p
+bindkey -M emacs '^N' history-substring-search-down  # C-n
 
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -153,7 +148,7 @@ function isutfenv () {
 # this function checks if a command exists and return either true
 # or false. Tihs avoids using 'which' and whence, which will avoid
 # porblems with aliases for which on certain weird system.
-# Usage: check_comman [-c|-g] word
+# Usage: check_command [-c|-g] word
 #   -c  only check for external commands
 #   -g  does the usual tests and also checks for global aliases
 function check_command ()  {
@@ -484,5 +479,4 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -f ${HOME}/.alias ]] && source ${HOME}/.alias
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+check_command neofetch && neofetch
