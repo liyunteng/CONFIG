@@ -1,5 +1,9 @@
 {
-  "Thin Strokes" : 4,
+  "Ansi 5 Color" : {
+    "Green Component" : 0.10802463442087173,
+    "Red Component" : 0.77738940715789795,
+    "Blue Component" : 0.43516635894775391
+  },
   "Working Directory" : "\/Users\/yli",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -334,7 +338,7 @@
   },
   "Name" : "lyt",
   "Blinking Cursor" : false,
-  "Guid" : "0BF382F8-58A3-4B5E-8E49-7D0C074B70D8",
+  "Guid" : "0EE80701-15CB-497C-9D94-2DA333BB555E",
   "Idle Code" : 0,
   "Ansi 10 Color" : {
     "Green Component" : 0.93699550628662109,
@@ -355,8 +359,8 @@
   },
   "Smart Cursor Color" : true,
   "Semantic History" : {
-    "text" : "",
     "action" : "best editor",
+    "text" : "",
     "editor" : "com.github.atom"
   },
   "Ambiguous Double Width" : false,
@@ -381,7 +385,7 @@
   "Terminal Type" : "xterm-256color",
   "Horizontal Spacing" : 1,
   "Option Key Sends" : 0,
-  "Only The Default BG Color Uses Transparency" : false,
+  "Only The Default BG Color Uses Transparency" : true,
   "Ansi 15 Color" : {
     "Green Component" : 0.95794391632080078,
     "Red Component" : 0.98943418264389038,
@@ -393,7 +397,7 @@
     "Red Component" : 0.14679534733295441,
     "Blue Component" : 0.52502274513244629
   },
-  "Transparency" : 0.1332011421319797,
+  "Transparency" : 0.22057423857868019,
   "Background Color" : {
     "Green Component" : 0.11783610284328461,
     "Red Component" : 0,
@@ -413,10 +417,6 @@
   "Unicode Normalization" : 0,
   "Visual Bell" : true,
   "ASCII Ligatures" : true,
-  "Custom Directory" : "No",
-  "Ansi 5 Color" : {
-    "Green Component" : 0.10802463442087173,
-    "Red Component" : 0.77738940715789795,
-    "Blue Component" : 0.43516635894775391
-  }
+  "Thin Strokes" : 4,
+  "Custom Directory" : "No"
 }
