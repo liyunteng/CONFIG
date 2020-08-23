@@ -12,7 +12,7 @@ install_configs() {
     ".gitconfig" ".git-credentials"  ".gitignore"
     ".tmux.conf" ".tmux.conf.local" ".clang-format"
     ".curlrc" ".wgetrc" ".editorconfig"
-    "zsh/.zshrc" ".ssh")
+    "zsh/.zshenv" "zsh/.zshrc" ".ssh")
 
     local target="${HOME}"
     for x in ${my_configs[@]}; do
