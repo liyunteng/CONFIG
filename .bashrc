@@ -135,7 +135,7 @@ fi
 export LESS_TERMCAP_mb=${BOLDRED}   	# start blink
 export LESS_TERMCAP_md=${BOLDBLUE}  	# start bold
 export LESS_TERMCAP_me=${NORMAL}    	# turn off bold, blink and underline
-export LESS_TERMCAP_so=${RED}     		# start standout
+export LESS_TERMCAP_so=${YELLOW}     	# start standout
 export LESS_TERMCAP_se=${NORMAL}    	# stop standout
 export LESS_TERMCAP_us=${GREEN}  		# start underline
 export LESS_TERMCAP_ue=${NORMAL}    	# stop underline
@@ -342,3 +342,7 @@ umask 022
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
+if which neofetch; then
+    neofetch
+fi
