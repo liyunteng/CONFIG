@@ -473,6 +473,23 @@ done
 return $RC
 }
 
+# dump terinal color
+terminal-color() {
+	for clbg in {0..9} {40..47} {100..107} 49 ; do
+		#Foreground
+		for clfg in {30..37} {90..97} 39 ; do
+			#Formatting
+			for attr in 0 1 2 4 5 6 7 ; do
+				#Print the result
+				echo -en "\e[${attr};${clbg};${clfg}m ^[${attr};${clbg};${clfg}m \e[0m"
+			done
+			echo #Newline
+		done
+	done
+}
+
+
+
 umask 022
 
 source $ZSH/oh-my-zsh.sh

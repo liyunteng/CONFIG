@@ -63,14 +63,22 @@ case "$TERM" in
 esac
 
 
+# use terminal-color
+BOLDRED=$'\033[1;31m'
+BOLDGREEN=$'\033[1;32m'
+BOLDYELLOW=$'\033[1;33m'
+BOLDBLUE=$'\033[1;34m'
+BOLDPURPLE=$'\033[1;35m'
+BOLDCYAN=$'\033[1;36m'
 
-BGREEN='\[\033[1;32m\]'
-GREEN='\[\033[0;32m\]'
-BRED='\[\033[1;31m\]'
-RED='\[\033[0;31m\]'
-BBLUE='\[\033[1;34m\]'
-BLUE='\[\033[0;34m\]'
-NORMAL='\[\033[00m\]'
+RED=$'\033[0;31m'
+GREEN=$'\033[0;32m'
+YELLOW=$'\033[0;33m'
+BLUE=$'\033[0;34m'
+PURPLE=$'\033[0;35m'
+CYAN=$'\033[0;36m'
+
+NORMAL=$'\033[0m'
 TIME=$(date +%H:%M)
 
 # Set colorful PS1 only on colorful terminals.
@@ -110,9 +118,9 @@ fi
 
 if ${use_color} ; then
     if [[ ${EUID} == 0 ]] ; then
-        PS1="${BRED}\h ${BBLUE}\w ${BRED}# ${NORMAL}"
+        PS1="${BOLDRED}\h ${BOLDBLUE}\w ${BOLDRED}# ${NORMAL}"
     else
-        PS1="${BGREEN}\u@\h ${BBLUE}\w ${BGREEN}\$ ${NORMAL}"
+        PS1="${BOLDGREEN}\u@\h ${BOLDBLUE}\w ${BOLDGREEN}\$ ${NORMAL}"
     fi
 else
     if [[ ${EUID} == 0 ]] ; then
@@ -123,7 +131,16 @@ else
     fi
 fi
 
+# support colors in less
+export LESS_TERMCAP_mb=${BOLDRED}   	# start blink
+export LESS_TERMCAP_md=${BOLDBLUE}  	# start bold
+export LESS_TERMCAP_me=${NORMAL}    	# turn off bold, blink and underline
+export LESS_TERMCAP_so=${RED}     		# start standout
+export LESS_TERMCAP_se=${NORMAL}    	# stop standout
+export LESS_TERMCAP_us=${GREEN}  		# start underline
+export LESS_TERMCAP_ue=${NORMAL}    	# stop underline
 
+unset BOLDRED BOLDGREEN BOLDYELLOW BOLDBLUE BOLDPURPLE BOLDCYAN RED GREEN YELLOW BLUE PURPLE CYAN NORMAL
 
 for sh in /etc/bash/bashrc.d/* ; do
     [[ -r ${sh} ]] && source "${sh}"
@@ -137,15 +154,6 @@ if [[ -f ~/.xprofile ]]; then
 fi
 
 
-
-# support colors in less
-# export LESS_TERMCAP_mb=$'\E[01;31m'
-# export LESS_TERMCAP_md=$'\E[01;31m'
-# export LESS_TERMCAP_me=$'\E[0m'
-# export LESS_TERMCAP_se=$'\E[0m'
-# export LESS_TERMCAP_so=$'\E[01;44;33m'
-# export LESS_TERMCAP_ue=$'\E[0m'
-# export LESS_TERMCAP_us=$'\E[01;32m'
 
 export EDITOR=${EDITOR:-"vim"}
 
@@ -183,6 +191,44 @@ function isutfenv () {
     esac
 }
 
+#f5# cd to directory and list files
+function cl () {
+    cd $1 && ls -a
+}
+
+# smart cd function, allows switching to /etc when running 'cd /etc/fstab'
+function cd () {
+    local dir
+    if (( $# == 1 )) && [[ -f ${1} ]]; then
+        dir=`dirname ${1}`
+        [[ ! -e ${dir} ]] && return 1
+        printf "Correcting ${1} to ${dir}\n"
+        builtin cd ${dir}
+    else
+        builtin cd "$@"
+    fi
+}
+
+#f5# Create Directory and \kbd{cd} to it
+function mkcd () {
+    if (( ARGC != 1 )); then
+        printf 'usage: mkcd <new-directory>\n'
+        return 1;
+    fi
+    if [[ ! -d "$1" ]]; then
+        command mkdir -p "$1"
+    else
+        printf '`%s'\'' already exists: cd-ing.\n' "$1"
+    fi
+    builtin cd "$1"
+}
+
+#f5# Create temporary directory and \kbd{cd} to it
+function cdt () {
+    builtin cd "$(mktemp -d)"
+    builtin pwd
+}
+
 
 #f5# Backup \kbd{file_or_folder {\rm to} file_or_folder\_timestamp}
 function bk_usage () {
@@ -207,6 +253,7 @@ the last one is used.
 The return code is the sum of all cp/mv/rm return codes."
 EOF0
 }
+
 function bk () {
     local current_date=$(date -u "+%Y%m%dT%H%M%SZ")
     local clean keep move verbose result all to_bk
@@ -272,43 +319,21 @@ function bk () {
     return $result
 }
 
-#f5# cd to directory and list files
-function cl () {
-    cd $1 && ls -a
+# dump terinal color
+terminal-color() {
+	for clbg in {0..9} {40..47} {100..107} 49 ; do
+		#Foreground
+		for clfg in {30..37} {90..97} 39 ; do
+			#Formatting
+			for attr in 0 1 2 4 5 6 7 ; do
+				#Print the result
+				echo -en "\033[${attr};${clbg};${clfg}m ^[${attr};${clbg};${clfg}m \033[0m"
+			done
+			echo #Newline
+		done
+	done
 }
 
-# smart cd function, allows switching to /etc when running 'cd /etc/fstab'
-function cd () {
-    local dir
-    if (( $# == 1 )) && [[ -f ${1} ]]; then
-        dir=`dirname ${1}`
-        [[ ! -e ${dir} ]] && return 1
-        printf "Correcting ${1} to ${dir}\n"
-        builtin cd ${dir}
-    else
-        builtin cd "$@"
-    fi
-}
-
-#f5# Create Directory and \kbd{cd} to it
-function mkcd () {
-    if (( ARGC != 1 )); then
-        printf 'usage: mkcd <new-directory>\n'
-        return 1;
-    fi
-    if [[ ! -d "$1" ]]; then
-        command mkdir -p "$1"
-    else
-        printf '`%s'\'' already exists: cd-ing.\n' "$1"
-    fi
-    builtin cd "$1"
-}
-
-#f5# Create temporary directory and \kbd{cd} to it
-function cdt () {
-    builtin cd "$(mktemp -d)"
-    builtin pwd
-}
 
 
 umask 022
