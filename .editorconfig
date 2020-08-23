@@ -9,10 +9,10 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 [*.[ch]]
-max_line_length = 80
+indent_size = 4
 
 [README.md]
-max_line_length = 80
+; max_line_length = 80
 
 [[Mm]akefile]
 indent_style = tab
