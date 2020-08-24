@@ -142,21 +142,27 @@ if [[ -d ${MY_HOME} ]]; then
     alias tot='cd ${MY_TOOLCHAINS}'
 fi
 
+export MY_BUILD_ENV=${MY_BUILD_ENV:-"B0"}
 G1_SYS=${MY_HOME}/g1_sys
 G1_SYS_TOOLCHAIN=${MY_TOOLCHAINS}/arm-himix100-linux
-if [[ -d ${G1_SYS} ]]; then
+if [[ -d ${G1_SYS} && ${MY_BUILD_ENV} == "G1" ]]; then
     alias tor='cd ${G1_SYS}'
+    alias tob='cd ${G1_SYS}'
     alias tov='cd ${G1_SYS}/reference/battery_ipcam/modules'
-    alias tob='cd ${G1_SYS}/reference/out/hi3518ev300_battery_ipcam_GC2053/burn'
+    alias too='cd ${G1_SYS}/reference/out/hi3518ev300_battery_ipcam_GC2053/burn'
     alias tol='cd ${G1_SYS}/osdrv/platform/liteos/liteos'
 fi
 
-BO_SYS=${MY_HOME}/b0_sys
+B0_SYS=${MY_HOME}/b0_sys
 B0_SYS_TOOLCHAIN_32=${MY_TOOLCHAINS}/mips-gcc472-glibc216-32bit
 B0_SYS_TOOLCHAIN_64=${MY_TOOLCHAINS}/mips-gcc472-glibc216-64bit
-if [[ -d ${B0_SYS} ]]; then
+if [[ -d ${B0_SYS} && ${MY_BUILD_ENV} == "B0" ]]; then
+    alias tor='cd ${B0_SYS}'
+    alias tob='cd ${B0_SYS}/Buildscript'
+    alias tov='cd ${B0_SYS}/Media'
+    alias too='cd ${B0_SYS}/Images/output'
+    alias tol='cd ${B0_SYS}/Apps'
 fi
-
 
 [[ -d ${G1_SYS_TOOLCHAIN} ]] && export PATH=${G1_SYS_TOOLCHAIN}/bin:$PATH
 [[ -d ${B0_SYS_TOOLCHAIN_32} ]] && export PATH=${B0_SYS_TOOLCHAIN_32}/bin:$PATH
