@@ -136,11 +136,14 @@ alias tog='cd ${GIT_HOME}'
 alias tok='cd ${KERNEL_HOME}'
 
 MY_HOME=/data1/liyunteng
+MY_TOOLCHAINS=${MY_HOME}/toolchains
 if [[ -d ${MY_HOME} ]]; then
     alias toh='cd ${MY_HOME}'
+    alias tot='cd ${MY_TOOLCHAINS}'
 fi
 
 G1_SYS=${MY_HOME}/g1_sys
+G1_SYS_TOOLCHAIN=${MY_TOOLCHAINS}/arm-himix100-linux
 if [[ -d ${G1_SYS} ]]; then
     alias tor='cd ${G1_SYS}'
     alias tov='cd ${G1_SYS}/reference/battery_ipcam/modules'
@@ -148,4 +151,13 @@ if [[ -d ${G1_SYS} ]]; then
     alias tol='cd ${G1_SYS}/osdrv/platform/liteos/liteos'
 fi
 
-[[ -d ${MY_HOME}/arm-himix100-linux ]] && export PATH=${MY_HOME}/arm-himix100-linux/bin:$PATH
+BO_SYS=${MY_HOME}/b0_sys
+B0_SYS_TOOLCHAIN_32=${MY_TOOLCHAINS}/mips-gcc472-glibc216-32bit
+B0_SYS_TOOLCHAIN_64=${MY_TOOLCHAINS}/mips-gcc472-glibc216-64bit
+if [[ -d ${B0_SYS} ]]; then
+fi
+
+
+[[ -d ${G1_SYS_TOOLCHAIN} ]] && export PATH=${G1_SYS_TOOLCHAIN}/bin:$PATH
+[[ -d ${B0_SYS_TOOLCHAIN_32} ]] && export PATH=${B0_SYS_TOOLCHAIN_32}/bin:$PATH
+[[ -d ${B0_SYS_TOOLCHAIN_64} ]] && export PATH=${B0_SYS_TOOLCHAIN_64}/bin:$PATH

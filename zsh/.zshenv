@@ -32,8 +32,9 @@ unset BOLDRED BOLDGREEN BOLDYELLOW BOLDBLUE BOLDPURPLE BOLDCYAN RED GREEN YELLOW
 # disables prompt mangling in virtual_env/bin/activate
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
+
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
 
 which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
