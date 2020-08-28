@@ -343,6 +343,6 @@ umask 022
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
-if which neofetch; then
+if which neofetch > /dev/null 2>&1; then
     neofetch
 fi
