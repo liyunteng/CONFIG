@@ -77,9 +77,7 @@ YELLOW=$'\033[0;33m'
 BLUE=$'\033[0;34m'
 PURPLE=$'\033[0;35m'
 CYAN=$'\033[0;36m'
-
-NORMAL=$'\033[0m'
-TIME=$(date +%H:%M)
+NORMAL=$'\033[00m'
 
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
@@ -118,27 +116,27 @@ fi
 
 if ${use_color} ; then
     if [[ ${EUID} == 0 ]] ; then
-        PS1="${BOLDRED}\h ${BOLDBLUE}\w ${BOLDRED}# ${NORMAL}"
+        PS1="\[${BOLDRED}\]\h \[${BOLDBLUE}\]\w \[${BOLDRED}\]# \[${NORMAL}\]"
     else
-        PS1="${BOLDGREEN}\u@\h ${BOLDBLUE}\w ${BOLDGREEN}\$ ${NORMAL}"
+        PS1="\[${$BOLDGREEN}\]\u@\h \[${$BOLDBLUE}\]\w \[${$BOLDGREEN}\]$ \[${$NORMAL}\]"
     fi
 else
     if [[ ${EUID} == 0 ]] ; then
         # show root@ when we don't have colors
-        PS1='\u@\h \w \# '
-        else
-            PS1='\u@\h \w \$ '
+        PS1='\h \w # '
+    else
+        PS1='\u@\h \w $ '
     fi
 fi
 
 # support colors in less
-export LESS_TERMCAP_mb=${BOLDRED}   	# start blink
-export LESS_TERMCAP_md=${BOLDBLUE}  	# start bold
-export LESS_TERMCAP_me=${NORMAL}    	# turn off bold, blink and underline
-export LESS_TERMCAP_so=${YELLOW}     	# start standout
-export LESS_TERMCAP_se=${NORMAL}    	# stop standout
-export LESS_TERMCAP_us=${GREEN}  		# start underline
-export LESS_TERMCAP_ue=${NORMAL}    	# stop underline
+export LESS_TERMCAP_mb=${BOLDRED}       # start blink
+export LESS_TERMCAP_md=${BOLDBLUE}      # start bold
+export LESS_TERMCAP_me=${NORMAL}        # turn off bold, blink and underline
+export LESS_TERMCAP_so=${YELLOW}        # start standout
+export LESS_TERMCAP_se=${NORMAL}        # stop standout
+export LESS_TERMCAP_us=${GREEN}         # start underline
+export LESS_TERMCAP_ue=${NORMAL}        # stop underline
 
 unset BOLDRED BOLDGREEN BOLDYELLOW BOLDBLUE BOLDPURPLE BOLDCYAN RED GREEN YELLOW BLUE PURPLE CYAN NORMAL
 
@@ -334,7 +332,9 @@ terminal-color() {
 	done
 }
 
-
+src () {
+    exec "${SHELL#-}"
+}
 
 umask 022
 

@@ -25,10 +25,10 @@ unset EXCLUDE_FOLDERS
 
 # do we have GNU ls with color-support?
 if [[ "$TERM" != dumb ]]; then
-    alias ls="command ls ${ls_options:+${ls_options[*]}}"
-    alias grep="command grep ${grep_options:+${grep_options[*]}}"
-    alias egrep="command egrep ${grep_options:+${grep_options[*]}}"
-    alias fgrep="command fgrep ${grep_options:+${grep_options[*]}}"
+    alias ls="ls ${ls_options:+${ls_options[*]}}"
+    alias grep="command grep -v grep | command grep ${grep_options:+${grep_options[*]}}"
+    alias egrep="command grep -v grep | command egrep ${grep_options:+${grep_options[*]}}"
+    alias fgrep="command grep -v grep | command fgrep ${grep_options:+${grep_options[*]}}"
 fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -111,7 +111,7 @@ alias ...='cd ../../'
 alias da='du -sch'
 
 alias tailf='tail -f'
-alias sgrep='grep -R -n -H -C 5' 
+alias sgrep='grep -R -n -H -C 5'
 
 alias ff='find . -type f -name'
 alias fd='find . -type d -name'
@@ -125,8 +125,11 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
-alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1'
+# alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
+# alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1'
+alias psmem='ps a -o user,pid,ppid,rss,vsz,pmem,cmd k pmem'
+alias pscpu='ps a -o user,pid,ppid,nice,state,wchan,cputime,pcpu,cmd k pcpu'
+alias psp='ps -ef | grep'
 alias x=simple-extract
 
 
