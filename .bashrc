@@ -118,7 +118,7 @@ if ${use_color} ; then
     if [[ ${EUID} == 0 ]] ; then
         PS1="\[${BOLDRED}\]\h \[${BOLDBLUE}\]\w \[${BOLDRED}\]# \[${NORMAL}\]"
     else
-        PS1="\[${$BOLDGREEN}\]\u@\h \[${$BOLDBLUE}\]\w \[${$BOLDGREEN}\]$ \[${$NORMAL}\]"
+        PS1="\[${BOLDGREEN}\]\u@\h \[${BOLDBLUE}\]\w \[${BOLDGREEN}\]$ \[${NORMAL}\]"
     fi
 else
     if [[ ${EUID} == 0 ]] ; then
