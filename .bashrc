@@ -339,6 +339,7 @@ src () {
 umask 022
 
 [[ -f ${HOME}/.alias ]] && source ${HOME}/.alias
+[[ -f ${HOME}/.custom.local ]] && source ${HOME}/.custom.local
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH

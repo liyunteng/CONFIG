@@ -495,7 +495,8 @@ umask 022
 source $ZSH/oh-my-zsh.sh
 
 [[ -f ${HOME}/.alias ]] && source ${HOME}/.alias
+[[ -f ${HOME}/.custom.local ]] && source ${HOME}/.custom.local
 
-if check_command neofetch; then 
+if check_command neofetch; then
     neofetch
 fi
