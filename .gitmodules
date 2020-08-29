@@ -1,0 +1,13 @@
+[submodule "emacs.d"]
+	path = emacs.d
+	url = https://github.com/liyunteng/emacs
+	branch = develop
+[submodule "vim"]
+	path = vim
+	url = https://github.com/liyunteng/vim
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "vim_runtime"]
+	path = vim_runtime
+	url = https://github.com/liyunteng/vim

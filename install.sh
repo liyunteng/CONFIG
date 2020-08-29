@@ -11,13 +11,32 @@ install_configs() {
     "bash_profile" "bashrc" "alias.sh" "zshrc"
     "gitconfig" "gitignore"
     "tmux.conf" "tmux.conf.local" "clang-format"
-    "curlrc" "wgetrc" "editorconfig" "ssh")
+    "curlrc" "wgetrc" "editorconfig"
+    )
+    local my_repos=("emacs.d" "vim_runtime" "oh-my-zsh" "ssh")
 
     local target="${HOME}"
     for x in ${my_configs[@]}; do
         # cp -af ${x} ${target}
-        ln -sf "$(readlink -f ${x})" ~/.${x}
+        ln -sfr -T "$(readlink -f ${x})" ${HOME}/.${x}
+        echo "install ${HOME}/.${x} -->  $(readlink -f ${x})"
     done
+    for x in ${my_repos[@]};do
+    	if [[ -d ${HOME}/.${x} ]]; then
+	        rm -rf ${HOME}/.${x}
+	    fi
+        ln -sfr -T "$(readlink -f ${x})" ${HOME}/.${x}
+        echo "install ${HOME}/.${x} -->  $(readlink -f ${x})"
+    done
+
+    cp -af zsh/plugins ${HOME}/.oh-my-zsh/plugins
+    cp -af zsh/themes ${HOME}/.oh-my-zsh/themes
+
+    # ${HOME}/.vim_runtime/install_awesome_parameterized.sh ${HOME}/.vim_runtime "$USER"
+    # python2 ${HOME}/.vim_runtime/update_plugins.py
+    if [[ emacs ]]; then
+        # emacs --debug-init && emacsclient -e "(kill-emacs)"
+    fi
 }
 
 check_git_cmd() {
@@ -133,7 +152,7 @@ main() {
         install_emacs
     fi
 
-    echo "install success"
+    echo "Install success"
     exit 0
 }
 
