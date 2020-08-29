@@ -1,1 +1,0 @@
-./configure --prefix=/opt/QtEmbedded-5.4.1-arm -opensource -release -xplatform linux-arm-gnueabi-g++ -sysroot /opt/hisi-linux/x86-arm/arm-hisiv200-linux/target  -confirm-license -platform linux-g++  -v 

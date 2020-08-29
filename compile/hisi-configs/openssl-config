@@ -1,1 +1,0 @@
-./config -DOPENSSL_NO_HEARTBEATS shared os/compiler:gcc --prefix=/usr/local/arm-hisi-linux --cross-compile-prefix=arm-hisiv200-linux- 

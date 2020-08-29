@@ -1,2 +1,0 @@
-./configure CXX=arm-hisiv200-linux-g++ CC=arm-hisiv200-linux-gcc LD=arm-hisiv200-linux-ld CXXLD=arm-hisiv200-linux-ld AR=arm-hisiv200-linux-ar AS=arm-hisiv200-linux-as STRIP=arm-hisiv200-linux-strip --host=arm-linux
- --prefix=/usr/locale/arm-hisi-linux

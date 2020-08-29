@@ -1,1 +1,0 @@
-./configure --host=arm-linux-androideabi --prefix=/root/work/android-lib LDFLAGS=-L/root/work/android-lib/lib CPPFLAGS=-fPIC -I$/root/work/android-lib/include LIBS=-lgcc

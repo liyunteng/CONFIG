@@ -1,1 +1,0 @@
- $ ./configure --host=arm-hisiv200-linux CC=arm-hisiv200-linux-gcc --enable-shared --prefix=/usr/local/arm-hisi-linux/ CFLAGS=-march=armv7-a -mcpu=cortex-a9 -mfloat-abi=softfp -mfpu=vfpv3-d16 -g -O2

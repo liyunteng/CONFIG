@@ -1,1 +1,0 @@
-./configure CXX=arm-none-linux-gnueabi-g++ CC=arm-none-linux-gnueabi-gcc LD=arm-none-linux-gnueabi-ld CXXLD=arm-none-linux-gnueabi-ld AR=arm-none-linux-gnueabi-ar AS=arm-none-linux-gnueabi-as sTRIP=arm-none-linux-gnueabi-strip --host=arm-linux
