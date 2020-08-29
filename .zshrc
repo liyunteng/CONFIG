@@ -1,4 +1,6 @@
-#!/usr/bin/env zsh
+#
+# ~/.zshrc
+#
 
 if [[ "$TERM" = "dumb" ]]; then
     unsetopt zle
@@ -535,20 +537,19 @@ export LESS_TERMCAP_ue=${NORMAL}    	# stop underline
 
 unset BOLDRED BOLDGREEN BOLDYELLOW BOLDBLUE BOLDPURPLE BOLDCYAN RED GREEN YELLOW BLUE PURPLE CYAN NORMAL
 
+# disables prompt mangling in virtual_env/bin/activate
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 umask 022
 
 # must before oh-my-zsh.sh
-[[ -f ${HOME}/.custom-local ]] && . ${HOME}/.custom-local
+if [[ -f ~/.custom-local.sh ]]; then
+    source ~/.custom-local.sh
+fi
+
 source  $ZSH/oh-my-zsh.sh
+
 # must after oh-my-zsh.sh
-[[ -f ${HOME}/.alias ]] && . ${HOME}/.alias
-
-# disables prompt mangling in virtual_env/bin/activate
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-
-# init pyenv
-if which pyenv > /dev/null 2>&1; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+if [[ -f ~/.alias.sh ]]; then
+    source  ~/.alias.sh
 fi

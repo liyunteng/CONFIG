@@ -1,4 +1,5 @@
-# /etc/bash/bashrc
+#
+# ~/.bashrc
 #
 # This file is sourced by all *interactive* bash shells on startup,
 # including some apparently interactive shells such as scp and rcp
@@ -358,12 +359,10 @@ src () {
 
 umask 022
 
-[[ -f ${HOME}/.custom-local ]] && source  ${HOME}/.custom-local
-[[ -f ${HOME}/.alias ]] && source ${HOME}/.alias
-
-# init pyenv
-if which pyenv > /dev/null 2>&1; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+if [[ -f ~/.custom-local.sh ]]; then
+    source  ~/.custom-local.sh
 fi
 
+if [[ -f ~/.alias.sh ]]; then
+    source ~/.alias.sh
+fi

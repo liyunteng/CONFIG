@@ -1,4 +1,6 @@
-#!/usr/bin/env sh
+#
+# ~/.alias.sh
+#
 
 # color on GNU ls(1)
 if ls --color=auto / > /dev/null 2>&1; then
@@ -15,7 +17,7 @@ if ls --version > /dev/null 2>&1 && ls --version | grep -q 'GNU' > /dev/null 2>&
 fi
 
 # color on GNU and FreeBSD grep(1)
-if grep --color=auto -q "a" <<< "a" > /dev/null 2>&1; then
+if echo "a" | grep --color=auto -q "a" > /dev/null 2>&1; then
     grep_options+=( --color=auto )
 fi
 
@@ -170,6 +172,12 @@ if [[ -d ${B0_SYS} && ${MY_BUILD_ENV} == "B0" ]]; then
     alias tol='cd ${B0_SYS}/Apps'
 fi
 
-[[ -d ${G1_SYS_TOOLCHAIN} ]] && add-path ${G1_SYS_TOOLCHAIN}/bin
-[[ -d ${B0_SYS_TOOLCHAIN_32} ]] && add-path ${B0_SYS_TOOLCHAIN_32}/bin
-[[ -d ${B0_SYS_TOOLCHAIN_64} ]] && add-path ${B0_SYS_TOOLCHAIN_64}/bin
+if [[ -d ${G1_SYS_TOOLCHAIN} ]]; then
+    add-path ${G1_SYS_TOOLCHAIN}/bin
+fi
+if [[ -d ${B0_SYS_TOOLCHAIN_32} ]];then
+    add-path ${B0_SYS_TOOLCHAIN_32}/bin
+fi
+if [[ -d ${B0_SYS_TOOLCHAIN_64} ]]; then
+    add-path ${B0_SYS_TOOLCHAIN_64}/bin
+fi

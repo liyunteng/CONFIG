@@ -8,7 +8,7 @@ INSTALL_GIT_REPOS=${INSTALL_GIT_REPOS:-no}
 
 install_configs() {
     local my_configs=(
-    ".bash_profile" ".bashrc" ".alias" ".zshrc"
+    ".bash_profile" ".bashrc" ".alias.sh" ".zshrc"
     ".gitconfig" ".git-credentials"  ".gitignore"
     ".tmux.conf" ".tmux.conf.local" ".clang-format"
     ".curlrc" ".wgetrc" ".editorconfig" ".ssh")
