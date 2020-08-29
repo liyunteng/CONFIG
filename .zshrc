@@ -519,7 +519,11 @@ unset BOLDRED BOLDGREEN BOLDYELLOW BOLDBLUE BOLDPURPLE BOLDCYAN RED GREEN YELLOW
 
 umask 022
 
-source $ZSH/oh-my-zsh.sh
+if [[ -f ${HOME}/.alias ]];then
+    source ${HOME}/.alias
+fi
+if [[ -f ${HOME}/.custom-local ]]; then
+    source  ${HOME}/.custom-local
+fi
 
-[[ -f ${HOME}/.alias ]] && source ${HOME}/.alias
-[[ -f ${HOME}/.custom.local ]] && source ${HOME}/.custom.local
+source $ZSH/oh-my-zsh.sh

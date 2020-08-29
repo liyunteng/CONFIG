@@ -338,6 +338,9 @@ src () {
 
 umask 022
 
-[[ -f ${HOME}/.alias ]] && source ${HOME}/.alias
-[[ -f ${HOME}/.custom.local ]] && source ${HOME}/.custom.local
-
+if [[ -f ${HOME}/.alias ]];then
+    source ${HOME}/.alias
+fi
+if [[ -f ${HOME}/.custom-local ]]; then
+    source  ${HOME}/.custom-local
+fi

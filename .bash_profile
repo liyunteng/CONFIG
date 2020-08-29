@@ -1,11 +1,13 @@
-#
-# ~/.bash_profile
-#
+#!/usr/bin/evn bash
+
+MY_PATH=
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# If you come from bash you might have to change your $PATH.
-export PATH=${PATH}:${HOME}/.pyenv/bin
-
 # init pyenv
-which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
+if which pyenv > /dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+export PATH=${PATH}:${MY_PATH}
