@@ -8,14 +8,15 @@ INSTALL_GIT_REPOS=${INSTALL_GIT_REPOS:-no}
 
 install_configs() {
     local my_configs=(
-    ".bash_profile" ".bashrc" ".alias.sh" ".zshrc"
-    ".gitconfig" ".git-credentials"  ".gitignore"
-    ".tmux.conf" ".tmux.conf.local" ".clang-format"
-    ".curlrc" ".wgetrc" ".editorconfig" ".ssh")
+    "bash_profile" "bashrc" "alias.sh" "zshrc"
+    "gitconfig" "git-credentials"  "gitignore"
+    "tmux.conf" "tmux.conf.local" "clang-format"
+    "curlrc" "wgetrc" "editorconfig" "ssh")
 
     local target="${HOME}"
     for x in ${my_configs[@]}; do
-        cp -af ${x} ${target}
+        # cp -af ${x} ${target}
+        ln -sf "$(readlink -f ${x})" ~/.${x}
     done
 }
 
