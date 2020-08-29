@@ -338,9 +338,5 @@ src () {
 
 umask 022
 
-if [[ -f ${HOME}/.alias ]];then
-    source ${HOME}/.alias
-fi
-if [[ -f ${HOME}/.custom-local ]]; then
-    source  ${HOME}/.custom-local
-fi
+[[ -f ${HOME}/.custom-local ]] && source  ${HOME}/.custom-local
+[[ -f ${HOME}/.alias ]] && source ${HOME}/.alias

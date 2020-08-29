@@ -4,8 +4,6 @@
 
 MY_PATH=
 
-[[ -f ~/.zshrc ]] && . ~/.zshrc
-
 # disables prompt mangling in virtual_env/bin/activate
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
