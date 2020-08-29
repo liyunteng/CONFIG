@@ -34,9 +34,9 @@ install_configs() {
 
     # ${HOME}/.vim_runtime/install_awesome_parameterized.sh ${HOME}/.vim_runtime "$USER"
     # python2 ${HOME}/.vim_runtime/update_plugins.py
-    if [[ emacs ]]; then
+    # if [[ emacs ]]; then
         # emacs --debug-init && emacsclient -e "(kill-emacs)"
-    fi
+    # fi
 }
 
 check_git_cmd() {
