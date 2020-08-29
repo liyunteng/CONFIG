@@ -14,6 +14,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+MY_PATH=
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -521,8 +522,18 @@ umask 022
 
 # must before oh-my-zsh.sh
 [[ -f ${HOME}/.custom-local ]] && . ${HOME}/.custom-local
-
 source  $ZSH/oh-my-zsh.sh
-
 # must after oh-my-zsh.sh
 [[ -f ${HOME}/.alias ]] && . ${HOME}/.alias
+
+export PATH=${PATH}:${MY_PATH}
+
+# disables prompt mangling in virtual_env/bin/activate
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# init pyenv
+if which pyenv > /dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+

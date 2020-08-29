@@ -63,6 +63,8 @@ case "$TERM" in
 esac
 
 
+MY_PATH=
+
 # use terminal-color
 BOLDRED=$'\033[1;31m'
 BOLDGREEN=$'\033[1;32m'
@@ -340,3 +342,12 @@ umask 022
 
 [[ -f ${HOME}/.custom-local ]] && source  ${HOME}/.custom-local
 [[ -f ${HOME}/.alias ]] && source ${HOME}/.alias
+
+export PATH=${PATH}:${MY_PATH}
+
+# init pyenv
+if which pyenv > /dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+

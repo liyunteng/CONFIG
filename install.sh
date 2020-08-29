@@ -8,11 +8,10 @@ INSTALL_GIT_REPOS=${INSTALL_GIT_REPOS:-no}
 
 install_configs() {
     local my_configs=(
-    ".bash_profile" ".bashrc" ".alias"
+    ".bash_profile" ".bashrc" ".alias" ".zshrc"
     ".gitconfig" ".git-credentials"  ".gitignore"
     ".tmux.conf" ".tmux.conf.local" ".clang-format"
-    ".curlrc" ".wgetrc" ".editorconfig"
-    ".zprofile" ".zshrc" ".ssh")
+    ".curlrc" ".wgetrc" ".editorconfig" ".ssh")
 
     local target="${HOME}"
     for x in ${my_configs[@]}; do
