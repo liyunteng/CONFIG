@@ -527,13 +527,13 @@ CYAN=$'\033[0;36m'
 NORMAL=$'\033[0m'
 
 # support colors in less
-export LESS_TERMCAP_mb=${BOLDRED}   	# start blink
-export LESS_TERMCAP_md=${BOLDBLUE}  	# start bold
-export LESS_TERMCAP_me=${NORMAL}    	# turn off bold, blink and underline
-export LESS_TERMCAP_so=${YELLOW}    	# start standout
-export LESS_TERMCAP_se=${NORMAL}    	# stop standout
-export LESS_TERMCAP_us=${GREEN}  		# start underline
-export LESS_TERMCAP_ue=${NORMAL}    	# stop underline
+export LESS_TERMCAP_mb=${BOLDRED}       # start blink
+export LESS_TERMCAP_md=${BOLDBLUE}      # start bold
+export LESS_TERMCAP_me=${NORMAL}        # turn off bold, blink and underline
+export LESS_TERMCAP_so=${BOLDYELLOW}    # start standout
+export LESS_TERMCAP_se=${NORMAL}        # stop standout
+export LESS_TERMCAP_us=${GREEN}         # start underline
+export LESS_TERMCAP_ue=${NORMAL}        # stop underline
 
 unset BOLDRED BOLDGREEN BOLDYELLOW BOLDBLUE BOLDPURPLE BOLDCYAN RED GREEN YELLOW BLUE PURPLE CYAN NORMAL
 
