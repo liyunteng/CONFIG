@@ -14,7 +14,6 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-MY_PATH=
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -489,6 +488,25 @@ terminal-color() {
 	done
 }
 
+MY_PATH=
+# add-path path [after]
+add-path () {
+    [[ $# -lt 1 ]] && echo "add-path <path> [after]" && return
+    if ! echo ${PATH} | grep -E -q "(^|:)$1($|:)"; then
+        if [ "$2" = "after" ]; then
+            PATH=${PATH}:$1
+        else
+            PATH=$1:${PATH}
+        fi
+
+        if [[ -z ${MY_PATH} ]]; then
+            MY_PATH=$1
+        else
+            MY_PATH=${MY_PATH}:$1
+        fi
+    fi
+}
+
 # use terminal-color
 BOLDRED=$'\033[1;31m'
 BOLDGREEN=$'\033[1;32m'
@@ -526,8 +544,6 @@ source  $ZSH/oh-my-zsh.sh
 # must after oh-my-zsh.sh
 [[ -f ${HOME}/.alias ]] && . ${HOME}/.alias
 
-export PATH=${PATH}:${MY_PATH}
-
 # disables prompt mangling in virtual_env/bin/activate
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
@@ -536,4 +552,3 @@ if which pyenv > /dev/null 2>&1; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
-

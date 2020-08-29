@@ -63,8 +63,6 @@ case "$TERM" in
 esac
 
 
-MY_PATH=
-
 # use terminal-color
 BOLDRED=$'\033[1;31m'
 BOLDGREEN=$'\033[1;32m'
@@ -334,6 +332,26 @@ terminal-color() {
 	done
 }
 
+MY_PATH=
+# add-path path [after]
+add-path () {
+    [[ $# -lt 1 ]] && echo "add-path <path> [after]" && return
+    if ! echo ${PATH} | grep -E -q "(^|:)$1($|:)"; then
+        if [ "$2" = "after" ]; then
+            PATH=${PATH}:$1
+        else
+            PATH=$1:${PATH}
+        fi
+
+        if [[ -z ${MY_PATH} ]]; then
+            MY_PATH=$1
+        else
+            MY_PATH=${MY_PATH}:$1
+        fi
+
+    fi
+}
+
 src () {
     exec "${SHELL#-}"
 }
@@ -342,8 +360,6 @@ umask 022
 
 [[ -f ${HOME}/.custom-local ]] && source  ${HOME}/.custom-local
 [[ -f ${HOME}/.alias ]] && source ${HOME}/.alias
-
-export PATH=${PATH}:${MY_PATH}
 
 # init pyenv
 if which pyenv > /dev/null 2>&1; then

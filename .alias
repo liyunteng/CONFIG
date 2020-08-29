@@ -170,6 +170,6 @@ if [[ -d ${B0_SYS} && ${MY_BUILD_ENV} == "B0" ]]; then
     alias tol='cd ${B0_SYS}/Apps'
 fi
 
-[[ -d ${G1_SYS_TOOLCHAIN} ]] && MY_PATH=${G1_SYS_TOOLCHAIN}/bin:${MY_PATH}
-[[ -d ${B0_SYS_TOOLCHAIN_32} ]] && MY_PATH=${B0_SYS_TOOLCHAIN_32}/bin:${MY_PATH}
-[[ -d ${B0_SYS_TOOLCHAIN_64} ]] && MY_PATH=${B0_SYS_TOOLCHAIN_64}/bin:${MY_PATH}
+[[ -d ${G1_SYS_TOOLCHAIN} ]] && add-path ${G1_SYS_TOOLCHAIN}/bin
+[[ -d ${B0_SYS_TOOLCHAIN_32} ]] && add-path ${B0_SYS_TOOLCHAIN_32}/bin
+[[ -d ${B0_SYS_TOOLCHAIN_64} ]] && add-path ${B0_SYS_TOOLCHAIN_64}/bin
