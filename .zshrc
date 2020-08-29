@@ -500,12 +500,12 @@ add-path () {
         else
             PATH=$1:${PATH}
         fi
+    fi
 
-        if [[ -z ${MY_PATH} ]]; then
-            MY_PATH=$1
-        else
-            MY_PATH=${MY_PATH}:$1
-        fi
+    if [[ -z ${MY_PATH} ]]; then
+        MY_PATH=$1
+    else
+        MY_PATH=${MY_PATH}:$1
     fi
 }
 
