@@ -12,7 +12,7 @@ install_configs() {
     ".gitconfig" ".git-credentials"  ".gitignore"
     ".tmux.conf" ".tmux.conf.local" ".clang-format"
     ".curlrc" ".wgetrc" ".editorconfig"
-    "zsh/.zshenv" "zsh/.zshrc" ".ssh")
+    ".zprofile" ".zshrc" ".ssh")
 
     local target="${HOME}"
     for x in ${my_configs[@]}; do
@@ -104,7 +104,7 @@ usage() {
 ${0} [-a | -n | -h].
 
     -a      install all.
-    -n      only install config.
+    -n      only install config (default).
     -h      help
 EOF
 }

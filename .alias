@@ -25,7 +25,7 @@ unset EXCLUDE_FOLDERS
 
 # do we have GNU ls with color-support?
 if [[ "$TERM" != dumb ]]; then
-    alias ls="ls ${ls_options:+${ls_options[*]}}"
+    alias ls="command ls ${ls_options:+${ls_options[*]}}"
     alias grep="command grep -v grep | command grep ${grep_options:+${grep_options[*]}}"
     alias egrep="command grep -v grep | command egrep ${grep_options:+${grep_options[*]}}"
     alias fgrep="command grep -v grep | command fgrep ${grep_options:+${grep_options[*]}}"
@@ -132,6 +132,9 @@ alias pscpu='ps a -o user,pid,ppid,nice,state,wchan,cputime,pcpu,cmd k pcpu'
 alias psp='ps -ef | grep'
 alias x=simple-extract
 
+if which neofetch > /dev/null 2>&1; then
+    alias s='neofetch'
+fi
 
 GIT_HOME=~/git
 KERNEL_HOME=/usr/src/linux
