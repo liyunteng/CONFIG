@@ -8,7 +8,7 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
-    ignore = dirty
+    	ignore = untracked
 [submodule "vim_runtime"]
 	path = vim_runtime
 	url = https://github.com/liyunteng/vim

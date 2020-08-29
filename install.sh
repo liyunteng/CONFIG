@@ -6,6 +6,8 @@
 set -e
 INSTALL_GIT_REPOS=${INSTALL_GIT_REPOS:-no}
 
+git submodule init
+git submodule update
 install_configs() {
     local my_configs=(
     "bash_profile" "bashrc" "alias.sh" "zshrc"
@@ -18,19 +20,19 @@ install_configs() {
     local target="${HOME}"
     for x in ${my_configs[@]}; do
         # cp -af ${x} ${target}
-        ln -sfr -T "$(readlink -f ${x})" ${HOME}/.${x}
-        echo "install ${HOME}/.${x} -->  $(readlink -f ${x})"
+        ln -sf "$(pwd)/${x}" ${HOME}/.${x}
+        echo "install ${HOME}/.${x} -->  $(pwd)/${x}"
     done
     for x in ${my_repos[@]};do
     	if [[ -d ${HOME}/.${x} ]]; then
-	        rm -rf ${HOME}/.${x}
-	    fi
-        ln -sfr -T "$(readlink -f ${x})" ${HOME}/.${x}
-        echo "install ${HOME}/.${x} -->  $(readlink -f ${x})"
+	    rm -rf ${HOME}/.${x}
+	fi
+        ln -sf "$(pwd)/${x}" ${HOME}/.${x}
+        echo "install ${HOME}/.${x} -->  $(pwd)/${x}"
     done
 
-    cp -af zsh/plugins ${HOME}/.oh-my-zsh/plugins
-    cp -af zsh/themes ${HOME}/.oh-my-zsh/themes
+    cp -af zsh/plugins oh-my-zsh/plugins
+    cp -af zsh/themes oh-my-zsh/themes
 
     # ${HOME}/.vim_runtime/install_awesome_parameterized.sh ${HOME}/.vim_runtime "$USER"
     # python2 ${HOME}/.vim_runtime/update_plugins.py
