@@ -1,7 +1,7 @@
 Host aws
     HostName 52.81.45.95
     User ec2-user
-    IdentityFile ~/.ssh/asw_test_env.pem
+    IdentityFile ~/.ssh/aws_test_env.pem
 
 Host 138
     HostName 47.107.151.138
@@ -22,7 +22,7 @@ Host 28
 
 Host 75
     Hostname 192.168.31.75
-    User liyt 
+    User liyt
     IdentityFile ~/.ssh/id_rsa
 
 Host jump
