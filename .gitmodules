@@ -1,14 +1,12 @@
 [submodule "emacs.d"]
-	path = emacs.d
-	url = https://github.com/liyunteng/emacs
-	branch = develop
-[submodule "vim"]
-	path = vim
-	url = https://github.com/liyunteng/vim
+    path = emacs.d
+    url = https://github.com/liyunteng/emacs
+    branch = develop
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/ohmyzsh/ohmyzsh.git
-    	ignore = untracked
+    path = oh-my-zsh
+    url = https://github.com/ohmyzsh/ohmyzsh.git
+    ignore = untracked
 [submodule "vim_runtime"]
-	path = vim_runtime
-	url = https://github.com/liyunteng/vim
+    path = vim_runtime
+    url = https://github.com/liyunteng/vim
+    branch = master
