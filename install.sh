@@ -39,7 +39,7 @@ create_copy () {
     local src="$(pwd)/$1"
     local target=$2
 
-    cp -rf ${src} ${target}
+    cp -af ${src} ${target}
     echo "copy ${src} ==> ${target}"
 }
 
