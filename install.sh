@@ -5,6 +5,7 @@
 # Last-Updated: <2019/11/16 03:19:02 liyunteng>
 set -e
 INSTALL_CONFIG=${INSTALL_CONFIG:-yes}
+INSTALL_SSH=${INSTALL_SSH:-yes}
 INSTALL_ZSH=${INSTALL_ZSH:-yes}
 INSTALL_VIM=${INSTALL_VIM:-no}
 INSTALL_EMACS=${INSTALL_EMACS:-no}
@@ -69,8 +70,6 @@ install_configs () {
     for x in ${my_configs[@]}; do
         create_link ${x}
     done
-
-    install_ssh
 }
 
 install_zsh() {
@@ -105,28 +104,36 @@ install_vim () {
 
 usage() {
     cat <<-EOF
-${0} [-a | -h | config | zsh | vim | emacs].
+${0} [all | help | config | ssh | zsh | vim | emacs].
 
-    -a      install all.
-    config  install config (default)
-    zsh     install zsh config
-    vim     install vim config
-    emacs   install emacs config
-    -h      help
+    all         install all.
+    config      install config (default)
+    ssh         install ssh config (default)
+    zsh         install zsh config (default)
+    vim         install vim config
+    emacs       install emacs config
+    help        help
 EOF
 }
 
 ###############################
 main() {
     # Parse arguments
+    if [[ $# -gt 0 ]];then
+        INSTALL_CONFIG=no
+        INSTALL_SSH=no
+        INSTALL_ZSH=no
+    fi
+
     while [ $# -gt 0 ]; do
         case $1 in
-            -a) INSTALL_ALL=yes ;;
-            emacs) INSTALL_EMACS=yes;;
-            vim) INSTALL_VIM=yes;;
-            zsh) INSTALL_ZSH=yes;;
-            config) INSTALL_CONFIG=yes;;
-            -h) usage
+            all)        INSTALL_ALL=yes ;;
+            config)     INSTALL_CONFIG=yes;;
+            ssh)        INSTALL_SSH=yes;;
+            zsh)        INSTALL_ZSH=yes;;
+            vim)        INSTALL_VIM=yes;;
+            emacs)      INSTALL_EMACS=yes;;
+            -h|help) usage
                 exit 0;;
             *) usage
                 exit -1;;
@@ -138,12 +145,17 @@ main() {
         INSTALL_ZSH=yes
         INSTALL_VIM=yes
         INSTALL_EMACS=yes
+        INSTALL_SSH=yes
     fi
 
     update
 
     if [[ ${INSTALL_CONFIG} == "yes" ]]; then
         install_configs
+    fi
+
+    if [[ ${INSTALL_SSH} == "yes" ]]; then
+        install_ssh
     fi
 
     if [[ ${INSTALL_ZSH} == "yes" ]]; then
