@@ -4,7 +4,11 @@
 # Copyright (C) 2019 liyunteng
 # Last-Updated: <2019/11/16 03:19:02 liyunteng>
 set -e
-INSTALL_GIT_REPOS=${INSTALL_GIT_REPOS:-no}
+INSTALL_CONFIG=${INSTALL_CONFIG:-yes}
+INSTALL_ZSH=${INSTALL_ZSH:-no}
+INSTALL_VIM=${INSTALL_VIM:-no}
+INSTALL_EMACS=${INSTALL_EMACS:-no}
+INSTALL_ALL=${INSTALL_ALL:-no}
 
 update () {
     if [[ ! git ]]; then
@@ -29,19 +33,22 @@ create_link () {
 
 install_configs() {
     local my_configs=(
-    bash_profile bashrc alias.sh zshrc
-    gitconfig gitignore
-    tmux.conf tmux.conf.local clang-format
-    curlrc wgetrc editorconfig
+        bash_profile bashrc alias.sh zshrc
+        gitconfig gitignore
+        tmux.conf tmux.conf.local clang-format
+        curlrc wgetrc editorconfig
     )
-    local my_repos=(emacs.d vim_runtime oh-my-zsh ssh)
-    local target=
-    local src=
     for x in ${my_configs[@]}; do
         create_link ${x}
     done
 
-    create_link ssh 1
+
+    # ssh
+    local target=${HOME}/.ssh
+    if [[ -L ${target} ]]; then
+        rm -rf ${target}
+    fi
+    cp -rf ssh ${target}
 }
 
 install_zsh() {
@@ -76,10 +83,13 @@ install_vim () {
 
 usage() {
     cat <<-EOF
-${0} [-a | -n | -h].
+${0} [-a | -h | config | zsh | vim | emacs].
 
     -a      install all.
-    -n      only install config (default).
+    config  install config (default)
+    zsh     install zsh config
+    vim     install vim config
+    emacs   install emacs config
     -h      help
 EOF
 }
@@ -89,8 +99,11 @@ main() {
     # Parse arguments
     while [ $# -gt 0 ]; do
         case $1 in
-            -a) INSTALL_GIT_REPOS=yes ;;
-            -n) INSTALL_GIT_REPOS=no ;;
+            -a) INSTALL_ALL=yes ;;
+            emacs) INSTALL_EMACS=yes;;
+            vim) INSTALL_VIM=yes;;
+            zsh) INSTALL_ZSH=yes;;
+            config) INSTALL_CONFIG=yes;;
             -h) usage
                 exit 0;;
             *) usage
@@ -98,13 +111,28 @@ main() {
         esac
         shift
     done
+    if [[ ${INSTALL_ALL} == "yes" ]]; then
+        INSTALL_CONFIG=yes
+        INSTALL_ZSH=yes
+        INSTALL_VIM=yes
+        INSTALL_EMACS=yes
+    fi
 
     update
 
-    install_configs
-    install_zsh
-    if [[ ${INSTALL_GIT_REPOS} == "yes" ]]; then
+    if [[ ${INSTALL_CONFIG} == "yes" ]]; then
+        install_configs
+    fi
+
+    if [[ ${INSTALL_ZSH} == "yes" ]]; then
+        install_zsh
+    fi
+
+    if [[ ${INSTALL_VIM} == "yes" ]]; then
         install_vim
+    fi
+
+    if [[ ${INSTALL_EMACS} == "yes" ]]; then
         install_emacs
     fi
 
