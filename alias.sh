@@ -167,7 +167,7 @@ B0_SYS_TOOLCHAIN_64=${MY_TOOLCHAINS}/mips-gcc472-glibc216-64bit
 if [[ -d ${B0_SYS} && ${MY_BUILD_ENV} == "B0" ]]; then
     alias tor='cd ${B0_SYS}'
     alias tob='cd ${B0_SYS}/Buildscript'
-    alias tov='cd ${B0_SYS}/Media'
+    alias tov='cd ${B0_SYS}/Apps/addx_stream'
     alias too='cd ${B0_SYS}/Images/output'
     alias tol='cd ${B0_SYS}/Apps'
 fi
