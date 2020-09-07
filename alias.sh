@@ -28,9 +28,9 @@ unset EXCLUDE_FOLDERS
 # do we have GNU ls with color-support?
 if [[ "$TERM" != dumb ]]; then
     alias ls="command ls ${ls_options:+${ls_options[*]}}"
-    alias grep="command grep -v grep | command grep ${grep_options:+${grep_options[*]}}"
-    alias egrep="command grep -v grep | command egrep ${grep_options:+${grep_options[*]}}"
-    alias fgrep="command grep -v grep | command fgrep ${grep_options:+${grep_options[*]}}"
+    alias grep="command grep ${grep_options:+${grep_options[*]}}"
+    alias egrep="command egrep ${grep_options:+${grep_options[*]}}"
+    alias fgrep="command fgrep ${grep_options:+${grep_options[*]}}"
 fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -131,7 +131,7 @@ alias mv='mv -i'
 # alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1'
 alias psmem='ps a -o user,pid,ppid,rss,vsz,pmem,cmd k pmem'
 alias pscpu='ps a -o user,pid,ppid,nice,state,wchan,cputime,pcpu,cmd k pcpu'
-alias psp='ps -ef | grep'
+alias psp='ps -ef | grep -v grep | grep'
 alias x=simple-extract
 
 if which neofetch > /dev/null 2>&1; then
