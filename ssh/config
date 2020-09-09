@@ -30,3 +30,9 @@ Host jump
     User ec2-user
     Port 32222
     IdentityFile ~/.ssh/id_rsa
+
+Host us-staging
+    Hostname 3.89.185.79
+    User centos
+    Port 32222
+    IdentityFile ~/.ssh/id_rsa
