@@ -1,0 +1,13 @@
+[Unit]
+Description=Start WiFi hotspot
+After=network-online.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/nmcli device wifi hotspot ifname wlan0 ssid lyt password Lyt123456
+RestartSec=5
+Restart=on-failure
+TimeoutStartSec=30
+
+[Install]
+WantedBy=multi-user.target
