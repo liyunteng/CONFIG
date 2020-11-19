@@ -5,7 +5,7 @@
 # color on GNU ls(1)
 if islinux; then
     ls_options+=( --color=auto )
-# color on FreeBSD and OSX ls(1)
+    # color on FreeBSD and OSX ls(1)
 elif isdarwin || isfreebsd; then
     ls_options+=( -G )
 fi
@@ -102,11 +102,11 @@ if isdarwin; then
     alias llog="${PAGER} /var/log/system.log"
     alias tlog="tail -f /var/log/system.log"
 elif [[ -e /var/log/syslog ]] ; then
-  alias llog="$PAGER /var/log/syslog"     # take a look at the syslog
-  alias tlog="tail -f /var/log/syslog"    # follow the syslog
+    alias llog="$PAGER /var/log/syslog"     # take a look at the syslog
+    alias tlog="tail -f /var/log/syslog"    # follow the syslog
 elif [[ journalctl ]]; then
-  alias llog="journalctl -e"
-  alias tlog="journalctl -f"
+    alias llog="journalctl -e"
+    alias tlog="journalctl -f"
 fi
 
 # Common Alias
@@ -132,13 +132,13 @@ alias mv='mv -i'
 # alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
 # alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1'
 if isdarwin; then
-alias psmem='ps a -o user,pid,ppid,rss,vsz,pmem,command | sort -b -k6,6n'
-alias pscpu='ps a -o user,pid,ppid,nice,state,wchan,cputime,pcpu,command | sort -b -k8,8n'
-alias psp='ps -ef | grep -hv grep | grep -hi'
+    alias psmem='ps a -o user,pid,ppid,rss,vsz,pmem,command | sort -b -k6,6n'
+    alias pscpu='ps a -o user,pid,ppid,nice,state,wchan,cputime,pcpu,command | sort -b -k8,8n'
+    alias psp='ps -ef | grep -hv grep | grep -hi'
 else
-alias psmem='ps a -o user,pid,ppid,rss,vsz,pmem,command k pmem'
-alias pscpu='ps a -o user,pid,ppid,nice,state,wchan,cputime,pcpu,command k pcpu'
-alias psp='ps -ef | grep -v grep | grep -i'
+    alias psmem='ps a -o user,pid,ppid,rss,vsz,pmem,command k pmem'
+    alias pscpu='ps a -o user,pid,ppid,nice,state,wchan,cputime,pcpu,command k pcpu'
+    alias psp='ps -ef | grep -v grep | grep -i'
 fi
 alias x=simple-extract
 
@@ -169,14 +169,6 @@ if [[ -d ${CG1_SYS} && ${MY_BUILD_ENV} == "CG1" ]];then
     ADDX_OTHER=${CG1_SYS}/osdrv/platform/liteos/liteos
 fi
 
-if [[ -d ${CG1_SYS} && ${MY_BUILD_ENV} == "CG1" ]]; then
-    alias tor='cd ${CG1_SYS}'
-    alias tob='cd ${CG1_SYS}'
-    alias tov='cd ${CG1_SYS}/reference/battery_ipcam/modules'
-    alias too='cd ${CG1_SYS}/reference/out/hi3518ev300_battery_ipcam_GC2053/burn'
-    alias tol='cd ${CG1_SYS}/osdrv/platform/liteos/liteos'
-fi
-
 CB0_SYS=${MY_HOME}/b0_sys
 CB0_SYS_TOOLCHAIN_32=${MY_TOOLCHAINS}/mips-gcc472-glibc216-32bit
 CB0_SYS_TOOLCHAIN_64=${MY_TOOLCHAINS}/mips-gcc472-glibc216-64bit
@@ -187,13 +179,6 @@ if [[ -d ${CB0_SYS} && ${MY_BUILD_ENV} == "CB0" ]]; then
     ADDX_OUTPUT=${CB0_SYS}/Images/output
     ADDX_OTHER=${CB0_SYS}/Apps
 fi
-if [[ -d ${CB0_SYS} && ${MY_BUILD_ENV} == "CB0" ]]; then
-    alias tor='cd ${CB0_SYS}'
-    alias tob='cd ${CB0_SYS}/Buildscript'
-    alias tov='cd ${CB0_SYS}/Apps/addx_stream'
-    alias too='cd ${CB0_SYS}/Images/output'
-    alias tol='cd ${CB0_SYS}/Apps'
-fi
 
 CG121_SYS=${MY_HOME}/g121_sys
 if [[ -d ${CG121_SYS} && ${MY_BUILD_ENV} == "CG121" ]]; then
@@ -203,7 +188,8 @@ if [[ -d ${CG121_SYS} && ${MY_BUILD_ENV} == "CG121" ]]; then
     ADDX_OUTPUT=${CG121_SYS}/out
     ADDX_OTHER=${CG121_SYS}/application/t31z/batcam/src
 fi
-if [[ ! -n ${ADDX_ROOT} ]]; then
+
+if [[ ${ADDX_ROOT} ]]; then
     alias tor='cd ${ADDX_ROOT}'
     alias tob='cd ${ADDX_BUILD}'
     alias tov='cd ${ADDX_MODULE}'
@@ -211,13 +197,13 @@ if [[ ! -n ${ADDX_ROOT} ]]; then
     alias tol='cd ${ADDX_OTHER}'
 fi
 
-buildenv() {
-        echo "BUILD_ENV   : ${MY_BUILD_ENV}"
-        echo "ROOT   (tor): ${ADDX_ROOT}"
-        echo "BUILD  (tob): ${ADDX_BUILD}"
-        echo "MODULE (tov): ${ADDX_MODULE}"
-        echo "OUTPUT (too): ${ADDX_OUTPUT}"
-        echo "OTHER  (tol): ${ADDX_OTHER}"
+benv() {
+    echo "MY_BUILD_ENV : ${MY_BUILD_ENV}"
+    echo "ROOT    (tor): ${ADDX_ROOT}"
+    echo "BUILD   (tob): ${ADDX_BUILD}"
+    echo "MODULE  (tov): ${ADDX_MODULE}"
+    echo "OUTPUT  (too): ${ADDX_OUTPUT}"
+    echo "OTHER   (tol): ${ADDX_OTHER}"
 }
 
 if [[ -d ${CG1_SYS_TOOLCHAIN} ]]; then
