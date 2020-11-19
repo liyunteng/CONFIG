@@ -3,22 +3,23 @@
 #
 
 # color on GNU ls(1)
-if ls --color=auto / > /dev/null 2>&1; then
+if islinux; then
     ls_options+=( --color=auto )
 # color on FreeBSD and OSX ls(1)
-elif ls -G / > /dev/null 2>&1; then
+elif isdarwin || isfreebsd; then
     ls_options+=( -G )
 fi
 
 # Natural sorting order on GNU ls(1)
 # OSX and IllumOS have a -v option that is not natural sorting
-if ls --version > /dev/null 2>&1 && ls --version | grep -q 'GNU' > /dev/null 2>&1 && ls -v / > /dev/null 2>&1; then
+if islinux; then
     ls_options+=( -v )
 fi
 
 # color on GNU and FreeBSD grep(1)
-if echo "a" | grep --color=auto -q "a" > /dev/null 2>&1; then
-    grep_options+=( --color=auto )
+grep_options+=( --color=auto )
+if isdarwin; then
+    grep_options+=( -r )
 fi
 
 EXCLUDE_FOLDERS="{.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
@@ -97,10 +98,11 @@ alias lsnewdir="ls -rthdl *(/om[1,10]) .*(D/om[1,10])"
 alias lsolddir="ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])"
 
 # use /var/log/syslog iff present, fallback to journalctl otherwise
-if [[ -e /var/log/syslog ]] ; then
-  #a1# Take a look at the syslog: \kbd{\$PAGER /var/log/syslog || journalctl}
+if isdarwin; then
+    alias llog="${PAGER} /var/log/system.log"
+    alias tlog="tail -f /var/log/system.log"
+elif [[ -e /var/log/syslog ]] ; then
   alias llog="$PAGER /var/log/syslog"     # take a look at the syslog
-  #a1# Take a look at the syslog: \kbd{tail -f /var/log/syslog || journalctl}
   alias tlog="tail -f /var/log/syslog"    # follow the syslog
 elif [[ journalctl ]]; then
   alias llog="journalctl -e"
@@ -129,9 +131,15 @@ alias mv='mv -i'
 
 # alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
 # alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1'
-alias psmem='ps a -o user,pid,ppid,rss,vsz,pmem,cmd k pmem'
-alias pscpu='ps a -o user,pid,ppid,nice,state,wchan,cputime,pcpu,cmd k pcpu'
-alias psp='ps -ef | grep -v grep | grep'
+if isdarwin; then
+alias psmem='ps a -o user,pid,ppid,rss,vsz,pmem,command | sort -b -k6,6n'
+alias pscpu='ps a -o user,pid,ppid,nice,state,wchan,cputime,pcpu,command | sort -b -k8,8n'
+alias psp='ps -ef | grep -hv grep | grep -hi'
+else
+alias psmem='ps a -o user,pid,ppid,rss,vsz,pmem,command k pmem'
+alias pscpu='ps a -o user,pid,ppid,nice,state,wchan,cputime,pcpu,command k pcpu'
+alias psp='ps -ef | grep -v grep | grep -i'
+fi
 alias x=simple-extract
 
 if which neofetch > /dev/null 2>&1; then
@@ -150,34 +158,43 @@ if [[ -d ${MY_HOME} ]]; then
     alias tot='cd ${MY_TOOLCHAINS}'
 fi
 
-export MY_BUILD_ENV=${MY_BUILD_ENV:-"B0"}
-G1_SYS=${MY_HOME}/g1_sys
-G1_SYS_TOOLCHAIN=${MY_TOOLCHAINS}/arm-himix100-linux
-if [[ -d ${G1_SYS} && ${MY_BUILD_ENV} == "G1" ]]; then
-    alias tor='cd ${G1_SYS}'
-    alias tob='cd ${G1_SYS}'
-    alias tov='cd ${G1_SYS}/reference/battery_ipcam/modules'
-    alias too='cd ${G1_SYS}/reference/out/hi3518ev300_battery_ipcam_GC2053/burn'
-    alias tol='cd ${G1_SYS}/osdrv/platform/liteos/liteos'
+export MY_BUILD_ENV=${MY_BUILD_ENV:-"CB0"}
+CG1_SYS=${MY_HOME}/g1_sys
+CG1_SYS_TOOLCHAIN=${MY_TOOLCHAINS}/arm-himix100-linux
+if [[ -d ${CG1_SYS} && ${MY_BUILD_ENV} == "CG1" ]]; then
+    alias tor='cd ${CG1_SYS}'
+    alias tob='cd ${CG1_SYS}'
+    alias tov='cd ${CG1_SYS}/reference/battery_ipcam/modules'
+    alias too='cd ${CG1_SYS}/reference/out/hi3518ev300_battery_ipcam_GC2053/burn'
+    alias tol='cd ${CG1_SYS}/osdrv/platform/liteos/liteos'
 fi
 
-B0_SYS=${MY_HOME}/b0_sys
-B0_SYS_TOOLCHAIN_32=${MY_TOOLCHAINS}/mips-gcc472-glibc216-32bit
-B0_SYS_TOOLCHAIN_64=${MY_TOOLCHAINS}/mips-gcc472-glibc216-64bit
-if [[ -d ${B0_SYS} && ${MY_BUILD_ENV} == "B0" ]]; then
-    alias tor='cd ${B0_SYS}'
-    alias tob='cd ${B0_SYS}/Buildscript'
-    alias tov='cd ${B0_SYS}/Apps/addx_stream'
-    alias too='cd ${B0_SYS}/Images/output'
-    alias tol='cd ${B0_SYS}/Apps'
+CB0_SYS=${MY_HOME}/b0_sys
+CB0_SYS_TOOLCHAIN_32=${MY_TOOLCHAINS}/mips-gcc472-glibc216-32bit
+CB0_SYS_TOOLCHAIN_64=${MY_TOOLCHAINS}/mips-gcc472-glibc216-64bit
+if [[ -d ${CB0_SYS} && ${MY_BUILD_ENV} == "CB0" ]]; then
+    alias tor='cd ${CB0_SYS}'
+    alias tob='cd ${CB0_SYS}/Buildscript'
+    alias tov='cd ${CB0_SYS}/Apps/addx_stream'
+    alias too='cd ${CB0_SYS}/Images/output'
+    alias tol='cd ${CB0_SYS}/Apps'
 fi
 
-if [[ -d ${G1_SYS_TOOLCHAIN} ]]; then
-    add-path ${G1_SYS_TOOLCHAIN}/bin
+CG121_SYS=${MY_HOME}/g121_sys
+if [[ -d ${CG121_SYS} && ${MY_BUILD_ENV} == "CG121" ]]; then
+    alias tor='cd ${CG121_SYS}'
+    alias tob='cd ${CG121_SYS}'
+    alias tov='cd ${CG121_SYS}/application/t31z/batcam/src/module'
+    alias too='cd ${CG121_SYS}/out'
+    alias tol='cd ${CG121_SYS}/application/t31z/batcam/src'
 fi
-if [[ -d ${B0_SYS_TOOLCHAIN_32} ]];then
-    add-path ${B0_SYS_TOOLCHAIN_32}/bin
+
+if [[ -d ${CG1_SYS_TOOLCHAIN} ]]; then
+    add-path ${CG1_SYS_TOOLCHAIN}/bin
 fi
-if [[ -d ${B0_SYS_TOOLCHAIN_64} ]]; then
-    add-path ${B0_SYS_TOOLCHAIN_64}/bin
+if [[ -d ${CB0_SYS_TOOLCHAIN_32} ]];then
+    add-path ${CB0_SYS_TOOLCHAIN_32}/bin
+fi
+if [[ -d ${CB0_SYS_TOOLCHAIN_64} ]]; then
+    add-path ${CB0_SYS_TOOLCHAIN_64}/bin
 fi

@@ -166,19 +166,19 @@ function islinux () {
 }
 
 function isdarwin () {
-    [[ $GRML_OSTYPE == "Darwin" ]]
+    [[ $MY_OSTYPE == "Darwin" ]]
 }
 
 function isfreebsd () {
-    [[ $GRML_OSTYPE == "FreeBSD" ]]
+    [[ $MY_OSTYPE == "FreeBSD" ]]
 }
 
 function isopenbsd () {
-    [[ $GRML_OSTYPE == "OpenBSD" ]]
+    [[ $MY_OSTYPE == "OpenBSD" ]]
 }
 
 function issolaris () {
-    [[ $GRML_OSTYPE == "SunOS" ]]
+    [[ $MY_OSTYPE == "SunOS" ]]
 }
 
 #f1# are we running within an utf environment?
