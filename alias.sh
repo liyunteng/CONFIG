@@ -161,6 +161,14 @@ fi
 export MY_BUILD_ENV=${MY_BUILD_ENV:-"CB0"}
 CG1_SYS=${MY_HOME}/g1_sys
 CG1_SYS_TOOLCHAIN=${MY_TOOLCHAINS}/arm-himix100-linux
+if [[ -d ${CG1_SYS} && ${MY_BUILD_ENV} == "CG1" ]];then
+    ADDX_ROOT=${CG1_SYS}
+    ADDX_BUILD=${CG1_SYS}
+    ADDX_MODULE=${CG1_SYS}/reference/battery_ipcam/modules
+    ADDX_OUTPUT=${CG1_SYS}/reference/out/hi3518ev300_battery_ipcam_GC2053/burn
+    ADDX_OTHER=${CG1_SYS}/osdrv/platform/liteos/liteos
+fi
+
 if [[ -d ${CG1_SYS} && ${MY_BUILD_ENV} == "CG1" ]]; then
     alias tor='cd ${CG1_SYS}'
     alias tob='cd ${CG1_SYS}'
@@ -173,6 +181,13 @@ CB0_SYS=${MY_HOME}/b0_sys
 CB0_SYS_TOOLCHAIN_32=${MY_TOOLCHAINS}/mips-gcc472-glibc216-32bit
 CB0_SYS_TOOLCHAIN_64=${MY_TOOLCHAINS}/mips-gcc472-glibc216-64bit
 if [[ -d ${CB0_SYS} && ${MY_BUILD_ENV} == "CB0" ]]; then
+    ADDX_ROOT=${CB0_SYS}
+    ADDX_BUILD=${CB0_SYS}/Buildscript
+    ADDX_MODULE=${CB0_SYS}/Apps/addx_stream
+    ADDX_OUTPUT=${CB0_SYS}/Images/output
+    ADDX_OTHER=${CB0_SYS}/Apps
+fi
+if [[ -d ${CB0_SYS} && ${MY_BUILD_ENV} == "CB0" ]]; then
     alias tor='cd ${CB0_SYS}'
     alias tob='cd ${CB0_SYS}/Buildscript'
     alias tov='cd ${CB0_SYS}/Apps/addx_stream'
@@ -182,12 +197,28 @@ fi
 
 CG121_SYS=${MY_HOME}/g121_sys
 if [[ -d ${CG121_SYS} && ${MY_BUILD_ENV} == "CG121" ]]; then
-    alias tor='cd ${CG121_SYS}'
-    alias tob='cd ${CG121_SYS}'
-    alias tov='cd ${CG121_SYS}/application/t31z/batcam/src/module'
-    alias too='cd ${CG121_SYS}/out'
-    alias tol='cd ${CG121_SYS}/application/t31z/batcam/src'
+    ADDX_ROOT=${CG121_SYS}
+    ADDX_BUILD=${CG121_SYS}
+    ADDX_MODULE=${CG121_SYS}/application/t31z/batcam/src/module
+    ADDX_OUTPUT=${CG121_SYS}/out
+    ADDX_OTHER=${CG121_SYS}/application/t31z/batcam/src
 fi
+if [[ ! -n ${ADDX_ROOT} ]]; then
+    alias tor='cd ${ADDX_ROOT}'
+    alias tob='cd ${ADDX_BUILD}'
+    alias tov='cd ${ADDX_MODULE}'
+    alias too='cd ${ADDX_OUTPUT}'
+    alias tol='cd ${ADDX_OTHER}'
+fi
+
+buildenv() {
+        echo "BUILD_ENV   : ${MY_BUILD_ENV}"
+        echo "ROOT   (tor): ${ADDX_ROOT}"
+        echo "BUILD  (tob): ${ADDX_BUILD}"
+        echo "MODULE (tov): ${ADDX_MODULE}"
+        echo "OUTPUT (too): ${ADDX_OUTPUT}"
+        echo "OTHER  (tol): ${ADDX_OTHER}"
+}
 
 if [[ -d ${CG1_SYS_TOOLCHAIN} ]]; then
     add-path ${CG1_SYS_TOOLCHAIN}/bin
