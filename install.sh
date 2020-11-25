@@ -74,11 +74,9 @@ install_configs () {
 
 install_zsh() {
     local src=oh-my-zsh
-    local target=${HOME}/.${src}
 
     create_link ${src} 1
-    create_copy zsh/plugins ${target}
-    create_copy zsh/themes ${target}
+    create_link zsh-custom 1
 }
 
 install_emacs() {
