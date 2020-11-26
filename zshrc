@@ -8,10 +8,13 @@ if [[ "$TERM" = "dumb" ]]; then
     # return
 fi
 
-if [[ "$TERM" = "eterm-color" ]]; then
-    chpwd() { print -P "\033AnSiTc %d" }
+# for emacs dired-jump
+chpwd () {
     print -P "\033AnSiTu %n"
     print -P "\033AnSiTc %d"
+}
+if [[ "$TERM" = "eterm-color" ]]; then
+    chpwd
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -282,6 +285,9 @@ function cd () {
         builtin cd ${1:h}
     else
         builtin cd "$@"
+    fi
+    if [[ "$TERM" = "eterm-color" ]]; then
+        chpwd
     fi
 }
 
