@@ -9,14 +9,13 @@ if [[ "$TERM" = "dumb" ]]; then
 fi
 
 # for emacs dired-jump
-chpwd () {
-    print -P "\033AnSiTu %n"
-    print -P "\033AnSiTc %d"
+function chpwd () {
+    if [[ "$TERM" = "eterm-color" ]]; then
+        print -P "\033AnSiTu %n"
+        print -P "\033AnSiTc %d"
+    fi
 }
-if [[ "$TERM" = "eterm-color" ]]; then
-    chpwd
-fi
-
+chpwd
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -286,9 +285,7 @@ function cd () {
     else
         builtin cd "$@"
     fi
-    if [[ "$TERM" = "eterm-color" ]]; then
-        chpwd
-    fi
+    chpwd
 }
 
 # Create Directory and \kbd{cd} to it
