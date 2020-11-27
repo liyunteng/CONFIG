@@ -58,6 +58,7 @@ install_ssh () {
     create_copy ssh/id_rsa ${target}
     create_copy ssh/id_rsa.pub ${target}
     create_copy ssh/aws_test_env.pem ${target}
+    chmod 0400 ${target}/id_rsa
 }
 
 install_configs () {
