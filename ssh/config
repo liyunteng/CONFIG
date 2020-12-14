@@ -36,3 +36,15 @@ Host us-staging
     User centos
     Port 32222
     IdentityFile ~/.ssh/id_rsa
+
+Host ios
+    Hostname 192.168.31.128
+    User addx
+    Port 22
+    IdentityFile ~/.ssh/id_rsa
+
+Host cn-ai
+    Hostname 52.81.37.85
+    User ubuntu
+    Port 32222
+    IdentityFile ~/.ssh/id_rsa
