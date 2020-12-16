@@ -2,7 +2,7 @@
 # Description: install
 
 # Copyright (C) 2019 liyunteng
-# Last-Updated: <2019/11/16 03:19:02 liyunteng>
+# Last-Updated: <2020/12/16 10:32:44>
 set -e
 INSTALL_CONFIG=${INSTALL_CONFIG:-yes}
 INSTALL_SSH=${INSTALL_SSH:-yes}
@@ -11,14 +11,13 @@ INSTALL_VIM=${INSTALL_VIM:-no}
 INSTALL_EMACS=${INSTALL_EMACS:-no}
 INSTALL_ALL=${INSTALL_ALL:-no}
 
-update () {
+check () {
     if [[ ! git ]]; then
         echo "Please install 'git' first!"
         exit -1
     fi
 
     git submodule init
-    git submodule update
 }
 
 # create_link src delete?
@@ -76,6 +75,7 @@ install_configs () {
 install_zsh() {
     local src=oh-my-zsh
 
+    git submodule update ${src}
     create_link ${src} 1
     create_link zsh-custom 1
 }
@@ -83,6 +83,7 @@ install_zsh() {
 install_emacs() {
     local src=emacs.d
 
+    git submodule update ${src}
     create_link ${src} 1
     if [[ emacs ]]; then
         emacs -nw --debug-init --eval "(kill-emacs)"
@@ -94,6 +95,7 @@ install_vim () {
     local target=${HOME}/.${src}
     local pyexec=python
 
+    git submodule update ${src}
     create_link ${src} 1
 
     ${target}/install_awesome_parameterized.sh ${target} "$USER"
@@ -147,7 +149,7 @@ main() {
         INSTALL_SSH=yes
     fi
 
-    update
+    check
 
     if [[ ${INSTALL_CONFIG} == "yes" ]]; then
         install_configs
@@ -174,4 +176,3 @@ main() {
 }
 
 main "$@"
-
