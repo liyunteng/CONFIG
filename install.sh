@@ -2,7 +2,7 @@
 # Description: install
 
 # Copyright (C) 2019 liyunteng
-# Last-Updated: <2020/12/16 10:32:44>
+# Last-Updated: <2020/12/19 04:24:33>
 set -e
 INSTALL_CONFIG=${INSTALL_CONFIG:-yes}
 INSTALL_SSH=${INSTALL_SSH:-yes}
@@ -104,15 +104,18 @@ install_vim () {
 }
 
 usage() {
-    cat <<-EOF
-${0} [all | help | config | ssh | zsh | vim | emacs].
+    cat <<EOF
+USAGE:
+    ${0} [FLAGS].
 
+FLAGS:
     all         install all.
     config      install config (default)
     ssh         install ssh config (default)
     zsh         install zsh config (default)
     vim         install vim config
     emacs       install emacs config
+
     help        help
 EOF
 }
@@ -175,4 +178,4 @@ main() {
     exit 0
 }
 
-main "$@"
+main "$@" || exit -1
