@@ -48,3 +48,21 @@ Host cn-ai
     User ubuntu
     Port 32222
     IdentityFile ~/.ssh/id_rsa
+
+Host wowza-staging
+    Hostname 49.232.232.160
+    User root
+    Port 32222
+    IdentityFile ~/.ssh/id_rsa
+
+Host wowza-test
+    Hostname 58.87.101.181
+    User root
+    Port 32222
+    IdentityFile ~/.ssh/id_rsa
+
+Host mq-test
+    Hostname 58.87.67.189
+    User root
+    Port 32222
+    IdentityFile ~/.ssh/id_rsa
