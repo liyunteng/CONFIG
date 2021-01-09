@@ -17,7 +17,7 @@ Host 118
 
 Host 28
     Hostname 192.168.31.28
-    User demo
+    User liyt
     IdentityFile ~/.ssh/id_rsa
 
 Host 75
