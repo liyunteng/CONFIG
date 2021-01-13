@@ -78,6 +78,7 @@ BraceWrapping:
   SplitEmptyRecord: true
   # 空namespace后面
   SplitEmptyNamespace: true
+
 # 在二元运算符前换行: None(在操作符后换行), NonAssignment(在非赋值的操作符前换行), All(在操作符前换行)
 BreakBeforeBinaryOperators:	NonAssignment
 # 在大括号前换行: Attach(始终将大括号附加到周围的上下文), Linux(除函数、命名空间和类定义，与Attach类似),
@@ -99,7 +100,7 @@ BreakAfterJavaFieldAnnotations: false
 BreakStringLiterals: true
 
 # 每行字符的限制，0表示没有限制
-ColumnLimit: 80
+ColumnLimit: 70
 # 描述具有特殊意义的注释的正则表达式，它不应该被分割为多行或以其它方式改变
 CommentPragmas:	'^ IWYU pragma:'
 # true多个namespace在同一行, false在不同行
@@ -142,7 +143,8 @@ IncludeIsMainRegex: '(Test)?$'
 # 缩进case标签
 IndentCaseLabels: false
 # None 宏不indent, AfterHash #总是在第一列 BeforeHash #不在第一列
-IndentPPDirectives: AfterHash
+#IndentPPDirectives: AfterHash
+IndentPPDirectives: None
 # 缩进宽度
 IndentWidth: 4
 # 函数返回类型换行时，缩进函数声明或函数定义的函数名
