@@ -215,3 +215,7 @@ fi
 if [[ -d ${CB0_SYS_TOOLCHAIN_64} ]]; then
     add-path ${CB0_SYS_TOOLCHAIN_64}/bin
 fi
+
+# Local Variables:
+# mode: sh
+# End:

@@ -355,3 +355,7 @@ fi
 if [[ -f ~/.alias.sh ]]; then
     source ~/.alias.sh
 fi
+
+# Local Variables:
+# mode: sh
+# End:

@@ -2,7 +2,8 @@
 # Description: install
 
 # Copyright (C) 2019 liyunteng
-# Last-Updated: <2020/12/19 04:24:33>
+# Last-Updated: <2021/01/21 01:00:07>
+
 set -e
 INSTALL_CONFIG=${INSTALL_CONFIG:-yes}
 INSTALL_SSH=${INSTALL_SSH:-yes}
@@ -179,3 +180,7 @@ main() {
 }
 
 main "$@" || exit -1
+
+# Local Variables:
+# mode: sh
+# End:

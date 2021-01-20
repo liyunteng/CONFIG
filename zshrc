@@ -564,3 +564,7 @@ source  $ZSH/oh-my-zsh.sh
 if [[ -f ~/.alias.sh ]]; then
     source  ~/.alias.sh
 fi
+
+# Local Variables:
+# mode: sh
+# End:
