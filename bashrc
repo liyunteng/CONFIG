@@ -4,12 +4,21 @@
 # ~/.bashrc
 #
 
+: ${HOSTNAME=$(uname -n)}
+: ${USER=$(whoami)}
+
+# for emacs dired-jump
+# case $TERM in
+#     eterm*)
+#         printf '\033AnSiTh %s\n' "$HOSTNAME"
+#         printf '\033AnSiTu %s\n' "$USER"
+#         printf '\033AnSiTc %s\n' "$PWD"
+# esac
+
 chpwd() {
-    # for emacs dired-jump
     case $TERM in
-        linux|eterm*)
+        eterm*)
             printf '\033AnSiTc %s\n' "$PWD";
-            ;;
     esac
 }
 
@@ -92,7 +101,7 @@ else
     # Some systems (e.g. BSD & embedded) don't typically come with
     # dircolors so we need to hardcode some terminals in here.
     case ${TERM} in
-        [aEkx]term*|rxvt*|gnome*|konsole*|screen|cons25|*color) use_color=true;;
+        [aEkx]term*|eterm*|rxvt*|gnome*|konsole*|screen|cons25|*color) use_color=true;;
     esac
 fi
 

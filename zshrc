@@ -4,12 +4,18 @@
 # ~/.zshrc
 #
 
+# for emacs dired-jump
+case $TERM in
+    eterm*)
+        print -P '\033AnSiTh %m'
+        print -P '\033AnSiTu %n'
+        print -P '\033AnSiTc %d'
+esac
+
 chpwd() {
-    # for emacs dired-jump
     case $TERM in
-        linux|eterm*)
+        eterm*)
             print -P "\033AnSiTc %d"
-            ;;
     esac
 }
 
