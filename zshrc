@@ -1,21 +1,38 @@
+#!/usr/bin/env zsh
+
 #
 # ~/.zshrc
 #
 
-if [[ "$TERM" = "dumb" ]]; then
-    unsetopt zle
-    # PS1='$ '
-    # return
-fi
+case $TERM in
+    # for emacs dired-jump
+	eterm*)
+		# The \033 stands for ESC.
+	    # There is a space between "AnSiT?" and $whatever.
+		print -P '\033AnSiTh %m'
+		print -P '\033AnSiTu %n'
+		print -P '\033AnSiTc %d'
 
-# for emacs dired-jump
+		# cd()    { command cd    "$@"; printf '\033AnSiTc %s\n' "$PWD"; }
+		# pushd() { command pushd "$@"; printf '\033AnSiTc %s\n' "$PWD"; }
+		# popd()  { command popd  "$@"; printf '\033AnSiTc %s\n' "$PWD"; }
+
+		# Use custom dircolors in term buffers.
+		# eval $(dircolors $HOME/.emacs_dircolors)
+        ;;
+
+    dumb)
+        unsetopt zle
+        ;;
+esac
+
 function chpwd () {
     if [[ "$TERM" = "eterm-color" ]]; then
         print -P "\033AnSiTu %n"
         print -P "\033AnSiTc %d"
     fi
 }
-chpwd
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -285,7 +302,6 @@ function cd () {
     else
         builtin cd "$@"
     fi
-    chpwd
 }
 
 # Create Directory and \kbd{cd} to it
@@ -531,13 +547,13 @@ CYAN=$'\033[0;36m'
 NORMAL=$'\033[0m'
 
 # support colors in less
-export LESS_TERMCAP_mb=${BOLDRED}       # start blink
-export LESS_TERMCAP_md=${BOLDBLUE}      # start bold
-export LESS_TERMCAP_me=${NORMAL}        # turn off bold, blink and underline
-export LESS_TERMCAP_so=${BOLDYELLOW}    # start standout
-export LESS_TERMCAP_se=${NORMAL}        # stop standout
-export LESS_TERMCAP_us=${GREEN}         # start underline
-export LESS_TERMCAP_ue=${NORMAL}        # stop underline
+# export LESS_TERMCAP_mb=${BOLDRED}       # start blink
+# export LESS_TERMCAP_md=${BOLDBLUE}      # start bold
+# export LESS_TERMCAP_me=${NORMAL}        # turn off bold, blink and underline
+# export LESS_TERMCAP_so=${BOLDYELLOW}    # start standout
+# export LESS_TERMCAP_se=${NORMAL}        # stop standout
+# export LESS_TERMCAP_us=${GREEN}         # start underline
+# export LESS_TERMCAP_ue=${NORMAL}        # stop underline
 
 unset BOLDRED BOLDGREEN BOLDYELLOW BOLDBLUE BOLDPURPLE BOLDCYAN RED GREEN YELLOW BLUE PURPLE CYAN NORMAL
 

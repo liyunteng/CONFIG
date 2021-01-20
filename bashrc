@@ -1,12 +1,8 @@
+#!/usr/bin/env bash
+
 #
 # ~/.bashrc
 #
-# This file is sourced by all *interactive* bash shells on startup,
-# including some apparently interactive shells such as scp and rcp
-# that can't tolerate any output.  So make sure this doesn't display
-# anything or bad things will happen !
-
-
 #############################################################################################################
 #### Tramp emacs mandatory step
 #############################################################################################################
@@ -131,13 +127,13 @@ else
 fi
 
 # support colors in less
-export LESS_TERMCAP_mb=${BOLDRED}       # start blink
-export LESS_TERMCAP_md=${BOLDBLUE}      # start bold
-export LESS_TERMCAP_me=${NORMAL}        # turn off bold, blink and underline
-export LESS_TERMCAP_so=${BOLDYELLOW}    # start standout
-export LESS_TERMCAP_se=${NORMAL}        # stop standout
-export LESS_TERMCAP_us=${GREEN}         # start underline
-export LESS_TERMCAP_ue=${NORMAL}        # stop underline
+# export LESS_TERMCAP_mb=${BOLDRED}       # start blink
+# export LESS_TERMCAP_md=${BOLDBLUE}      # start bold
+# export LESS_TERMCAP_me=${NORMAL}        # turn off bold, blink and underline
+# export LESS_TERMCAP_so=${BOLDYELLOW}    # start standout
+# export LESS_TERMCAP_se=${NORMAL}        # stop standout
+# export LESS_TERMCAP_us=${GREEN}         # start underline
+# export LESS_TERMCAP_ue=${NORMAL}        # stop underline
 
 unset BOLDRED BOLDGREEN BOLDYELLOW BOLDBLUE BOLDPURPLE BOLDCYAN RED GREEN YELLOW BLUE PURPLE CYAN NORMAL
 

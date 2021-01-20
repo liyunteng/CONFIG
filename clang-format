@@ -124,7 +124,9 @@ DisableFormat: false
 # namespace结尾 添加注释
 FixNamespaceComments: true
 # 需要被解读为foreach循环而不是函数调用的宏
-ForEachMacros:	[ foreach, Q_FOREACH, BOOST_FOREACH ]
+ForEachMacros:	[ foreach, Q_FOREACH, BOOST_FOREACH,
+                  list_for_each_entry, list_for_each_entry_reverse,
+                  list_for_each_entry_safe ]
 
 # Preserve 头文件每块进行排序, Merge 头文件不分块进行排序, Regroup重新分组并排序
 IncludeBlocks: Preserve
