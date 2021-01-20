@@ -3,19 +3,15 @@
 #
 # ~/.bashrc
 #
-#############################################################################################################
-#### Tramp emacs mandatory step
-#############################################################################################################
-case "$TERM" in
-    "dumb")
-        export PS1="> "
-        return
-        ;;
-    xterm*|rxvt*|eterm*|screen*)
-        tty -s && export PS1="$ "
-        ;;
-esac
 
+chpwd() {
+    # for emacs dired-jump
+    case $TERM in
+        linux|eterm*)
+            printf '\033AnSiTc %s\n' "$PWD";
+            ;;
+    esac
+}
 
 # Test for an interactive shell.  There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
@@ -48,17 +44,6 @@ shopt -s histappend
 # the history will halt the shell prompt until it's finished.
 # PROMPT_COMMAND='history -a'
 
-############################################################################################################
-#### Titles
-#############################################################################################################
-case "$TERM" in
-    xterm*|rxvt*)
-        PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-        ;;
-    *)
-        ;;
-esac
-
 
 # use terminal-color
 BOLDRED=$'\033[1;31m'
@@ -83,7 +68,7 @@ NORMAL=$'\033[00m'
 # We run dircolors directly due to its changes in file syntax and
 # terminal name patching.
 use_color=false
-if type -P dircolors >/dev/null ; then
+if type -p dircolors >/dev/null ; then
     # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
     LS_COLORS=
     if [[ -f ~/.dir_colors ]] ; then
@@ -202,6 +187,7 @@ function cd () {
     else
         builtin cd "$@"
     fi
+    chpwd
 }
 
 #f5# Create Directory and \kbd{cd} to it

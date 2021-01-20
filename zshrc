@@ -4,34 +4,18 @@
 # ~/.zshrc
 #
 
-case $TERM in
+chpwd() {
     # for emacs dired-jump
-	eterm*)
-		# The \033 stands for ESC.
-	    # There is a space between "AnSiT?" and $whatever.
-		print -P '\033AnSiTh %m'
-		print -P '\033AnSiTu %n'
-		print -P '\033AnSiTc %d'
-
-		# cd()    { command cd    "$@"; printf '\033AnSiTc %s\n' "$PWD"; }
-		# pushd() { command pushd "$@"; printf '\033AnSiTc %s\n' "$PWD"; }
-		# popd()  { command popd  "$@"; printf '\033AnSiTc %s\n' "$PWD"; }
-
-		# Use custom dircolors in term buffers.
-		# eval $(dircolors $HOME/.emacs_dircolors)
-        ;;
-
-    dumb)
-        unsetopt zle
-        ;;
-esac
-
-function chpwd () {
-    if [[ "$TERM" = "eterm-color" ]]; then
-        print -P "\033AnSiTu %n"
-        print -P "\033AnSiTc %d"
-    fi
+    case $TERM in
+        linux|eterm*)
+            print -P "\033AnSiTc %d"
+            ;;
+    esac
 }
+
+if [[ $TERM = dumb ]];then
+    unsetopt zle
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -291,7 +275,7 @@ return $result
 function cl () {
     emulate -L zsh
     cd $1 && ls -a
-}
+ }
 
 # Smart cd function, allows switching to /etc when running 'cd /etc/fstab'
 function cd () {
@@ -302,6 +286,7 @@ function cd () {
     else
         builtin cd "$@"
     fi
+    chpwd
 }
 
 # Create Directory and \kbd{cd} to it
