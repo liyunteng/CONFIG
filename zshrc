@@ -7,7 +7,7 @@
 # for emacs dired-jump
 case $TERM in
     eterm*)
-        print -P '\033AnSiTh %m'
+        print -P '\033AnSiTh %M'
         print -P '\033AnSiTu %n'
         print -P '\033AnSiTc %d'
 esac
