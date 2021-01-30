@@ -241,7 +241,3 @@ StatementMacros:
 TabWidth: 4
 # 使用tab字符: Never, ForIndentation, ForContinuationAndIndentation, Always
 UseTab: Never
-
-;; Local Variables:
-;; mode: conf
-;; End:
