@@ -27,6 +27,6 @@ indent_style = tab
 end_of_line = LF
 
 
-;; Local Variables:
-;; mode: conf
-;; End:
+; Local Variables:
+; mode: conf
+; End:
